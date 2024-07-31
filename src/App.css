@@ -1,0 +1,26 @@
+.main_frame{
+    margin: auto;
+    width: 80%
+    
+}
+
+.main_body{
+    width: 100%;
+}
+
+.nav{
+    padding: 8px;
+    background-color: lightgray;
+    border: red dotted 1px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+.top_row_left{
+
+}
+.top_row_middle{
+    
+}
+.top_row_right{
+    
+}
