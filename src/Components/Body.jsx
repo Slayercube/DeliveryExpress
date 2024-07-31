@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import Map from './Map'
+
 import { Autocomplete } from '@react-google-maps/api'
 
 const Body = () => {
@@ -78,12 +78,6 @@ const Body = () => {
           <strong>Selected Delivery Address:</strong> {deliverAddress}
         </div>
       </div>
-      <Map
-        onPickLocation={handlePickLocation}
-        onDeliverLocation={handleDeliverLocation}
-        pickLocation={pickLocation}
-        deliverLocation={deliverLocation}
-      />
     </div>
   )
 }
