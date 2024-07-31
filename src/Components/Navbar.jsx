@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="nav top d-flex">
       <div className="top_row_left">
         
-        <img src="https://placehold.co/200x150" alt="" />
+        <img id="logo" src="./src/Images/logo.jpeg" alt="" />
 
       </div>
       <div className="top_row_middle">
