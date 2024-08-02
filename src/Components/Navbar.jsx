@@ -3,16 +3,6 @@ import'../index.css'
 
 const Navbar = () => {
   return (
-<<<<<<< HEAD
-    <div>
-      <nav className='fixed top-0 w-full bg-blue-500 p-4'>
-        <ul className='flex justify-around'>
-          <li className='text-white'>Home</li>
-          <li className='text-white'>About</li>
-          <li className='text-white'>Contact</li>
-        </ul>
-      </nav>
-=======
     <div className="nav top d-flex">
       <div className="top_row_left">
         
@@ -29,7 +19,6 @@ const Navbar = () => {
         
         </div>
       <div className="top_row_right">Login | Sign Up!</div>
->>>>>>> 29a591207179148627ad7904e99ea653cfbc16c8
     </div>
   )
 }

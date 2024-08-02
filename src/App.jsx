@@ -12,7 +12,7 @@ function App() {
     <>
    
     <Navbar />
-    <div className="card d-flex">
+    <div className='body'>
      <Body />
 
      <Itemspecs />

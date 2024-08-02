@@ -77,6 +77,7 @@ const Body = () => {
         <div>
           <strong>Selected Delivery Address:</strong> {deliverAddress}
         </div>
+        <button>book</button>
       </div>
     </div>
   )
