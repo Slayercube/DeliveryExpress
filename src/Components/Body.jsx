@@ -42,7 +42,7 @@ const Body = () => {
   }
   
   return (
-    <div>
+    <div className="main_body">
       <h1>Pick and Deliver Locations</h1>
       <div>
         <h2>Pick Location</h2>
