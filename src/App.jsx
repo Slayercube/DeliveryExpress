@@ -1,23 +1,29 @@
-import { useState } from 'react'
-
-
+import { useState } from "react";
 
 import './App.css'
 import Body from './Components/Body'
-import Navbar from './Components/Navbar'
+import Map from './Components/Map';
+import Itemspecs from "./Components/Itemspecs";
+import Navbar from "./Components/Navbar";
 
 
 function App() {
-
-
   return (
-    <div className="main_frame">
+    <>
+   
     <Navbar />
+    <div className='body'>
      <Body />
 
-      
+     <Itemspecs />
+
+
     </div>
+    <Map />
+
+      
+    </>
   )
 }
 
-export default App
+export default App;
