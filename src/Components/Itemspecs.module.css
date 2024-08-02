@@ -1,0 +1,14 @@
+#container {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.box {
+    width: 100px;
+    height: 20px;
+    background-color: #ccc; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
