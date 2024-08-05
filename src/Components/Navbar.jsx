@@ -44,21 +44,21 @@ const Navbar = () => {
               href=""
               style={{ color: hoveredLink === "Home" ? "lightgray" : "darkgray" }}
               onMouseEnter={() => handleMouseEnter("Home")}
-              onMouseLeave={handleMouseLeave}>Home | </a>
+              onMouseLeave={handleMouseLeave}>Home</a>
           </div>
           <div className={styles.hovered_link}>
             <a
               href=""
               style={{ color: hoveredLink === "Contact" ? "lightgray" : "darkgray" }}
               onMouseEnter={() => handleMouseEnter("Contact")}
-              onMouseLeave={handleMouseLeave}> Contact | </a>
+              onMouseLeave={handleMouseLeave}> Contact</a>
           </div>
           <div className={styles.hovered_link}>
             <a
               href=""
               style={{ color: hoveredLink === "Rate" ? "lightgray" : "darkgray" }}
               onMouseEnter={() => handleMouseEnter("Rate")}
-              onMouseLeave={handleMouseLeave} > Rate
+              onMouseLeave={handleMouseLeave} >Rate
             </a>
           </div>
         </div>
@@ -68,21 +68,21 @@ const Navbar = () => {
         
         </div>
       <div className={styles.top_row_right}>
-        <div className="">
-          <div className={styles.hovered_link}>
+        <div className={styles.top_login_left}>
+          <div className={styles.hovered_link_login}>
             <a
               href=""
               style={{ color: hoveredLink === "Login" ? "lightgray" : "darkgray" }}
               onMouseEnter={() => handleMouseEnter("Login")}
-              onMouseLeave={handleMouseLeave} > Login |
+              onMouseLeave={handleMouseLeave} >Login
             </a>
           </div>
-          <div className={styles.hovered_link}>
+          <div className={styles.hovered_link_login}>
             <a
               href=""
               style={{ color: hoveredLink === "Sign Up" ? "lightgray" : "darkgray" }}
               onMouseEnter={() => handleMouseEnter("Sign Up")}
-              onMouseLeave={handleMouseLeave} >  Sign Up
+              onMouseLeave={handleMouseLeave} >Sign Up
             </a>
           </div>
         </div>
