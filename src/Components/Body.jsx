@@ -1,12 +1,14 @@
 import React, { useState, useRef } from 'react'
 
 import { Autocomplete } from '@react-google-maps/api'
+import Itemspecs from './Itemspecs'
 
 const Body = () => {
   const [pickLocation, setPickLocation] = useState(null)
   const [deliverLocation, setDeliverLocation] = useState(null)
   const [pickAddress, setPickAddress] = useState('')
   const [deliverAddress, setDeliverAddress] = useState('')
+  const [showItemspecs, setShowItemspecs] = useState(false); 
 
   const pickAutocompleteRef = useRef(null)
   const deliverAutocompleteRef = useRef(null)
@@ -40,6 +42,9 @@ const Body = () => {
     setDeliverAddress(place.formatted_address)
     handleDeliverLocation(location)
   }
+  const handleBookClick = () => {
+    setShowItemspecs(true);
+  };
   
   return (
     <div className="main_body">
@@ -77,8 +82,9 @@ const Body = () => {
         <div>
           <strong>Selected Delivery Address:</strong> {deliverAddress}
         </div>
-        <button>book</button>
+        <button onClick={handleBookClick}>book</button>
       </div>
+      {showItemspecs && <Itemspecs />}
     </div>
   )
 }
