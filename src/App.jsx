@@ -4,6 +4,7 @@ import './App.css'
 import Body from './Components/Body'
 import Navbar from './Components/Navbar'
 import Lowerbody from './Components/Lowerbody'
+import Itemspecs from './Components/Itemspecs'
 
 
 function App() {
@@ -15,11 +16,11 @@ function App() {
      <Body />
      <Lowerbody/>
 
-     <Itemspecs />
+     {/* <Itemspecs /> */}
 
 
     </div>
-    <Map />
+    {/* <Map /> */}
 
       
     </>
