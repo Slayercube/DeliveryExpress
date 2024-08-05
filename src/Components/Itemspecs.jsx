@@ -61,7 +61,7 @@ const Itemspecs = () => {
         onChange={(e) => setWeight(e.target.value)}
       />
       {error && <p className={styles.error}>{error}</p>}
-      <button onClick={handleBookClick}>Book</button>
+      <button onClick={handleBookClick}>submit</button>
     </div>
   );
 };
