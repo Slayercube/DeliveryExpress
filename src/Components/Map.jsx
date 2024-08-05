@@ -1,42 +1,29 @@
 import React from 'react'
-import { GoogleMap, Marker } from '@react-google-maps/api'  
+import { useContext } from 'react'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { myContext } from '../Context'
 
 
-const containerStyle = {
-    width: '100%',
-    height: '400px'
-  }
-  
-  const center = {
-    lat: 38.722,
-    lng: -9.123
-  }
-  
-  const Map = ({ onPickLocation, onDeliverLocation, pickLocation, deliverLocation }) => {
-    const handleMapClick = (event) => {
-      const location = {
-        lat: event.latLng.lat(),
-        lng: event.latLng.lng()
-      }
-  
-      if (!pickLocation) {
-        onPickLocation(location)
-      } else if (!deliverLocation) {
-        onDeliverLocation(location)
-      }
-    }
-  
-    return (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onClick={handleMapClick}
-      >
-        {pickLocation && <Marker position={pickLocation} />}
-        {deliverLocation && <Marker position={deliverLocation} />}
-      </GoogleMap>
-    )
-  }
-  
-  export default Map
+const Map = () => {
+  const { pickLocation, deliverLocation, pickAddress, deliverAddress } = useContext(myContext);
+  return (
+    <MapContainer center={[38.722, -9.123]} zoom={13} style={{ height: '400px', width: '100%' }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {pickLocation && (
+          <Marker position={[pickLocation.lat, pickLocation.lng]}>
+            <Popup>{pickAddress}</Popup>
+          </Marker>
+        )}
+        {deliverLocation && (
+          <Marker position={[deliverLocation.lat, deliverLocation.lng]}>
+            <Popup>{deliverAddress}</Popup>
+          </Marker>
+        )}
+      </MapContainer>
+  )
+}
+
+export default Map
