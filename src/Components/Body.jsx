@@ -1,70 +1,80 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react';
+import { Autocomplete } from '@react-google-maps/api';
+import Itemspecs from './Itemspecs';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { myContext } from '../Context';
+import { useContext } from 'react';
+import Map from './Map';
 
-import { Autocomplete } from '@react-google-maps/api'
-import Itemspecs from './Itemspecs'
+
+// Fix for default marker icon issue with Leaflet
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+});
 
 const Body = () => {
-  const [pickLocation, setPickLocation] = useState(null)
-  const [deliverLocation, setDeliverLocation] = useState(null)
-  const [pickAddress, setPickAddress] = useState('')
-  const [deliverAddress, setDeliverAddress] = useState('')
-  const [showItemspecs, setShowItemspecs] = useState(false); 
+ const { setPickLocation, setDeliverLocation } = useContext(myContext);
+  const [pickAddress, setPickAddress] = useState('');
+  const [deliverAddress, setDeliverAddress] = useState('');
+  const [showItemspecs, setShowItemspecs] = useState(false);
 
-  const pickAutocompleteRef = useRef(null)
-  const deliverAutocompleteRef = useRef(null)
+  const pickAutocompleteRef = useRef(null);
+  const deliverAutocompleteRef = useRef(null);
 
   const handlePickLocation = (location) => {
-    setPickLocation(location)
-  }
-  
+    setPickLocation(location);
+  };
+
   const handleDeliverLocation = (location) => {
-    setDeliverLocation(location)
-  }
-  
+    setDeliverLocation(location);
+  };
+
   const handlePickPlaceChanged = () => {
-    const place = pickAutocompleteRef.current.getPlace()
+    const place = pickAutocompleteRef.current.getPlace();
     const location = {
       lat: place.geometry.location.lat(),
       lng: place.geometry.location.lng()
-    }
-    setPickLocation(location)
-    setPickAddress(place.formatted_address)
-    handlePickLocation(location)
-  }
-  
+    };
+    setPickLocation(location);
+    setPickAddress(place.formatted_address);
+    handlePickLocation(location);
+  };
+
   const handleDeliverPlaceChanged = () => {
-    const place = deliverAutocompleteRef.current.getPlace()
+    const place = deliverAutocompleteRef.current.getPlace();
     const location = {
       lat: place.geometry.location.lat(),
       lng: place.geometry.location.lng()
-    }
-    setDeliverLocation(location)
-    setDeliverAddress(place.formatted_address)
-    handleDeliverLocation(location)
-  }
+    };
+    setDeliverLocation(location);
+    setDeliverAddress(place.formatted_address);
+    handleDeliverLocation(location);
+  };
+
   const handleBookClick = () => {
     setShowItemspecs(true);
   };
-  
+
   return (
-    <div className="main_body">
-      <h1>Pick and Deliver Locations</h1>
+    <div>
+      <h2>Pick Location</h2>
+      <Autocomplete
+        onLoad={(autocomplete) => (pickAutocompleteRef.current = autocomplete)}
+        onPlaceChanged={handlePickPlaceChanged}
+      >
+        <input
+          type="text"
+          placeholder="Enter pick-up address"
+          value={pickAddress}
+          onChange={(e) => setPickAddress(e.target.value)}
+        />
+      </Autocomplete>
       <div>
-        <h2>Pick Location</h2>
-        <Autocomplete
-          onLoad={(autocomplete) => (pickAutocompleteRef.current = autocomplete)}
-          onPlaceChanged={handlePickPlaceChanged}
-        >
-          <input
-            type="text"
-            placeholder="Enter pick-up address"
-            value={pickAddress}
-            onChange={(e) => setPickAddress(e.target.value)}
-          />
-        </Autocomplete>
-        <div>
-          <strong>Selected Pick-up Address:</strong> {pickAddress}
-        </div>
+        <strong>Selected Pick-up Address:</strong> {pickAddress}
       </div>
       <div>
         <h2>Deliver Location</h2>
@@ -84,9 +94,13 @@ const Body = () => {
         </div>
         <button onClick={handleBookClick}>book</button>
       </div>
-      {showItemspecs && <Itemspecs />}
-    </div>
-  )
-}
 
-export default Body
+      {showItemspecs && <Itemspecs />}
+
+       <Map />
+      
+    </div>
+  );
+};
+
+export default Body;

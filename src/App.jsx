@@ -1,25 +1,20 @@
-import { useState } from "react";
 
 import './App.css'
 import Body from './Components/Body'
-import Navbar from './Components/Navbar'
-import Lowerbody from './Components/Lowerbody'
+import Navbar from "./Components/Navbar";
+
 
 
 function App() {
   return (
     <>
+      <Navbar />
+      <div>
+        <Body />
+     
+      </div>
    
-    <Navbar />
-    <div className='body'>
-     <Body />
-
-     <Itemspecs />
-
-
-    </div>
-    <Map />
-
+  
       
     </>
   )
