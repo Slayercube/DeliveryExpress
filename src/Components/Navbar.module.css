@@ -1,0 +1,121 @@
+.main_frame{
+    margin: auto;
+    width: 80%
+    
+}
+
+div{ 
+   /* border: red dotted 1px; */
+}
+.main_body{
+    width: 80%;
+}
+
+.nav{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+#logo{
+    height: 200px;
+    width: 250px
+}
+.top_row_left{
+
+}
+.top_row_middle{
+    text-align: center;
+    width: 20rem;
+}
+.top_row_right{
+    width: 14%;
+    display: flex;
+    justify-content: space-between;
+}
+.top_middle{
+    padding: 5px;
+    border-radius: 30px;
+    justify-content: center;
+    display: flex;
+    border: rgb(202, 202, 202) solid 1px;
+    background-color: rgb(224, 224, 224);
+}
+.top_middle_unhovered{
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    justify-content: center;
+    display: flex;
+}
+
+.hovered_link{
+    width: 30%;
+    background-color: aquamarine;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+.bottom_middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: white;
+    width: 100%;
+    height: 80%;
+}
+
+.hamburguer_icon_selected{
+    width: 85px;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: rgb(223, 223, 223);
+    text-align: center;
+
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+.hamburguer_icon_unselected{
+    width: 85px;
+    border-radius: 40px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+.login_links{
+    width: 150px;
+    display: flex;
+}
+
+.hidden_links {
+    display: none
+}
+.show_links {
+    display: contents
+}
+
+@keyframes fadeOut {
+    from {
+      background-color: rgb(223, 223, 223);
+    }
+    to {
+      background-color: white
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      background-color: white;
+    }
+    to {
+      background-color: rgb(223, 223, 223);
+    }
+  }

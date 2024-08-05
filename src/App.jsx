@@ -1,6 +1,4 @@
-import { useState } from 'react'
-
-
+import { useState } from "react";
 
 import './App.css'
 import Body from './Components/Body'
@@ -9,16 +7,22 @@ import Lowerbody from './Components/Lowerbody'
 
 
 function App() {
-
-
   return (
-    <div className="main_frame">
+    <>
+   
     <Navbar />
+    <div className='body'>
      <Body />
      <Lowerbody/>
 
-      
+     <Itemspecs />
+
+
     </div>
+    <Map />
+
+      
+    </>
   )
 }
 
