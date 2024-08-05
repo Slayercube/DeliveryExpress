@@ -5,7 +5,7 @@
 }
 
 div{ 
-   /* border: red dotted 1px; */
+   border: red dotted 1px; 
 }
 .main_body{
     width: 80%;
@@ -30,20 +30,22 @@ div{
 }
 .top_row_middle{
     text-align: center;
-    width: 20rem;
+    width: 100%;
 }
 .top_row_right{
-    width: 14%;
+    width: 25%;
     display: flex;
     justify-content: space-between;
 }
 .top_middle{
+    margin: auto;
+    width: 80%;
     padding: 5px;
     border-radius: 30px;
     justify-content: center;
     display: flex;
-    border: rgb(202, 202, 202) solid 1px;
-    background-color: rgb(224, 224, 224);
+    border: rgb(212, 212, 212) solid 1px;
+    background-color: rgb(233, 233, 233);
 }
 .top_middle_unhovered{
     padding: 5px;
@@ -54,11 +56,23 @@ div{
 }
 
 .hovered_link{
-    width: 30%;
-    background-color: aquamarine;
-    border: 1px solid black;
+    width: 25%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
     border-radius: 25px;
 }
+
+.hovered_link_login{
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
+    border-radius: 25px;
+}
+
 .bottom_middle{
     display: flex;
     align-items: center;
@@ -100,6 +114,11 @@ div{
 }
 .show_links {
     display: contents
+}
+
+.top_login_left{
+    display: flex;
+    width: 100%;
 }
 
 @keyframes fadeOut {
