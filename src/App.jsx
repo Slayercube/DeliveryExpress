@@ -14,8 +14,7 @@ function App() {
     <Navbar />
     <div className='body'>
      <Body />
-
-     <Itemspecs />
+    
 
 
     </div>
