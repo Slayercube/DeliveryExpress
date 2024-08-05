@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import './App.css'
 import Body from './Components/Body'
-import Map from './Components/Map';
-import Itemspecs from "./Components/Itemspecs";
-import Navbar from "./Components/Navbar";
+import Navbar from './Components/Navbar'
+import Lowerbody from './Components/Lowerbody'
+import Itemspecs from './Components/Itemspecs'
 
 
 function App() {
@@ -15,11 +15,11 @@ function App() {
     <div className='body'>
      <Body />
 
-     <Itemspecs />
+     {/* <Itemspecs /> */}
 
 
     </div>
-    <Map />
+    {/* <Map /> */}
 
       
     </>
