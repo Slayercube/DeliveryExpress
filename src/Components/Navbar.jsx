@@ -20,12 +20,6 @@ const Navbar = () => {
     const handleMouseLeave = () => {
       setHoveredLink(null);
     };
-    const handleHiddenMenu = () => {
-      
-    }
-    const handleHiddenMenuOut = () => {
-      
-    }
     const handleSubMenu = (menuH, subMenuH) => {
       if(menuH === false && subMenuH === false){
         setMenuHidden(!isMenuHidden)
@@ -44,34 +38,43 @@ const Navbar = () => {
       <div className={styles.top_row_middle}>
         <div className={styles.top_middle}>
           <div className={hoveredMenu === "Home"? styles.hovered_link : styles.unhovered_link}
-          onMouseEnter={() => handleMenuEntered("Home")}
-          onMouseLeave={() => handleMenuexit()}
+          onMouseEnter={() => {
+            handleMenuEntered("Home")
+            setHoveredLink("Home")
+          }}
+          onMouseLeave={() => {
+            handleMenuexit()
+            setHoveredLink(false)
+          }}
           >
             <a
-              href=""
-              style={{ color: hoveredLink === "Home" ? "lightgray" : "darkgray" }}
-              onMouseEnter={() => handleMouseEnter("Home")}
-              onMouseLeave={handleMouseLeave}>Home</a>
+              href="" className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Home</a>
           </div>
           <div className={hoveredMenu === "Contact"? styles.hovered_link : styles.unhovered_link}
-          onMouseEnter={() => handleMenuEntered("Contact")}
-          onMouseLeave={() => handleMenuexit()}
+          onMouseEnter={() => {
+            handleMenuEntered("Contact")
+            setHoveredLink("Contact")
+          }}
+          onMouseLeave={() => {
+            setHoveredLink(false)
+            handleMenuexit()
+          }}
           >
             <a
-              href=""
-              style={{ color: hoveredLink === "Contact" ? "lightgray" : "darkgray" }}
-              onMouseEnter={() => handleMouseEnter("Contact")}
-              onMouseLeave={handleMouseLeave}> Contact</a>
+              href="" className={hoveredLink === "Contact" ? styles.hovered_raw_link : styles.unhovered_raw_link}> Contact</a>
           </div>
           <div className={hoveredMenu === "Rate"? styles.hovered_link : styles.unhovered_link}
-          onMouseEnter={() => handleMenuEntered("Rate")}
-          onMouseLeave={() => handleMenuexit()}
+          onMouseEnter={() => {
+            handleMenuEntered("Rate")
+            setHoveredLink("Rate")
+          }}
+          onMouseLeave={() => {
+            setHoveredLink(false)
+            handleMenuexit()
+          }}
           >
             <a
-              href=""
-              style={{ color: hoveredLink === "Rate" ? "lightgray" : "darkgray" }}
-              onMouseEnter={() => handleMouseEnter("Rate")}
-              onMouseLeave={handleMouseLeave} >Rate
+              href="" className={hoveredLink === "Rate" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Rate
             </a>
           </div>
         </div>
@@ -105,23 +108,23 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-        <div className=""
+        <div className={styles.top_login_right}
           onMouseLeave={() => {
           handleSubMenu(isMenuHidden,isSubMenuHidden)
           }
         }
         >
           <div className={hoveredMenu === "login_menu"? styles.hamburguer_icon_selected : styles.hamburguer_icon_unselected}
-          onMouseEnter={() => handleMenuEntered("login_menu")}
-          onMouseLeave={() => handleMenuexit()}
-          onClick={() => {
-            setMenuHidden(!isMenuHidden)
-            setSubMenuHidden(!isSubMenuHidden)
-            }}>
-              <i class="fa-solid fa-bars"></i>
+            onMouseEnter={() => handleMenuEntered("login_menu")}
+            onMouseLeave={() => handleMenuexit()}
+            onClick={() => {
+              setMenuHidden(!isMenuHidden)
+              setSubMenuHidden(!isSubMenuHidden)
+              }}>
+                <i class="fa-solid fa-bars"></i>
           </div>
           <div className={isMenuHidden === true ? styles.hidden_links : styles.show_links}>
-            <div className={styles.hovered_link}>
+            <div className={styles.hovered_link_submenu}>
               <a
               href=""
               style={{ color: hoveredLink === "My Account" ? "lightgray" : "darkgray" }}
@@ -129,15 +132,14 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave} >My Account
               </a>
             </div>
-            <div className={styles.hovered_link}>
+            <div className={styles.hovered_link_submenu}>
               <a
-                href=""
-                style={{ color: hoveredLink === "Orders" ? "lightgray" : "darkgray" }}
+                href="" 
                 onMouseEnter={() => handleMouseEnter("Orders")}
                 onMouseLeave={handleMouseLeave} >Orders
               </a>
             </div>
-            <div className={styles.hovered_link}>
+            <div className={styles.hovered_link_submenu}>
               <a
                 href=""
                 style={{ color: hoveredLink === "Messages" ? "lightgray" : "darkgray" }}
