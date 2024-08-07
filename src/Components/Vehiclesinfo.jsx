@@ -1,38 +1,20 @@
 import React, { useState } from 'react';
-import styles from './Itemspecs.module.css';
+import Itemspecs from './Itemspecs'; // Assuming you have an Itemspecs component
 
-const Itemspecs = () => {
-  const [itemType, setItemType] = useState('');
+const Body = () => {
+  const [showItemspecs, setShowItemspecs] = useState(false);
+  const [isBooked, setIsBooked] = useState(false);
   const [length, setLength] = useState('');
   const [width, setWidth] = useState('');
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
-  const [error, setError] = useState(null);
   const [vehicle, setVehicle] = useState('');
 
   const handleBookClick = () => {
-    if (!itemType) {
-      setError('Please select an item type.');
-      return;
-    }
-    if (!length || !width || !height || !weight) {
-      setError('Please fill in all dimensions and weight.');
-      return;
-    }
-    setError('');
-   
-    console.log('Booking details:', { itemType, length, width, height, weight });
-    if (!error) {
-      handleSubmitClick()
-      setError(null)
-
-     
-
-      }
-    
+    setShowItemspecs(true);
+    setIsBooked(true);
   };
 
-  
   const handleSubmitClick = () => {
     const l = parseFloat(length);
     const w = parseFloat(width);
@@ -40,27 +22,23 @@ const Itemspecs = () => {
     const wt = parseFloat(weight);
 
     if (l <= 1 && w <= 1 && h <= 1 && wt <= 10) {
-      setVehicle("bike");
+      setVehicle('Bike');
     } else if (l <= 2 && w <= 2 && h <= 2 && wt <= 50) {
-      setVehicle("car");
+      setVehicle('Car');
     } else if (l <= 3 && w <= 3 && h <= 3 && wt <= 200) {
-      setVehicle("van");
+      setVehicle('Van');
     } else {
-      setVehicle("truck_kun");
+      setVehicle('Truck');
     }
   };
 
   return (
-    <div className='card' id={styles.box}>
-          {error && <div style={{ color: 'red' }}>{error}</div>}
-      <select value={itemType} onChange={(e) => setItemType(e.target.value)}>
-        <option value="">Select item</option>
-        <option value="Documents">Documents</option>
-        <option value="Box">Box</option>
-        <option value="Furniture">Furniture</option>
-        <option value="Electronics">Electronics</option>
-      </select>
-      <div>
+    <div>
+      {!isBooked && (
+        <button onClick={handleBookClick}>Book</button>
+      )}
+      {showItemspecs && (
+        <div>
           <div>
             <label>Length: </label>
             <input type="number" value={length} onChange={(e) => setLength(e.target.value)} />
@@ -77,19 +55,12 @@ const Itemspecs = () => {
             <label>Weight: </label>
             <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} />
           </div>
-          <p>if you are not sure about the details you can contact us 
-          <button>i need help</button>
-          </p>
-          <button onClick={handleBookClick}>Submit</button>
-        
+          <button onClick={handleSubmitClick}>Submit</button>
           {vehicle && <div>Vehicle: {vehicle}</div>}
-
-
-
-
         </div>
+      )}
     </div>
   );
 };
 
-export default Itemspecs;
+export default Body;

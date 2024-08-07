@@ -1,105 +1,110 @@
-import React, { useState, useRef } from 'react';
-import { Autocomplete } from '@react-google-maps/api';
-import Itemspecs from './Itemspecs';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import 'leaflet-control-geocoder/dist/Control.Geocoder.css';
+import 'leaflet-control-geocoder';
+import Itemspecs from './Itemspecs';
 import { myContext } from '../Context';
-import { useContext } from 'react';
 import Map from './Map';
 import styles from './Body.module.css'
 
-
-// Fix for default marker icon issue with Leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-});
-
 const Body = () => {
- const { setPickLocation, setDeliverLocation } = useContext(myContext);
+  const { setPickLocation, setDeliverLocation, isBooked , setIsBooked } = useContext(myContext);
   const [pickAddress, setPickAddress] = useState('');
   const [deliverAddress, setDeliverAddress] = useState('');
+  const [pickResults, setPickResults] = useState([]);
+  const [deliverResults, setDeliverResults] = useState([]);
   const [showItemspecs, setShowItemspecs] = useState(false);
+ 
 
-  const pickAutocompleteRef = useRef(null);
-  const deliverAutocompleteRef = useRef(null);
+  const pickGeocoderRef = useRef(null);
+  const deliverGeocoderRef = useRef(null);
 
-  const handlePickLocation = (location) => {
-    setPickLocation(location);
+  useEffect(() => {
+    pickGeocoderRef.current = L.Control.Geocoder.nominatim();
+    deliverGeocoderRef.current = L.Control.Geocoder.nominatim();
+  }, []);
+
+  const handlePickAddressChange = (e) => {
+    setPickAddress(e.target.value);
+    if (pickGeocoderRef.current) {
+      pickGeocoderRef.current.geocode(e.target.value, (results) => {
+        setPickResults(results);
+      });
+    }
   };
 
-  const handleDeliverLocation = (location) => {
-    setDeliverLocation(location);
+  const handleDeliverAddressChange = (e) => {
+    setDeliverAddress(e.target.value);
+    if (deliverGeocoderRef.current) {
+      deliverGeocoderRef.current.geocode(e.target.value, (results) => {
+        setDeliverResults(results);
+      });
+    }
   };
 
-  const handlePickPlaceChanged = () => {
-    const place = pickAutocompleteRef.current.getPlace();
-    const location = {
-      lat: place.geometry.location.lat(),
-      lng: place.geometry.location.lng()
-    };
-    setPickLocation(location);
-    setPickAddress(place.formatted_address);
-    handlePickLocation(location);
+  const handlePickResultClick = (result) => {
+    setPickAddress(result.name);
+    setPickLocation(result.center);
+    setPickResults([]);
   };
 
-  const handleDeliverPlaceChanged = () => {
-    const place = deliverAutocompleteRef.current.getPlace();
-    const location = {
-      lat: place.geometry.location.lat(),
-      lng: place.geometry.location.lng()
-    };
-    setDeliverLocation(location);
-    setDeliverAddress(place.formatted_address);
-    handleDeliverLocation(location);
+  const handleDeliverResultClick = (result) => {
+    setDeliverAddress(result.name);
+    setDeliverLocation(result.center);
+    setDeliverResults([]);
   };
-
   const handleBookClick = () => {
     setShowItemspecs(true);
+    setIsBooked(true);
+ 
   };
 
   return (
     <div>
-      <h2>Pick Location</h2>
-      <Autocomplete
-        onLoad={(autocomplete) => (pickAutocompleteRef.current = autocomplete)}
-        onPlaceChanged={handlePickPlaceChanged}
-      >
+      <div>
+      <h3>Pickup Location</h3>
         <input
           type="text"
-          placeholder="Enter pick-up address"
+          placeholder="Pick-up Address"
           value={pickAddress}
-          onChange={(e) => setPickAddress(e.target.value)}
+          onChange={handlePickAddressChange}
         />
-      </Autocomplete>
-      <div>
-        <strong>Selected Pick-up Address:</strong> {pickAddress}
+        <ul>
+          {pickResults.map((result, index) => (
+            <li key={index} onClick={() => handlePickResultClick(result)}>
+              {result.name}
+            </li>
+          ))}
+        </ul>
       </div>
       <div>
-        <h2>Deliver Location</h2>
-        <Autocomplete
-          onLoad={(autocomplete) => (deliverAutocompleteRef.current = autocomplete)}
-          onPlaceChanged={handleDeliverPlaceChanged}
-        >
-          <input
-            type="text"
-            placeholder="Enter delivery address"
-            value={deliverAddress}
-            onChange={(e) => setDeliverAddress(e.target.value)}
-          />
-        </Autocomplete>
-        <div>
-          <strong>Selected Delivery Address:</strong> {deliverAddress}
-        </div>
-        <button onClick={handleBookClick}>book</button>
+        <h3>Delivery Location</h3>
+        <input
+          type="text"
+          placeholder="Delivery Address"
+          value={deliverAddress}
+          onChange={handleDeliverAddressChange}
+        />
+        <ul>
+          {deliverResults.map((result, index) => (
+            <li key={index} onClick={() => handleDeliverResultClick(result)}>
+              {result.name}
+            </li>
+          ))}
+        </ul>
       </div>
-
+      {!isBooked && (
+        <button onClick={handleBookClick}>fill Details</button>
+      )}
       {showItemspecs && <Itemspecs />}
+<<<<<<< HEAD
+      <br /> 
+      <Map />
+=======
       <div className={styles.map_frame}>
        <Map />
        </div>
+>>>>>>> c82727acaf383864280611eb40518c3503d9dcf3
     </div>
   );
 };
