@@ -44,18 +44,19 @@ const Cards = () => {
                     <Card key={index} item={item} />
                 ))}
             </section>
-            <div className="text-center my-4">
+            <div className="text-center mb-3 mt-4">
                 <h4>
                     Pillars
                 </h4>
             </div>
 
 
-            <div className="d-flex justify-content-evenly text-bold">
+            <div className=" box-text d-flex justify-content-evenly text-bold">
+
                 <div>
                     <p>Security</p>
-                    <div className='bg-danger'></div>
                 </div>
+
 
                 <div>
                     Speed
@@ -64,7 +65,31 @@ const Cards = () => {
                 <div>
                     Reliability
                 </div>
+
             </div>
+
+            <div className='boxes d-flex text-center justify-content-evenly'>
+                <div>
+
+                    <div className='bg-danger w-20px h-50'>s</div>
+                </div>
+
+
+                <div>
+                    <div className='bg-danger w-400 h-100'>s</div>
+
+                </div>
+
+                <div>
+
+                    <div className='bg-danger w-20px h-50'>s</div>
+                </div>
+
+
+
+
+            </div>
+
 
         </div>
     );
