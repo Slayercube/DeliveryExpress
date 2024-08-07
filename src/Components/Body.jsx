@@ -5,6 +5,7 @@ import 'leaflet-control-geocoder';
 import Itemspecs from './Itemspecs';
 import { myContext } from '../Context';
 import Map from './Map';
+import styles from './Body.module.css'
 
 const Body = () => {
   const { setPickLocation, setDeliverLocation, isBooked , setIsBooked } = useContext(myContext);
@@ -96,8 +97,14 @@ const Body = () => {
         <button onClick={handleBookClick}>fill Details</button>
       )}
       {showItemspecs && <Itemspecs />}
+<<<<<<< HEAD
       <br /> 
       <Map />
+=======
+      <div className={styles.map_frame}>
+       <Map />
+       </div>
+>>>>>>> c82727acaf383864280611eb40518c3503d9dcf3
     </div>
   );
 };

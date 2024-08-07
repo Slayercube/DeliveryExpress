@@ -5,14 +5,14 @@
 }
 
 div{ 
-   border: red dotted 1px; 
+    /* border: red dotted 1px;   */
 }
 .main_body{
     width: 80%;
 }
 
 .nav{
-    width: 80%;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -21,22 +21,40 @@ div{
     border-radius: 10px;
 }
 
+.top_login_left{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    margin-right: 10px;
+    
+    border-radius: 30px;
+    align-self: self-start;
+    background-color: rgb(199, 238, 255);
+}
+
+.top_login_right{
+    width: 50%;
+}
+
 #logo{
     height: 200px;
     width: 250px
 }
-.top_row_left{
 
-}
+/* ------------------------------------------------------------------------------- ROWS ---------------------------------------------------------------------------------------- */
+
 .top_row_middle{
     text-align: center;
     width: 100%;
 }
 .top_row_right{
-    width: 25%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
 }
+
+/* ------------------------------------------------------------------------------- ROWS --------------------------------------------------------------------------------------------- */
+
 .top_middle{
     margin: auto;
     width: 80%;
@@ -45,7 +63,7 @@ div{
     justify-content: center;
     display: flex;
     border: rgb(212, 212, 212) solid 1px;
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(199, 238, 255);
 }
 .top_middle_unhovered{
     padding: 5px;
@@ -53,24 +71,7 @@ div{
     border-radius: 30px;
     justify-content: center;
     display: flex;
-}
 
-.hovered_link{
-    width: 25%;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
-    border-radius: 25px;
-}
-
-.hovered_link_login{
-    width: 100%;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
-    border-radius: 25px;
 }
 
 .bottom_middle{
@@ -83,18 +84,117 @@ div{
     height: 80%;
 }
 
+/* ------------------------------------------------------------------------------- LINKS ---------------------------------------------------------------------------------------- */
+
+.login_links{
+    width: 150px;
+    display: flex;
+}
+
+.hidden_links {
+    display: none;
+}
+.show_links {
+    display: contents;
+
+}
+
+/* ------------------------------------------------------------------------------- LINKS ---------------------------------------------------------------------------------------- */
+
+
+
+/* ------------------------------------------------------------------------------- DIV BUTTONS ---------------------------------------------------------------------------------------- */
+
+.hovered_link{
+    width: 25%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(4, 180, 255);
+    color: white;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
+    border-radius: 25px;
+
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.unhovered_link{
+    width: 25%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
+    border-radius: 25px;
+
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+.hovered_link_login{
+    width: 100%;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(4, 180, 255);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
+    border-radius: 25px;
+
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+.unhovered_link_login{
+    width: 100%;
+    margin-left: 5px;
+    text-align: center;
+    margin-right: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
+    border-radius: 25px;
+
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+.hovered_link_submenu{
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(4, 180, 255);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
+    border-radius: 25px;
+
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+.unhovered_link_submenu{
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
+    border-radius: 25px;
+
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
 .hamburguer_icon_selected{
-    width: 85px;
+    width: 100%;
     border-radius: 25px;
     padding: 5px;
-    background-color: rgb(223, 223, 223);
+    background-color: rgb(4, 180, 255);
     text-align: center;
 
     animation-name: fadeIn;
     animation-duration: 0.5s;
 }
 .hamburguer_icon_unselected{
-    width: 85px;
+    width: 100%;
     border-radius: 40px;
     padding: 5px;
     background-color: rgb(255, 255, 255);
@@ -104,26 +204,21 @@ div{
     animation-duration: 0.5s;
 }
 
-.login_links{
-    width: 150px;
-    display: flex;
+.hovered_raw_link{
+    color: white;
+    text-decoration: none;
 }
 
-.hidden_links {
-    display: none
-}
-.show_links {
-    display: contents
+.unhovered_raw_link{
+    color: rgb(0, 32, 96);
+    text-decoration: none;
 }
 
-.top_login_left{
-    display: flex;
-    width: 100%;
-}
+/* ------------------------------------------------------------------------------- ANIMATIONS ---------------------------------------------------------------------------------------- */
 
 @keyframes fadeOut {
     from {
-      background-color: rgb(223, 223, 223);
+      background-color: rgb(4, 180, 255);
     }
     to {
       background-color: white
@@ -135,6 +230,7 @@ div{
       background-color: white;
     }
     to {
-      background-color: rgb(223, 223, 223);
+      background-color: rgb(4, 180, 255);
     }
   }
+
