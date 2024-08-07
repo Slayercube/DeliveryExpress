@@ -5,9 +5,10 @@ const myContext = React.createContext();
 function ContextProvider({ children }) {
     const [pickLocation, setPickLocation] = useState(null);
     const [deliverLocation, setDeliverLocation] = useState(null);
+    const [isBooked, setIsBooked] = useState(false);
+   
 
-   
-   
+
    
    
    
@@ -17,6 +18,8 @@ function ContextProvider({ children }) {
         setPickLocation,
         deliverLocation,
         setDeliverLocation,
+        isBooked,
+        setIsBooked,
     };
 
     return (
