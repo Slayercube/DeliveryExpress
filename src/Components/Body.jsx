@@ -97,14 +97,8 @@ const Body = () => {
         <button onClick={handleBookClick}>fill Details</button>
       )}
       {showItemspecs && <Itemspecs />}
-<<<<<<< HEAD
       <br /> 
       <Map />
-=======
-      <div className={styles.map_frame}>
-       <Map />
-       </div>
->>>>>>> c82727acaf383864280611eb40518c3503d9dcf3
     </div>
   );
 };
