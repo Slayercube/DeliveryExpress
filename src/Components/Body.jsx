@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import { myContext } from '../Context';
 import { useContext } from 'react';
 import Map from './Map';
+import styles from './Body.module.css'
 
 
 // Fix for default marker icon issue with Leaflet
@@ -96,9 +97,9 @@ const Body = () => {
       </div>
 
       {showItemspecs && <Itemspecs />}
-
+      <div className={styles.map_frame}>
        <Map />
-      
+       </div>
     </div>
   );
 };

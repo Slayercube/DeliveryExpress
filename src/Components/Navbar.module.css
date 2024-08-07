@@ -136,7 +136,7 @@ div{
     text-align: center;
     margin-left: 5px;
     margin-right: 5px;
-    background-color: rgb(176, 231, 255);
+    background-color: rgb(4, 180, 255);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
     border-radius: 25px;
 
@@ -162,7 +162,7 @@ div{
     margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(176, 231, 255);
+    background-color: rgb(4, 180, 255);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
     border-radius: 25px;
 
@@ -171,9 +171,10 @@ div{
 }
 .unhovered_link_submenu{
     width: 100%;
-    margin-left: 5px;
     text-align: center;
-    margin-right: 5px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgb(255, 255, 255);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.315);
     border-radius: 25px;
@@ -186,7 +187,7 @@ div{
     width: 100%;
     border-radius: 25px;
     padding: 5px;
-    background-color: rgb(176, 231, 255);
+    background-color: rgb(4, 180, 255);
     text-align: center;
 
     animation-name: fadeIn;
