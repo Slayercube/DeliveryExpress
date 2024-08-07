@@ -1,9 +1,8 @@
 
 const Contact = () => {
 
-return {
-    anything here
-}
+return <div>here dldkf</div>
+
 }
 
 export default Contact;

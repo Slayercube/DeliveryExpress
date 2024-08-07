@@ -14,10 +14,10 @@ const Routers = () => {
       <Navbar />
       <Routes>
         <Route path='/' element={<App />} />
-        { <Route path='./contact' element={<Contact />} /> }
-        { <Route path='./login' element={<Login />} /> }
-        { <Route path='./signup' element={<Signup />} /> }
-        { <Route path='./rate' element={<Rate />} /> }
+        { <Route path='/contact' element={<Contact />} /> }
+        { <Route path='/login' element={<Login />} /> }
+        { <Route path='/signup' element={<Signup />} /> }
+        { <Route path='/rate' element={<Rate />} /> }
 
         
       </Routes>
