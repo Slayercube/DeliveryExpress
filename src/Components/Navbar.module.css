@@ -52,6 +52,9 @@ div{
     display: flex;
     justify-content: space-between;
 }
+.top_row_middle_text{
+    color: red;
+}
 
 /* ------------------------------------------------------------------------------- ROWS --------------------------------------------------------------------------------------------- */
 
@@ -154,6 +157,10 @@ div{
 
     animation-name: fadeOut;
     animation-duration: 0.5s;
+}
+
+a:hovered{
+    
 }
 
 .hovered_link_submenu{

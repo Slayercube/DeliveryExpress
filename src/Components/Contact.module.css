@@ -1,0 +1,31 @@
+.main_frame{
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+.top_line {
+    justify-content: space-between;
+    margin: auto;
+    display: flex;
+    width: 90%;
+    margin-bottom: 10px;
+}
+.mid_line{
+    margin: auto;
+    width: 90%;
+    margin-bottom: 10px;
+}
+.bottom_line{
+    margin: auto;
+    width: 90%;
+}
+
+.firstlastname{
+    width: 48%;
+}
+.emailclass,phone{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* div{border: 1px solid red;} */
