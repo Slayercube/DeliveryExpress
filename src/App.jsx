@@ -14,10 +14,6 @@ function App() {
         <Cards/>
      
       </div>
-      
-   
-  
-      <Cards />
     </>
   )
 }

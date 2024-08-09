@@ -14,7 +14,7 @@ const Body = () => {
   const [pickResults, setPickResults] = useState([]);
   const [deliverResults, setDeliverResults] = useState([]);
   const [showItemspecs, setShowItemspecs] = useState(false);
- 
+  const [errorMessage, setErrorMessage] = useState('');
 
   const pickGeocoderRef = useRef(null);
   const deliverGeocoderRef = useRef(null);
@@ -54,8 +54,13 @@ const Body = () => {
     setDeliverResults([]);
   };
   const handleBookClick = () => {
+    if (!pickAddress || !deliverAddress ) {
+      setErrorMessage('Please fill the both pickup and delivery locations.')
+      return;
+    }
     setShowItemspecs(true);
     setIsBooked(true);
+    setErrorMessage('')
  
   };
 
@@ -93,8 +98,12 @@ const Body = () => {
           ))}
         </ul>
       </div>
+    
+
+      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       {!isBooked && (
         <button onClick={handleBookClick}>fill Details</button>
+        
       )}
       {showItemspecs && <Itemspecs />}
       <br /> 

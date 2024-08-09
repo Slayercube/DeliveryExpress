@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from './Navbar.module.css'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -47,8 +48,10 @@ const Navbar = () => {
             setHoveredLink(false)
           }}
           >
-            <a
-              href="" className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Home</a>
+            <div
+              href="" className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}>
+             <Link to='/'>Home</Link>
+              </div>
           </div>
           <div className={hoveredMenu === "Contact"? styles.hovered_link : styles.unhovered_link}
           onMouseEnter={() => {
@@ -127,7 +130,7 @@ const Navbar = () => {
               setMenuHidden(!isMenuHidden)
               setSubMenuHidden(!isSubMenuHidden)
               }}>
-                <i class="fa-solid fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
           </div>
           <div className={isMenuHidden === true ? styles.hidden_links : styles.show_links}>
             <div className={hoveredMenu === "MyAccount"? styles.hovered_link_submenu : styles.unhovered_link_submenu}
