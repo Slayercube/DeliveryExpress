@@ -4,6 +4,22 @@
     height: 400px;
 }
 
-div{
-    /* border: 1px solid red; */
+.input{
+    width: 30%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+   
+}  
+.icon{
+    margin: 2px;
+    padding: 5px;
+    background-color: #a7eafe;
+    border-radius: 50%;
+    cursor: pointer;
+} 
+.icon:hover{
+    background-color: #ccc;
 }

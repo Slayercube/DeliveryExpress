@@ -52,6 +52,9 @@ div{
     display: flex;
     justify-content: space-between;
 }
+.top_row_middle_text{
+    color: red;
+}
 
 /* ------------------------------------------------------------------------------- ROWS --------------------------------------------------------------------------------------------- */
 
@@ -65,6 +68,7 @@ div{
     border: rgb(212, 212, 212) solid 1px;
     background-color: rgb(199, 238, 255);
 }
+
 .top_middle_unhovered{
     padding: 5px;
     background-color: rgb(255, 255, 255);
@@ -154,6 +158,10 @@ div{
 
     animation-name: fadeOut;
     animation-duration: 0.5s;
+}
+
+a:hovered{
+    
 }
 
 .hovered_link_submenu{

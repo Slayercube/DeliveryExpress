@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import styles from './Navbar.module.css'
+import { Link } from 'react-router-dom';
+<<<<<<< HEAD
+import App from '../App';
+=======
+>>>>>>> a666070cbd133d6c580b8fbe845ff985c9d336a6
 
 const Navbar = () => {
 
@@ -27,10 +32,11 @@ const Navbar = () => {
       }
     }
     
+/*`${styles.description} ${styles.yellow}` */
 
   return (
     <div className={styles.nav}>
-      <div className={styles.top_row_left}>
+       <div className={styles.top_row_left}> 
         
         <img id={styles.logo} src="./src/Images/logo.jpeg" alt="" />
 
@@ -47,8 +53,12 @@ const Navbar = () => {
             setHoveredLink(false)
           }}
           >
-            <a
-              href="" className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Home</a>
+<<<<<<< HEAD
+
+              <Link to="/" className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}> Home </Link>
+=======
+             <Link to='/' className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Home</Link>
+>>>>>>> a666070cbd133d6c580b8fbe845ff985c9d336a6
           </div>
           <div className={hoveredMenu === "Contact"? styles.hovered_link : styles.unhovered_link}
           onMouseEnter={() => {
@@ -60,8 +70,7 @@ const Navbar = () => {
             handleMenuexit()
           }}
           >
-            <a
-              href="" className={hoveredLink === "Contact" ? styles.hovered_raw_link : styles.unhovered_raw_link}> Contact</a>
+            <Link to="/Contact" className={hoveredLink === "Contact" ? styles.hovered_raw_link : styles.unhovered_raw_link}> Contact</Link>
           </div>
           <div className={hoveredMenu === "Rate"? styles.hovered_link : styles.unhovered_link}
           onMouseEnter={() => {
@@ -73,9 +82,7 @@ const Navbar = () => {
             handleMenuexit()
           }}
           >
-            <a
-              href="" className={hoveredLink === "Rate" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Rate
-            </a>
+             <Link to="/Rate" className={hoveredLink === "Rate" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Rate </Link>
           </div>
         </div>
         <div className={styles.bottom_middle}>
@@ -95,9 +102,7 @@ const Navbar = () => {
             handleMenuexit()
           }}
           >
-            <a
-              href="" className={hoveredLink === "Login" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Login
-            </a>
+            <Link to="/Login" className={hoveredLink === "Login" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Login </Link>
           </div>
           <div className={hoveredMenu === "SignUp"? styles.hovered_link_login : styles.unhovered_link_login}
           onMouseEnter={() => {
@@ -109,9 +114,7 @@ const Navbar = () => {
             handleMenuexit()
           }}
           >
-            <a
-              href="" className={hoveredLink === "SignUp" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Sign Up
-            </a>
+            <Link to="/Signup" className={hoveredLink === "SignUp" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Sign Up</Link>
           </div>
         </div>
         <div className={styles.top_login_right}
@@ -127,7 +130,7 @@ const Navbar = () => {
               setMenuHidden(!isMenuHidden)
               setSubMenuHidden(!isSubMenuHidden)
               }}>
-                <i class="fa-solid fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
           </div>
           <div className={isMenuHidden === true ? styles.hidden_links : styles.show_links}>
             <div className={hoveredMenu === "MyAccount"? styles.hovered_link_submenu : styles.unhovered_link_submenu}
