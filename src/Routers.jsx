@@ -6,6 +6,8 @@ import Contact from './Components/Contact.jsx'
 import { Rate } from './Components/Rate.jsx'
 import { Login } from './Components/Login.jsx'
 import { Signup } from './Components/Signup';
+import Payment from './Components/Payment';
+import UserInfoForm from './Components/UserInfoForm.jsx'
 
 const Routers = () => {
   return (
@@ -18,6 +20,8 @@ const Routers = () => {
         { <Route path='/login' element={<Login />} /> }
         { <Route path='/signup' element={<Signup />} /> }
         { <Route path='/rate' element={<Rate />} /> }
+        { <Route path='/userinfo' element={<UserInfoForm />} /> }
+        { <Route path='/payment' element={<Payment />} /> }
       </Routes>
     
     </>

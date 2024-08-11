@@ -12,3 +12,29 @@
     align-items: center;
     justify-content: center;
 }
+.select{
+    width: 200px;
+    padding: 5px 15px;
+    display: inline-block;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(214, 205, 205);
+}
+.container{
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    margin: 2px;
+    margin: 5px 0;
+    padding-left: 10px;
+}
+.input{
+    width: 100px;
+    padding: 5px 10px;
+    margin: 3px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+}

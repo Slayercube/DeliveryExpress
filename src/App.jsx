@@ -7,14 +7,14 @@ import Cards from "./Components/Cards"
 
 function App() {
   return (
-    <>
+    <div className='app'>
      
-      <div>
+      
         <Body />
         <Cards/>
      
-      </div>
-    </>
+      
+    </div>
   )
 }
 
