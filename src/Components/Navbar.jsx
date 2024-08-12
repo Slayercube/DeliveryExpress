@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import styles from './Navbar.module.css'
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import App from '../App';
-=======
->>>>>>> a666070cbd133d6c580b8fbe845ff985c9d336a6
+import { ThemeContext } from '../ThemeProvider';
+import { useContext } from 'react';
+
 
 const Navbar = () => {
-
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const [hoveredLink, setHoveredLink] = useState(null);
   const [hoveredMenu, setHoveredMenu] = useState(false)
   const [isMenuHidden, setMenuHidden] = useState(true)
@@ -53,12 +52,7 @@ const Navbar = () => {
             setHoveredLink(false)
           }}
           >
-<<<<<<< HEAD
-
-              <Link to="/" className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}> Home </Link>
-=======
              <Link to='/' className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Home</Link>
->>>>>>> a666070cbd133d6c580b8fbe845ff985c9d336a6
           </div>
           <div className={hoveredMenu === "Contact"? styles.hovered_link : styles.unhovered_link}
           onMouseEnter={() => {
@@ -117,6 +111,15 @@ const Navbar = () => {
             <Link to="/Signup" className={hoveredLink === "SignUp" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Sign Up</Link>
           </div>
         </div>
+
+
+        <div>
+        <button onClick={toggleTheme}>
+        Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
+      </button>
+        </div>
+
+        
         <div className={styles.top_login_right}
           onMouseLeave={() => {
           handleSubMenu(isMenuHidden,isSubMenuHidden)

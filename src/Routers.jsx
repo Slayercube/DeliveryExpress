@@ -1,4 +1,3 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import App from './App.jsx'
 import Navbar from './Components/Navbar.jsx'
@@ -8,10 +7,11 @@ import { Login } from './Components/Login.jsx'
 import { Signup } from './Components/Signup';
 import Payment from './Components/Payment';
 import UserInfoForm from './Components/UserInfoForm.jsx'
+import Footer from './Components/Footer.jsx'
 
 const Routers = () => {
   return (
-    <>
+    <div>
 
       <Navbar />
       <Routes>
@@ -22,9 +22,10 @@ const Routers = () => {
         { <Route path='/rate' element={<Rate />} /> }
         { <Route path='/userinfo' element={<UserInfoForm />} /> }
         { <Route path='/payment' element={<Payment />} /> }
+        { <Route path='/foot' element={<Footer />} /> }
       </Routes>
     
-    </>
+    </div>
    
     
   )
