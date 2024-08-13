@@ -18,7 +18,7 @@ const Cards = () => {
             {/* Container */}
             <div className=" mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
                 {/* Title */}
-                <h2 className="text-center text-3xl font-bold md:text-5xl mb-4">
+                <h2 className="text-center text-3xl font-bold md:text-3xl mb-4">
                     Our Vehicles
                 </h2>
                 
@@ -80,6 +80,14 @@ const Cards = () => {
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+            
 
         </section>
     );
