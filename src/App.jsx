@@ -2,6 +2,7 @@
 import './App.css'
 import Body from './Components/Body'
 import Cards from "./Components/Cards"
+import Team from "./Components/Team"
 
 
 
@@ -12,6 +13,7 @@ function App() {
       
         <Body />
         <Cards/>
+        <Team/>
      
       
     </div>
