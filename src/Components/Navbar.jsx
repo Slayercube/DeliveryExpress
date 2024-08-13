@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Navbar.module.css'
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import App from '../App';
-=======
->>>>>>> a666070cbd133d6c580b8fbe845ff985c9d336a6
->>>>>>> 49f0e5102db198198c0b53d5a0edf1b015075551
 
 const Navbar = () => {
 
@@ -27,7 +21,7 @@ const Navbar = () => {
     };
     const handleMouseLeave = () => {
       setHoveredLink(null);
-    };
+    };      
     const handleSubMenu = (menuH, subMenuH) => {
       if(menuH === false && subMenuH === false){
         setMenuHidden(!isMenuHidden)
@@ -56,19 +50,11 @@ const Navbar = () => {
             setHoveredLink(false)
           }}
           >
-<<<<<<< HEAD
             <div
               href="" className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}>
              <Link to='/'>Home</Link>
               </div>
-=======
-<<<<<<< HEAD
 
-              <Link to="/" className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}> Home </Link>
-=======
-             <Link to='/' className={hoveredLink === "Home" ? styles.hovered_raw_link : styles.unhovered_raw_link}>Home</Link>
->>>>>>> a666070cbd133d6c580b8fbe845ff985c9d336a6
->>>>>>> 49f0e5102db198198c0b53d5a0edf1b015075551
           </div>
           <div className={hoveredMenu === "Contact"? styles.hovered_link : styles.unhovered_link}
           onMouseEnter={() => {

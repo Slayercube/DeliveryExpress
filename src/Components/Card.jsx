@@ -6,10 +6,10 @@ function Card({ item }) {
             <div>
                 <div className='row' >
                     <div className='cardsDescription'>
-                        <img src={item.img} className=" rounded card-img-top" height={300}/>
+                        <img src={item.img} className=" rounded card-img-top"/>
                         <div className="card-body">
                             <h5 className="card-title mt-2 bg-light-subtle bg-opacity-20 rounded shadow-sm">{item.title}</h5>
-                            <p className=" {}card-text mt-1 mb-3 ">{item.description}</p>
+                            <p className="card-text mt-1 mb-3 ">{item.description}</p>
                         </div>
                     </div>
                 </div>

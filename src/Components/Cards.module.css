@@ -1,0 +1,11 @@
+img {
+    height: 320px;
+    width: 320px;
+}
+
+.leftbox {
+    height: 200px;
+    width: 200px;
+    border-radius: 2px;
+    border: 1px solid black;
+}

@@ -5,9 +5,9 @@ import styles from './Cards.module.css'
 const arr = [
     
     {
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiAcw3U22HHnSaPS5vum48U88hKGVJyZwpG2pVjZKCVLGfrzX3W1_bzhsgbKDafNK8A9U&usqp=CAU',
-        title: 'Motobike',
-        description: "Medium packages delivery, reliable and safe."
+        img: 'https://www.euroscooter.es/wp-content/uploads/2020/09/med_fiddleblanca50cctocashe10-1-400x450.png',
+        title: 'Mini-Van',
+        description: "For large size packages, relocation and more."
     },
 
     {
@@ -38,7 +38,7 @@ const Cards = () => {
             </section>
 
             <div className="text-center my-2 mt-3">
-                <h3>
+                <h3 className='vehiclesHeader'>
                     Our Vehicles
                 </h3>
             </div>
@@ -75,18 +75,18 @@ const Cards = () => {
             <div className='boxes d-flex text-center justify-content-evenly'>
                 <div>
 
-                    <div className='bg-danger w-20px h-50'>s</div>
+                    <div className=' leftbox bg-danger'>s</div>
                 </div>
 
 
                 <div>
-                    <div className='bg-danger w-400 h-100'>s</div>
+                    <div className=' middlebox bg-danger w-400 h-100'>s</div>
 
                 </div>
 
                 <div>
 
-                    <div className='bg-danger w-20px h-50'>s</div>
+                    <div className=' rightbox bg-danger w-20px h-50'>s</div>
                 </div>
 
 
