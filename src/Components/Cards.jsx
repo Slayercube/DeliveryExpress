@@ -21,7 +21,7 @@ const Cards = () => {
                 <h2 className="text-center text-3xl font-bold md:text-3xl mb-4">
                     Our Vehicles
                 </h2>
-                
+
 
 
                 {/* Content */}
@@ -83,11 +83,38 @@ const Cards = () => {
 
 
 
+            {/* <div className="banner">
+                <div className="slider" style={quantity(4)}>
+
+                    <div className="item1" style={position(1)}><img src='https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/honda-select-model-pearl-precious-white-1674535479295.png?q=80' alt='' /></div>
+                    <div className="item2" style={position(2)}><img src='https://qwestore.com/png_images_min/10/BMW-Cars-PNG-bBMWb-PNG-image-free-download-9628.png' alt='' /></div>
+                    <div className="item3" style={position(3)}><img src='https://provanhire.co.uk/wp-content/uploads/CarRentalGallery/1502765766_2017-ford-transit-connect-xlt-minivan-angular-front.png' alt='' /></div>
+                    <div className="item4" style={position(4)}><img src='https://static.vecteezy.com/system/resources/previews/034/467/958/original/covered-van-truck-cargo-van-truck-transporting-cargo-transparent-background-ai-generated-png.png' alt='' /></div>
+                   
+                </div>
+            </div>
+            <div className="content">
+                <h1 datatype='CSS ONLY'>
+                    CSS ONLY
+                    </h1>
+                <div className="author">
+                    <h2>Vehicles</h2>
+                <p><b>We transport fast and safe.</b></p>
+
+                </div>
+                <div className="model"> </div>
+            </div>
+
+
+ */}
 
 
 
 
-            
+
+
+
+
 
         </section>
     );
