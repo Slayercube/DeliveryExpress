@@ -1,8 +1,24 @@
 .app {
-    margin: 20px;
+    margin: 0px;
 }
 
 body {
     background-color: rgb(58, 47, 125);
-    background: linear-gradient(to right,gold,rgb(41, 41, 201));
+    background: linear-gradient(to right, rgb(69, 69, 126),beige);
+}
+
+.vehicles-container {
+    background-color: black;
+    background: linear-gradient(to right, rgb(69, 69, 126),beige);     
+}
+
+.team-container {
+    background-color: rgb(50, 40, 40);
+    background-image: url("https://cdn.pixabay.com/photo/2023/11/05/09/36/ai-generated-8366613_640.jpg");
+     background-blend-mode: multiply;
+     border-radius: 20% 0 20% 0;
+}
+
+.team-card-img {
+    border-radius: 10% 0 10% 0;
 }
