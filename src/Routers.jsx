@@ -8,6 +8,7 @@ import { Signup } from './Components/Signup';
 import Payment from './Components/Payment';
 import UserInfoForm from './Components/UserInfoForm.jsx'
 import Footer from './Components/Footer.jsx'
+import Home from './Home.jsx'
 
 const Routers = () => {
   return (
@@ -15,7 +16,7 @@ const Routers = () => {
 
       <Navbar />
       <Routes>
-        <Route path='/' element={<App />} />
+        <Route path='/' element={<Home />} />
         { <Route path='/contact' element={<Contact />} /> }
         { <Route path='/login' element={<Login />} /> }
         { <Route path='/signup' element={<Signup />} /> }
@@ -23,7 +24,9 @@ const Routers = () => {
         { <Route path='/userinfo' element={<UserInfoForm />} /> }
         { <Route path='/payment' element={<Payment />} /> }
         { <Route path='/foot' element={<Footer />} /> }
+        { <Route path='/app' element={<App />} /> }
       </Routes>
+      <Footer />
     
     </div>
    

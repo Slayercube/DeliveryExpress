@@ -1,3 +1,31 @@
 .app {
     margin: 20px;
 }
+
+.primary-button {
+    background-color: #007bff; /* Primary color */
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+}
+
+.glow-hover {
+    transition: text-shadow 1s ease-in-out;
+}
+
+.glow-hover:hover {
+    text-shadow: 0 0 10px #007bff; /* Add a glow effect on hover */
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .section.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }

@@ -1,0 +1,57 @@
+ import { useEffect, useRef } from "react";
+import Hero from "./Components/home/Hero";
+import Logo from "./Components/home/Logo";
+import Mid from "./Components/home/Mid";
+import Team from "./Components/home/Team";
+import Testimonial from "./Components/home/Testimonial";
+import './app.css'; // Import the CSS file for animations
+
+const Home = () => {
+  const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    sectionsRef.current.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sectionsRef.current.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  return (
+    <div style={{ color: 'white' }}>
+      <div ref={(el) => (sectionsRef.current[0] = el)} className="section">
+        <Hero />
+      </div>
+      <div ref={(el) => (sectionsRef.current[1] = el)} className="section">
+        <Mid />
+      </div>
+      <div ref={(el) => (sectionsRef.current[2] = el)} className="section">
+        <Team />
+      </div>
+      <div ref={(el) => (sectionsRef.current[3] = el)} className="section">
+        <Logo />
+      </div>
+      <div ref={(el) => (sectionsRef.current[4] = el)} className="section">
+        <Testimonial />
+      </div>
+    </div>
+  );
+};
+
+export default Home;

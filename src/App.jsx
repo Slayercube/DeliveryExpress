@@ -1,7 +1,7 @@
 
-import './App.css'
+import './app.css'
 import Body from './Components/Body'
-import Cards from "./Components/Cards"
+
 
 
 
@@ -11,9 +11,9 @@ function App() {
      
       
         <Body />
-        <Cards/>
+        {/* <Cards/> */}
+         
      
-      
     </div>
   )
 }

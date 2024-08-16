@@ -1,25 +1,76 @@
-.map_frame{
-    margin: auto;
+.container {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .heading {
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .input {
     width: 40%;
-    height: 400px;
-}
-
-.input{
-    width: 30%;
-    padding: 10px 15px;
-    margin: 5px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-   
-}  
-.icon{
-    margin: 2px;
-    padding: 5px;
-    background-color: #a7eafe;
-    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: gray;
+    color: #ffffff;
+  }
+  
+  .icon {
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
     cursor: pointer;
-} 
-.icon:hover{
-    background-color: #ccc;
-}
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .iconSvg {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    
+  }
+  
+  .list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .listItem {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #1e1e1e;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .listItem:hover {
+    background-color: #333;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btnSuccess {
+    background-color: #28a745;
+    color: #ffffff;
+  }
