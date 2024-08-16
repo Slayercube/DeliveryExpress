@@ -1,0 +1,22 @@
+@keyframes moveLogo {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logo-container {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .logo {
+    display: inline-block;
+    animation: moveLogo 20s linear infinite;
+  }
+  
+  .logo img {
+    margin-right: 20px; /* Adjust spacing between logos */
+  }

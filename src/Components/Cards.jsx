@@ -1,98 +1,59 @@
 import React from 'react';
-import Card from './Card.jsx';
-
-const arr = [
-    {
-        img: "https://plus.unsplash.com/premium_photo-1681488124242-c58c37c79af6?q=80&w=1296&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: 'Bicycle',
-        description: "Dispatch for smaller packages & Documents."
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1595267433529-8e29dd995ac3?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'Motocycle',
-        description: "Medium packages delivery, reliable and safe."
-    },
-    {
-        img: "https://plus.unsplash.com/premium_photo-1682141929497-97402f35d45e?q=80&w=1487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: 'Mini-Van',
-        description: "For large size packages, relocation and more."
-    },
-    {
-        img: 'https://plus.unsplash.com/premium_photo-1682144324433-ae1ee89a0238?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'Truck/Lorry',
-        description: "Big relocation, Restock delivery and any other."
-    }
-];
-
+import styles from './Cards.module.css'
 const Cards = () => {
     return (
-        <div className='container-fluid text-center'>
-            <section className='one my-4 py-1 bg-tertiary'>
-                <div className='text-start'>
-                </div>
-
-            </section>
-
-            <div className="text-center my-2 mt-3">
-                <h3>
+        <section id={styles.card} className="mx-auto w-full max-w-7xl px-5 py-1 md:px-10 md:py-10">
+            {/* Container */}
+            <div className=" my-20 mx-auto w-full max-w-7xl px-2 py-3 md:px-10 md:py-24 lg:py-32">
+                {/* Title */}
+                <h2 className="text-center font-bold text-4xl mb-5">
                     Our Vehicles
-                </h3>
+                </h2>
+                {/* Content */}
+                <div className="py-4 my-20 mx-auto grid justify-items-center gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4 lg:justify-items-stretch">
+                    {/* Motobike*/}
+                    <div className=" motobike flex max-w-sm flex-col items-center rounded-md border border-solid border-gray-300 px-8 py-6 md:max-w-full">
+                        <img
+                            src="https://www.scootercentral.com.au/wp-content/uploads/FIDDLEWH-8028PTOPCASE.png"
+                            alt="Motobike"
+                            className="verhicles-card-img mb-4 inline-block h-auto w-full object-cover"
+                        />
+                        <p className="font-bold card-title pb-3" style={{color : "gold"}}>Motobike</p>
+                        <p className=" text-md text-white-900 card-text">Delivers smaller packages like Documents.</p>
+                    </div>
+                    {/* Car */}
+                    <div className=" car flex max-w-sm flex-col items-center gap-2 rounded-md border border-solid border-gray-300 px-8 py-6 md:max-w-full">
+                        <img
+                            src="https://qwestore.com/png_images_min/10/BMW-Cars-PNG-bBMWb-PNG-image-free-download-9628.png"
+                            alt="Car"
+                            className=" vehicles-card-img mb-4 inline-block h-auto w-full object-cover"
+                        />
+                        <p className="font-bold card-title mt-2" style={{color : 'gold'}}  >Car</p>
+                        <p className=" mt-3 text-md text-white-950 card-text">Express delivery, receive in same day</p>
+                    </div>
+                    {/* Mini-Van */}
+                    <div className=" mini-van flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-gray-300 px-8 py-6 md:max-w-full">
+                        <img
+                            src="https://provanhire.co.uk/wp-content/uploads/CarRentalGallery/1502765766_2017-ford-transit-connect-xlt-minivan-angular-front.png"
+                            alt="Mini-Van"
+                            className=" vehicles-card-img mb-4 inline-block h-auto w-full object-cover"
+                        />
+                        <p className="font-bold card-title" style={{color : 'gold'}}>Mini-Van</p>
+                        <p className="text-md text-white-950 card-text">Delivery for medium pacels and smaller relocation.</p>
+                    </div>
+                    {/* Truck */}
+                    <div className=" truck flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-gray-300 px-8 py-6 md:max-w-full">
+                        <img
+                            src="https://static.vecteezy.com/system/resources/previews/034/467/958/original/covered-van-truck-cargo-van-truck-transporting-cargo-transparent-background-ai-generated-png.png"
+                            alt="Truck"
+                            className=" vehicles-card-img mb-4 inline-block h-auto w-full object-cover"
+                        />
+                        <p className="font-bold card-title" style={{color : 'gold'}}>Truck</p>
+                        <p className="text-md text-white-950 card-text">Big relocation, Restock delivery and any other</p>
+                    </div>
+                </div>
             </div>
-
-            <section className='two row'>
-                {arr.map((item, index) => (
-                    <Card key={index} item={item} />
-                ))}
-            </section>
-            <div className="text-center mb-3 mt-4">
-                <h4>
-                    Pillars
-                </h4>
-            </div>
-
-
-            <div className=" box-text d-flex justify-content-evenly text-bold">
-
-                <div>
-                    <p>Security</p>
-                </div>
-
-
-                <div>
-                    Speed
-                </div>
-
-                <div>
-                    Reliability
-                </div>
-
-            </div>
-
-            <div className='boxes d-flex text-center justify-content-evenly'>
-                <div>
-
-                    <div className='bg-danger w-20px h-50'>s</div>
-                </div>
-
-
-                <div>
-                    <div className='bg-danger w-400 h-100'>s</div>
-
-                </div>
-
-                <div>
-
-                    <div className='bg-danger w-20px h-50'>s</div>
-                </div>
-
-
-
-
-            </div>
-
-
-        </div>
+        </section>
     );
 };
-
 export default Cards;
