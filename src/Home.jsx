@@ -5,6 +5,7 @@ import Mid from "./Components/home/Mid";
 import Team from "./Components/home/Team";
 import Testimonial from "./Components/home/Testimonial";
 import './app.css'; // Import the CSS file for animations
+import Cards from './Components/Cards';
 
 const Home = () => {
   const sectionsRef = useRef([]);
@@ -50,6 +51,10 @@ const Home = () => {
       <div ref={(el) => (sectionsRef.current[4] = el)} className="section">
         <Testimonial />
       </div>
+       <div ref={(el) => (sectionsRef.current[5] = el)} className="section">
+        <Cards />
+      </div>
+      
     </div>
   );
 };

@@ -1,0 +1,44 @@
+.app {
+    margin: 20px;
+}
+.primary-button {
+    background-color: #007BFF; /* Primary color */
+    color: white;
+}
+.primary-button:hover {
+    background-color: #0056B3; /* Darker shade for hover */
+}
+.glow-hover {
+    transition: text-shadow 1s ease-in-out;
+}
+.glow-hover:hover {
+    text-shadow: 0 0 10px #007BFF; /* Add a glow effect on hover */
+}
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  .section.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+.vehicles-container {
+    background-color: black;
+    background: linear-gradient(to right, rgb(69, 69, 126),beige);
+}
+.team-container {
+    background-color: rgb(50, 40, 40);
+    background-image: url("https://cdn.pixabay.com/photo/2023/11/05/09/36/ai-generated-8366613_640.jpg");
+     background-blend-mode: multiply;
+     border-radius: 20% 0 20% 0;
+}
+.team-card-img {
+    border-radius: 10% 0 10% 0;
+}
+#card{
+    margin-top: -150px;
+
+}
