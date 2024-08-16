@@ -18,7 +18,7 @@ const Cards = () => {
                             alt="Motobike"
                             className="verhicles-card-img mb-4 inline-block h-auto w-full object-cover"
                         />
-                        <p className="font-bold card-title pb-3">Motobike</p>
+                        <p className="font-bold card-title pb-3" style={{color : "gold"}}>Motobike</p>
                         <p className=" text-md text-white-900 card-text">Delivers smaller packages like Documents.</p>
                     </div>
                     {/* Car */}
@@ -28,7 +28,7 @@ const Cards = () => {
                             alt="Car"
                             className=" vehicles-card-img mb-4 inline-block h-auto w-full object-cover"
                         />
-                        <p className="font-bold card-title mt-2">Car</p>
+                        <p className="font-bold card-title mt-2" style={{color : 'gold'}}  >Car</p>
                         <p className=" mt-3 text-md text-white-950 card-text">Express delivery, receive in same day</p>
                     </div>
                     {/* Mini-Van */}
@@ -38,7 +38,7 @@ const Cards = () => {
                             alt="Mini-Van"
                             className=" vehicles-card-img mb-4 inline-block h-auto w-full object-cover"
                         />
-                        <p className="font-bold card-title">Mini-Van</p>
+                        <p className="font-bold card-title" style={{color : 'gold'}}>Mini-Van</p>
                         <p className="text-md text-white-950 card-text">Delivery for medium pacels and smaller relocation.</p>
                     </div>
                     {/* Truck */}
@@ -48,7 +48,7 @@ const Cards = () => {
                             alt="Truck"
                             className=" vehicles-card-img mb-4 inline-block h-auto w-full object-cover"
                         />
-                        <p className="font-bold card-title">Truck</p>
+                        <p className="font-bold card-title" style={{color : 'gold'}}>Truck</p>
                         <p className="text-md text-white-950 card-text">Big relocation, Restock delivery and any other</p>
                     </div>
                 </div>
