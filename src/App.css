@@ -1,5 +1,9 @@
 .app {
-    margin: 20px;
+    margin: 20px; 
+     /* border: red 1px solid; */
+  
+
+
 }
 
 .primary-button {
@@ -22,10 +26,11 @@
 .section {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 2s ease-out, transform 2s ease-out;
   }
   
   .section.appear {
-    opacity: 1;
+    opacity: 2;
     transform: translateY(0);
   }
+ 

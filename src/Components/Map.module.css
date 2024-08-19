@@ -1,0 +1,54 @@
+@keyframes borderGlow {
+    0% {
+      box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 30px #ffffff;
+    }
+    50% {
+      box-shadow: 0 0 5px #808080, 0 0 10px #808080, 0 0 15px #808080, 0 0 30px #808080;
+    }
+    100% {
+      box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 30px #ffffff;
+    }
+  }
+  
+  .distance {
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+  
+  .container {
+    border-radius: 45px;
+  }
+  
+  .map {
+    animation: borderGlow 5s infinite;
+    border-radius: 50px 50px 20px 20px; /* Rounded top corners, less rounded bottom corners */
+    border: 5px solid #000; /* Black border to resemble a car outline */
+    position: relative;
+    background-color: #fff; /* Background color of the map */
+  }
+  
+  .map::before, .map::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Position the wheels below the map */
+    width: 30px;
+    height: 30px;
+    background-color: #e4dede; /* Black wheels */
+    border-radius: 50%; /* Circular wheels */
+  }
+  
+  .map::before {
+    left: 20px; /* Position the left wheel */
+  }
+  
+  .map::after {
+    right: 20px; /* Position the right wheel */
+  }

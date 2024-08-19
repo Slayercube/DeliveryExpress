@@ -1,78 +1,152 @@
 .container {
-    background-color: #121212;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 5s ease;
+  max-width: max-content;
+  overflow: hidden; 
+  height: 600px;
+  margin: auto;
+  /* border: red 1px solid; */
   
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .heading {
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-  
-  .input {
-    width: 40%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    background-color: gray;
-    color: #ffffff;
-  }
-  
-  .icon {
-   
-    
-    margin-left: 1px;
-  
-   
+}
 
-  }
-  .icon:hover{
-    background-color: gray;
-  }
+.containerShifted {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
   
+  transition: transform 2s ease; 
+  margin: auto;
+  
+}
+
+.section {
+  margin: 50px;
+  transition: all 2s ease;
+  width: 600px;
+}
+
+.sectionShifted {
+  width: 1000px;
+  align-items: flex-start;
+  transition: all 2s ease;
+}
+
+.specs {
+  width: 100%; /* Ensure the map takes full width */
+  height: 400px;
+  transition: all 2s ease;
+  margin: 20px;
+
+}
+
+
+
+.map {
+  width: 60%;
+  height: 400px;
+  transition: all 2s ease;
+  margin: 20px;
+  margin-left: 20%;
+  justify-content: center;
+  
+  
+
+}
+
+.heading {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: gray;
+  color: #ffffff;
+}
+
+.icon {
+  margin-left: 1px;
+}
+
+.icon:hover {
+  background-color: gray;
+}
+
+.iconSvg {
+  width: 30px;
+  height: 30px;
+  color: #ffffff;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.listItem {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #1e1e1e;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .containerShifted {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(0); /* Reset transform for small screens */
+  }
+
+  .section, .sectionShifted {
+    width: 90%;
+    margin: 20px;
+  }
+
+  .map {
+    height: 300px;
+  }
+
+  .input {
+    width: 80%;
+  }
+
   .iconSvg {
-    width: 30px;
-    height: 30px;
-    color: #ffffff;
-    
-    
+    width: 25px;
+    height: 25px;
   }
-  
-  .list {
-    list-style-type: none;
-    padding: 0;
+}
+
+@media (max-width: 480px) {
+  .section, .sectionShifted {
+    width: 100%;
+    margin: 10px;
   }
-  
-  .listItem {
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #1e1e1e;
-    border-radius: 4px;
-    cursor: pointer;
+
+  .map {
+    height: 200px;
   }
-  
-  .listItem:hover {
-    background-color: #333;
+
+  .input {
+    width: 100%;
   }
-  
-  .error {
-    color: red;
+
+  .iconSvg {
+    width: 20px;
+    height: 20px;
   }
-  
-  .btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .btnSuccess {
-    background-color: #28a745;
-    color: #ffffff;
-  }
+}

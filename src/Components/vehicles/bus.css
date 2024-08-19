@@ -1,0 +1,379 @@
+
+.truck-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+
+
+.truck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  position: relative;
+  animation: move-truck 5s linear infinite;
+  perspective: 1000px; /* Added perspective */
+}
+
+.truck-cab {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(to bottom right, #119ff0, #526a82);
+  border: 2px solid #000;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: rotateY(-10deg); /* Added 3D rotation */
+}
+
+.truck-bed {
+  width: 300px;
+  height: 150px;
+  background: linear-gradient(to bottom right, #A9A9A9, #808080);
+  border: 2px solid #000;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: rotateY(-10deg); /* Added 3D rotation */
+}
+
+.window {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(to bottom, #87CEEB, #7d9db8);
+  border: 1px solid #000;
+  border-radius: 5px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Added inner shadow */
+}
+
+.billboard {
+  width: 280px;
+  height: 130px;
+  background-color: #FFF;
+  border: 2px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.billboard-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.wheel {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #696969, #333);
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: rotate-wheel 1s linear infinite;
+}
+
+.front-wheel {
+  bottom: -30px;
+  left: 75px;
+}
+
+.back-wheel {
+  bottom: -30px;
+  left: 375px;
+}
+
+.headlight {
+  width: 20px;
+  height: 20px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  box-shadow: 0 0 10px yellow;
+}
+
+.grille {
+  width: 60px;
+  height: 20px;
+  background: #333;
+  position: absolute;
+  top: 60px;
+  left: 45px;
+  border-radius: 5px;
+}
+
+.bumper {
+  width: 100px;
+  height: 10px;
+  background: #333;
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  border-radius: 5px;
+}
+
+.side-mirror {
+  width: 15px;
+  height: 30px;
+  background: #1E90FF;
+  border: 2px solid #000;
+  position: absolute;
+  top: 20px;
+  border-radius: 5px;
+}
+
+.left-mirror {
+  left: -20px;
+}
+
+.right-mirror {
+  right: -20px;
+}
+
+.door {
+  width: 50px;
+  height: 60px;
+  background: #457db6;
+  border: 2px solid #000;
+  position: absolute;
+  top: 80px;
+  left: 35px;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Added inner shadow */
+}
+
+.door-handle {
+  width: 15px;
+  height: 5px;
+  background: #333;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  border-radius: 2px;
+}
+
+.exhaust-pipe {
+  width: 10px;
+  height: 50px;
+  background: #5a5a5a;
+  position: absolute;
+  bottom: -50px;
+  right: 10px;
+  border-radius: 5px;
+}
+
+.roof-rack {
+  width: 140px;
+  height: 10px;
+  background: #4e4e4e;
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  border-radius: 5px;
+}
+
+.roof-light {
+  width: 15px;
+  height: 15px;
+  background: yellow;
+  border-radius: 50%;
+  position: relative;
+  top: -20px;
+  left: 100px;
+  box-shadow: 0 0 10px yellow;
+}
+
+
+
+.tread:nth-child(1) { transform: rotate(0deg) translateX(20px); }
+.tread:nth-child(2) { transform: rotate(45deg) translateX(20px); }
+.tread:nth-child(3) { transform: rotate(90deg) translateX(20px); }
+.tread:nth-child(4) { transform: rotate(135deg) translateX(20px); }
+.tread:nth-child(5) { transform: rotate(180deg) translateX(20px); }
+.tread:nth-child(6) { transform: rotate(225deg) translateX(20px); }
+.tread:nth-child(7) { transform: rotate(270deg) translateX(20px); }
+.tread:nth-child(8) { transform: rotate(315deg) translateX(20px); }
+
+.front-wheel {
+  bottom: -95px;
+  left: -410px;
+}
+
+.back-wheel {
+  bottom: -95px;
+  left: -220px;
+}
+
+@keyframes rotate-wheel {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wheel {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #333 20%, #696969 80%);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: rotate-wheel 1s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hubcap {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #ccc 20%, #999 80%);
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.tread {
+  width: 6px;
+  height: 15px;
+  background: #e5dfdf;
+  position: absolute;
+  border-radius: 2px;
+  top: 18%;
+  left: 40%;
+  transform-origin: center;
+}
+
+.tread:nth-child(1) { transform: rotate(0deg) translate(-50%, -50%); }
+.tread:nth-child(2) { transform: rotate(45deg) translate(-50%, -50%); }
+.tread:nth-child(3) { transform: rotate(90deg) translate(-50%, -50%); }
+.tread:nth-child(4) { transform: rotate(135deg) translate(-50%, -50%); }
+.tread:nth-child(5) { transform: rotate(180deg) translate(-50%, -50%); }
+.tread:nth-child(6) { transform: rotate(225deg) translate(-50%, -50%); }
+.tread:nth-child(7) { transform: rotate(270deg) translate(-50%, -50%); }
+.tread:nth-child(8) { transform: rotate(315deg) translate(-50%, -50%); }
+
+.backlight {
+  width: 10px;
+  height: 35px;
+  background: red;
+  position: absolute;
+  bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+  animation: glow-dip .3s infinite; /* Added animation */
+}
+
+.backlight.left {
+  left: 290px;
+}
+
+.backlight.right {
+  right: 0px;
+  box-shadow: 10px 0 30px 10px rgba(255, 0, 0, 1); /* More intense glow to the right */
+}
+
+@keyframes glow-dip {
+  0%, 100% {
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.3);
+  }
+}
+
+.front-light {
+  width: 10px;
+  height: 40px;
+  background: yellow;
+  position: absolute;
+  top: 100px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.7);
+  animation: glow-dip-front 0.3s infinite
+}
+
+.front-light.left {
+  left: -10px;
+}
+
+.front-light.right {
+  right: 147px;
+}
+@keyframes glow-dip-front {
+  0%, 100% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.3);
+  }
+}
+
+
+
+
+.exhaust-pipe-top {
+  position: absolute;
+  top: -20px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  width: 10px;
+  height: 30px;
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.smoke {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(160, 157, 157, 0.952);
+  border-radius: 50%;
+  animation: smoke 5s infinite;
+}
+
+.smoke:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.smoke:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.smoke:nth-child(4) {
+  animation-delay: 2s;
+}
+.smoke:nth-child(5) {
+  animation-delay: 2.5s;
+}
+.smoke:nth-child(6) {
+  animation-delay: 3;
+}
+
+@keyframes smoke {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(2);
+    opacity: .1;
+  }
+}
+
+

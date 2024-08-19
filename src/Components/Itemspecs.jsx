@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
-import styles from './Itemspecs.module.css';
 import { myContext } from '../Context';
+import styles from './Itemspecs.module.css';
 
 const Itemspecs = () => {
-  const { setVehicle} = useContext(myContext)
+  const { setVehicle } = useContext(myContext);
   const [itemType, setItemType] = useState('');
   const [length, setLength] = useState('');
   const [width, setWidth] = useState('');
@@ -21,19 +21,13 @@ const Itemspecs = () => {
       return;
     }
     setError('');
-   
     console.log('Booking details:', { itemType, length, width, height, weight });
     if (!error) {
-      handleSubmitClick()
-      setError(null)
-
-     
-
-      }
-    
+      handleSubmitClick();
+      setError(null);
+    }
   };
 
-  
   const handleSubmitClick = () => {
     const l = parseFloat(length);
     const w = parseFloat(width);
@@ -52,43 +46,68 @@ const Itemspecs = () => {
   };
 
   return (
-    <div className='card' id={styles.box}>
-          {error && <div style={{ color: 'red' }}>{error}</div>}
-      <select className={styles.select} value={itemType} onChange={(e) => setItemType(e.target.value)}>
-        <option value="">Select item</option>
-        <option value="Documents">Documents</option>
-        <option value="Box">Box</option>
-        <option value="Furniture">Furniture</option>
-        <option value="Electronics">Electronics</option>
-      </select>
-      <div className={styles.container}>
-          <div >
-            <label>Length: </label>
-            <input className={styles.input} type="number" value={length} onChange={(e) => setLength(e.target.value)} />
+    <div className={styles.container}>
+      <div className=" p-8 rounded-lg shadow-lg w-full max-w-md">
+      {error && <div className="text-red-500 mb-4">{error}</div>}
+        <select
+          className="w-full p-2 mb-4 bg-gray-700 text-white rounded"
+          value={itemType}
+          onChange={(e) => setItemType(e.target.value)}
+        >
+          <option value="">Select item</option>
+          <option value="Documents">Documents</option>
+          <option value="Box">Box</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Electronics">Electronics</option>
+        </select>
+        <div className="space-y-4">
+          <div>
+            <label className="block text-white">Length:</label>
+            <input
+              className="w-full p-2 bg-gray-700 text-white rounded"
+              type="number"
+              value={length}
+              onChange={(e) => setLength(e.target.value)}
+            />
           </div>
           <div>
-            <label>Width: </label>
-            <input className={styles.input} type="number" value={width} onChange={(e) => setWidth(e.target.value)} />
+            <label className="block text-white">Width:</label>
+            <input
+              className="w-full p-2 bg-gray-700 text-white rounded"
+              type="number"
+              value={width}
+              onChange={(e) => setWidth(e.target.value)}
+            />
           </div>
           <div>
-            <label>Height: </label>
-            <input className={styles.input} type="number" value={height} onChange={(e) => setHeight(e.target.value)} />
+            <label className="block text-white">Height:</label>
+            <input
+              className="w-full p-2 bg-gray-700 text-white rounded"
+              type="number"
+              value={height}
+              onChange={(e) => setHeight(e.target.value)}
+            />
           </div>
           <div>
-            <label>Weight: </label>
-            <input className={styles.input} type="number" value={weight} onChange={(e) => setWeight(e.target.value)} />
+            <label className="block text-white">Weight:</label>
+            <input
+              className="w-full p-2 bg-gray-700 text-white rounded"
+              type="number"
+              value={weight}
+              onChange={(e) => setWeight(e.target.value)}
+            />
+
           </div>
-          <p>if you are not sure about the details you can contact us 
-          <button className='btn btn-dark'>i need help</button>
-          </p>
-          <button className='btn btn-primary' onClick={handleBookClick}>Submit</button>
         
-          {/* {vehicle && <div>Vehicle: {vehicle}</div>} */}
-
-
-
-
         </div>
+    
+        <button
+          className="w-24 mt-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 "
+          onClick={handleBookClick}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 };

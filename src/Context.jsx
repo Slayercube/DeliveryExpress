@@ -17,6 +17,9 @@ function ContextProvider({ children }) {
   const [pickupTime, setPickupTime] = useState('');
   const [deliveryDate, setDeliveryDate] = useState('');
   const [deliveryTime, setDeliveryTime] = useState('');
+  const [showMap, setShowMap] = useState(false)
+  const [fadeOut, setFadeOut] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
 
 
 
@@ -43,6 +46,8 @@ function ContextProvider({ children }) {
             const address = await reverseGeocode(lat, lng);
             if (address) {
               setPickAddress(address);
+              setShowMap(true)
+              
             }
           });
         } else {
@@ -61,6 +66,7 @@ function ContextProvider({ children }) {
             const address = await reverseGeocode(lat, lng);
             if (address) {
               setDeliverAddress(address);
+              setShowMap(true)
             }
           });
         } else {
@@ -102,6 +108,8 @@ function ContextProvider({ children }) {
         setDeliveryDate,
         deliveryTime,
         setDeliveryTime,
+        showMap,
+        setShowMap
     };
 
     return (
