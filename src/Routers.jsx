@@ -6,10 +6,10 @@ import { Rate } from './Components/Rate.jsx'
 import { Login } from './Components/Login.jsx'
 import { Signup } from './Components/Signup';
 import Payment from './Components/Payment';
-// import UserInfoForm from './Components/UserInfoForm.jsx'
 import Footer from './Components/Footer.jsx'
 import Home from './Home.jsx'
 import Bus from './Components/vehicles/Bus';
+import Body from './Components/Body.jsx'
 
 const Routers = () => {
   return (
@@ -26,6 +26,7 @@ const Routers = () => {
         { <Route path='/foot' element={<Footer />} /> }
         { <Route path='/app' element={<App />} /> }
         { <Route path='/bus' element={<Bus />} /> }
+        { <Route path='/body' element={<Body />} /> }
       </Routes>
       <Footer />
     

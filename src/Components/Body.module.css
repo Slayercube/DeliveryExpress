@@ -8,7 +8,6 @@
   overflow: hidden; 
   height: 600px;
   margin: auto;
-  /* border: red 1px solid; */
   
 }
 
@@ -16,10 +15,8 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  width: 100%;
-  
+  width: 900px;
   transition: transform 2s ease; 
-  margin: auto;
   
 }
 
@@ -33,6 +30,7 @@
   width: 1000px;
   align-items: flex-start;
   transition: all 2s ease;
+  
 }
 
 .specs {
@@ -68,22 +66,28 @@
   margin-bottom: 10px;
   border: 1px solid #333;
   border-radius: 4px;
-  background-color: gray;
+  background-color: #374151;
   color: #ffffff;
 }
 
 .icon {
-  margin-left: 1px;
+  margin-left: 2px;
+  margin-bottom: -5px;
 }
 
-.icon:hover {
-  background-color: gray;
-}
+
 
 .iconSvg {
   width: 30px;
   height: 30px;
   color: #ffffff;
+  transition: transform 0.3s ease, fill 0.3s ease, box-shadow 0.3s ease;
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+.iconSvg:hover {
+  transform: scale(1.2);
+  color: #ff0000;
+  filter: drop-shadow( 2px 2px 5px rgba(255, 0, 0, 0.5));
 }
 
 .list {
@@ -110,11 +114,13 @@
     align-items: center;
     justify-content: center;
     transform: translateX(0); /* Reset transform for small screens */
+    height: 1000px;
   }
 
   .section, .sectionShifted {
     width: 90%;
     margin: 20px;
+    margin-left: 15%;
   }
 
   .map {

@@ -8,8 +8,11 @@ import Map from './Map'
 import styles from './Body.module.css'
 
 import Bus from './vehicles/Bus';
-import Vehicles from './Vehicles';
+
 import Car from './vehicles/Car'
+
+
+// import TimeDate1 from './TimeDate1'
 
 
 const Body = () => {
@@ -189,9 +192,11 @@ const Body = () => {
       <div className={styles.map}>{showMap && <Map />}</div>
       <br />
       
-     <Vehicles />
+    
+
 
      <Car />
+     {/* <TimeDate1 /> */}
      <Bus />
     </div>
   )

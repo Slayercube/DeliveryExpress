@@ -1,11 +1,12 @@
 .drone-container {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border: 1px solid #db2323;
 }
 
 .drone {
@@ -13,6 +14,7 @@
   width: 500px; /* Increased size */
   height: 350px; /* Increased size */
   animation: fly 4s linear infinite;
+  top: -15%;
 }
 
 .drone-body {
@@ -208,7 +210,7 @@
 
 .landing-gear {
   position: absolute;
-  width: 15px; /* Increased size */
+  width: 10px; /* Increased size */
   height: 60px; /* Increased size */
   background: linear-gradient(145deg, #555, #777);
   bottom: -60px; /* Adjusted position */
@@ -278,7 +280,7 @@
   height: 30px; /* Increased size */
   background: radial-gradient(circle, #000 60%, #333 100%); /* Lens effect */
   border-radius: 50%;
-  bottom: -15px; /* Adjusted position */
+  bottom: -2px; /* Adjusted position */
   box-shadow: 0 0 10px rgb(255, 253, 253);
   animation: growShadow .1s infinite alternate, rotateCamera 5s linear infinite; /* Added rotation animation */
 }
@@ -319,5 +321,86 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+
+
+
+.sensor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(145deg, #555, #777);
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sensor-front {
+  top: 332px;
+  left: 50%;
+  transform: translateX(-50%);
+ width: 10px;
+  height: 10px; 
+  background: rgb(5, 5, 5);
+  z-index: 1000;
+}
+
+.sensor-back {
+  bottom: 3px;
+  
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  
+  
+}
+
+
+.rope {
+  position: absolute;
+  width: 5px;
+  height: 200px;
+  background: linear-gradient(135deg, #a67b5b 25%, #8b5e3c 25%, #8b5e3c 50%, #a67b5b 50%, #a67b5b 75%, #8b5e3c 75%, #8b5e3c);
+  background-size: 10px 10px;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.link-container {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -80px; /* Adjust to align with the bottom of the rope */
+  left: 50%;
+
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  bottom: -250px;
+  border: 5px solid; /* Add border */
+   transform: translateX(-50%);
+
+}
+.link-container {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -250px; /* Adjust to align with the bottom of the rope */
+  left: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: 5px solid transparent; /* Transparent border to show the background */
+  background: linear-gradient(rgb(0, 0, 0), rgb(71, 71, 71)) padding-box, 
+              linear-gradient(to right, red, green, blue, yellow, red, green, blue, yellow) border-box;
+  background-size: 200% 100%;
+  animation: lights 2s linear infinite;
+  transform: translateX(-50%);
+}
+
+@keyframes lights {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
   }
 }

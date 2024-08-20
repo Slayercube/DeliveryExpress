@@ -75,8 +75,34 @@ function ContextProvider({ children }) {
       };
     
 
+      // this is used to calculate the estimated price
+      
+  const calculateEstimatedPrice = (distance, vehicle) => {
+    if (!distance || !vehicle) return null;
+
+    let pricePerKm;
+    switch (vehicle) {
+      case 'van':
+        pricePerKm = 2.0;
+        break;
+      case 'car':
+        pricePerKm = 1.5;
+        break;
+      case 'bike':
+        pricePerKm = 1.0;
+        break;
+      case 'truck':
+        pricePerKm = 2.5;
+        break;
+      default:
+        pricePerKm = 1.0;
+    }
+
+    return distance * pricePerKm;
+  };
 
 
+      const estimatedPrice = calculateEstimatedPrice(distance, vehicle);
    
    
    
@@ -109,7 +135,8 @@ function ContextProvider({ children }) {
         deliveryTime,
         setDeliveryTime,
         showMap,
-        setShowMap
+        setShowMap,
+        estimatedPrice
     };
 
     return (

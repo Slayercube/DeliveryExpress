@@ -46,7 +46,7 @@ const Itemspecs = () => {
   };
 
   return (
-    <div className={styles.container}>
+   
       <div className=" p-8 rounded-lg shadow-lg w-full max-w-md">
       {error && <div className="text-red-500 mb-4">{error}</div>}
         <select
@@ -108,7 +108,7 @@ const Itemspecs = () => {
           Submit
         </button>
       </div>
-    </div>
+    
   );
 };
 
