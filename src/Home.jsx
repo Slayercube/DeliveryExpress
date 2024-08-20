@@ -1,4 +1,4 @@
- import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Hero from "./Components/home/Hero";
 import Logo from "./Components/home/Logo";
 import Mid from "./Components/home/Mid";
@@ -6,6 +6,8 @@ import Team from "./Components/home/Team";
 import Testimonial from "./Components/home/Testimonial";
 import './app.css'; // Import the CSS file for animations
 import Cards from './Components/Cards';
+
+
 
 const Home = () => {
   const sectionsRef = useRef([]);
@@ -35,7 +37,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ color: 'white' }}>
+    <div style={{ color: 'white'}}>
       <div ref={(el) => (sectionsRef.current[0] = el)} className="section">
         <Hero />
       </div>

@@ -29,15 +29,41 @@
     background-color: black;
 }
 
-
+/* card */
 #card{
     margin-top: -150px;
 
 }
 
+#card {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 100px;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
+
+
+
+
+img, #cardtitle, #cardtext {
+    z-index: 10;
+}
+
+#cardtitle {
+    text-align: center;
+}
+
 /* Motobike */
 #motobike {
-    z-index: 10;
     border: 10px solid gray;
     border-radius: 50px 0 50px 0;
     display: grid;
@@ -79,11 +105,25 @@
     border-radius: 50px 0 50px 0;
 }
 
+#motobike {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
 
 
 /* car */
 #car {
-    z-index: 10;
     border: 10px solid gray;
     border-radius: 50px 0 50px 0;
     display: grid;
@@ -126,6 +166,21 @@
     border-radius: 50px 0 50px 0;
 }
 
+#car {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
 
 
 
@@ -134,7 +189,6 @@
 
 /* Mini-Van */
 #minivan {
-    z-index: 10;
     border: 10px solid gray;
     border-radius: 50px 0 50px 0;
     display: grid;
@@ -177,6 +231,21 @@
     border-radius: 50px 0 50px 0;
 }
 
+#minivan {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
 
 
 
@@ -184,7 +253,6 @@
 
 /* Truck */
 #truck {
-    z-index: 10;
     border: 10px solid gray;
     border-radius: 50px 0 50px 0;
     display: grid;
@@ -226,3 +294,20 @@
     background: #000000;
     border-radius: 50px 0 50px 0;
 }
+
+#truck {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
+

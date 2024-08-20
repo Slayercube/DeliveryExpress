@@ -1,15 +1,16 @@
 import React from 'react'
 import './style.css'
+import styles from './home.module.css'
 import { color } from 'framer-motion'
 
 const Mid = () => {
   return (
     <div className="container mx-auto p-4">
       <section id="features">
-        <div className="bb ze ki yn 2xl:ud-px-12.5">
+        <div className="bb ze ki yn 2xl:ud-px-12.5" id={styles.mid}>
           <div className="tc uf zo xf ap zf bp mq">
             {/* <!-- Small Features Item --> */}
-            <div className="animate_top kn to/3 tc cg oq">
+            <div className="animate_top kn to/3 tc cg oq" id={styles.mid247support}>
               <div className="tc wf xf cf ae cd rg mh">
                 {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +44,7 @@ const Mid = () => {
             </div>
 
             {/* <!-- Small Features Item --> */}
-            <div className="animate_top kn to/3 tc cg oq">
+            <div className="animate_top kn to/3 tc cg oq" id={styles.midfastdelivery}>
               <div className="tc wf xf cf ae cd rg nh">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +66,7 @@ const Mid = () => {
             </div>
 
             {/* <!-- Small Features Item --> */}
-            <div className="animate_top kn to/3 tc cg oq">
+            <div className="animate_top kn to/3 tc cg oq" id={styles.midteamwork}>
               <div className="tc wf xf cf ae cd rg oh">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

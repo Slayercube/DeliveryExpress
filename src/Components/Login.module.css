@@ -1,7 +1,138 @@
-.main_frame{
+.main_frame {
     width: 30%;
     margin: auto;
     text-align: center;
 }
 
 /* div{border: 1px solid red;} */
+
+
+
+#login {
+    background: rgba(254, 254, 254, 0.1);
+    width: 500px;
+    padding: 40px;
+    color: #fff;
+    border: 3px solid rgba(254, 254, 254, 0.7);
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    background: url(https://thumbs.dreamstime.com/b/stars-above-snowy-autumn-mountain-ridges-21627356.jpg?w=768) no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+
+#form {  
+    position: relative;
+    width: 100%;
+}
+
+h1 {
+    font-size: 5em;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+#inputbox1,
+#inputbox2 {
+    position: relative;
+}
+
+#input1,
+#input2 {
+    color: #fff;
+    width: 85%;
+    height: 70px;
+    outline: none;
+    font-size: 1.3em;
+    border: 3px solid rgba(254, 254, 254, 0.6);
+    border-radius: 50px;
+    background: transparent;
+    display: inline;
+    margin: 10px 0;
+    padding-right: 80px;
+    transition: 0.1s ease-in;
+}
+
+#input1,
+#input2 {
+    border: 3px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#input1::placeholder {
+    color: #fff;
+}
+
+#input2::placeholder {
+    color: #fff;
+}
+
+#uil1 {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+
+}
+
+#uil2 {
+    position: absolute;
+    top: 19%;
+    right: 70px;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+
+}
+
+#forgetpw {
+    display: flex;
+    justify-content: space-around;
+}
+
+#forgetpw label input{
+    scale: 1.2;
+    accent-color: gold;
+}
+
+#pw a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#pw a:hover {
+    text-decoration: underline;
+}
+
+#btn {
+    color: #222;
+    background: #fff;
+    font-size: 1.8em;
+    border: none;
+    margin-top: 50px;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s ease-in-out;
+    width: 85%;
+    height: 2em;
+    border-radius: 30px;
+}
+
+#btn:hover {
+    color: #fff;
+    background: #7075fa;
+}
+
+#createnew {
+ margin-top: 20px;
+ font-size: 1.2em;   
+}
+
+#createnew a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#createnew a:hover {
+    text-decoration: underline;
+}

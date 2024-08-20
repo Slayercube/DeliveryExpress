@@ -8,6 +8,7 @@ import Map from './Map'
 import styles from './Body.module.css'
 import Vehicles from './Vehicles'
 
+
 const Body = () => {
   const {
     setPickLocation,

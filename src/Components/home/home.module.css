@@ -15,3 +15,321 @@
   height: 100%;
   z-index: -1; /* Ensure the image is behind other content */
 }
+
+#headerhero {
+  animation: fade-out linear;
+  animation-timeline: view();
+  animation-range: exit;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* headerimg */
+#headerimg {
+  animation: headerimg-animation linear;
+  animation-timeline: view();
+  animation: fade-out linear;
+  animation-timeline: view();
+  animation-range: exit;
+  margin-bottom: 75px;
+
+  transform-origin: top;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes headerimg-animation {
+  25%{opacity: 1;}
+  85%, 100%{opacity: 0; scale: 3;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* team */
+#team {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* teamsaeed */
+#teamsaeed {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* teamjaouu */
+#teamjaouu {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* teamsidhu */
+#teamsidhu {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+
+/* headertestimonial */
+#headertestimonial {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+
+/* testimoniallucas */
+#testimoniallucas {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* testimoniallucia */
+#testimoniallucia {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* testimonialfourgeeks */
+#testimonialfourgeeks {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* testimonialjavier */
+#testimonialjavier {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* testimonialruben*/
+#testimonialruben {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* testimonialdavid */
+#testimonialdavid {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+
+/* mid*/
+#mid{
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* mid247support*/
+#mid247support{
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* midfastdelivery*/
+#midfastdelivery{
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
+
+/* midteamwork*/
+#midteamwork{
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+      scale: .8; opacity: 0;
+  }
+  to {
+      scale: 1; opacity: 1;
+  }
+}
+
+
