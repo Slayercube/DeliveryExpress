@@ -50,7 +50,12 @@ const Car = () => {
                   {errorMessage && (
                     <div style={{ color: 'red' }}>{errorMessage}</div>
                   )}
-                  <button className="btn btn-success">Payment</button>
+                  <div className='container d-flex'>
+                  <button className="btn btn-primary">Payment</button>
+                  
+                  {estimatedPrice !== null && <div className='m-2' style={{color : 'white'}}> ${estimatedPrice.toFixed(2)}</div>}
+                  </div>
+                  
                 </>
               )}
             </div>
