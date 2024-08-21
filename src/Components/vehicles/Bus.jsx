@@ -31,7 +31,14 @@ const Bus = () => {
 
         </div>
         <div className="truck-bed">
-          <div className="billboard">{/* <Vehicles /> */}</div>
+          <div className="board">
+          <div className='board-text'>
+         Thanks for using our services!!
+          <p>see you soon !! 😎</p> 
+          </div>
+          
+          
+           </div>
           <div className="exhaust-pipe"></div>
           <div className="backlight left"></div>
           <div className="backlight right"></div>

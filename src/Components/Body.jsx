@@ -13,6 +13,7 @@ import Car from './vehicles/Car'
 
 
 // import TimeDate1 from './TimeDate1'
+import Vehicles from './Vehicles';
 
 
 const Body = () => {
@@ -29,7 +30,7 @@ const Body = () => {
     handleSetDeliveryocation,
     errorMessage,
     setErrorMessage,
-    showMap,
+    showMap,setShowMap,vehicle ,showDrone,setShowDrone
   } = useContext(myContext)
 
   const [pickResults, setPickResults] = useState([])
@@ -49,6 +50,7 @@ const Body = () => {
     if (pickGeocoderRef.current) {
       pickGeocoderRef.current.geocode(e.target.value, (results) => {
         setPickResults(results)
+        setShowMap(true)
       })
     }
   }
@@ -58,6 +60,7 @@ const Body = () => {
     if (deliverGeocoderRef.current) {
       deliverGeocoderRef.current.geocode(e.target.value, (results) => {
         setDeliverResults(results)
+        setShowMap(true)
       })
     }
   }
@@ -84,6 +87,7 @@ const Body = () => {
     setIsBooked(true)
     setErrorMessage('')
   }
+  
 
   return (
     <div className="container">
@@ -192,12 +196,12 @@ const Body = () => {
       <div className={styles.map}>{showMap && <Map />}</div>
       <br />
       
-    
 
 
-     <Car />
+    <dir>   { showDrone &&  <Car /> }    </dir>
+    {/* <Car /> */}
      {/* <TimeDate1 /> */}
-     <Bus />
+     <Bus /> 
     </div>
   )
 }

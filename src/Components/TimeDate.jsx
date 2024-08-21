@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { myContext } from "../Context";
+import '../app.css';
 
 const TimeDate = () => {
   const {
@@ -12,10 +13,10 @@ const TimeDate = () => {
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <div>
+    <div style={{color : 'white'}}>
       <div className="mb-4 flex space-x-4">
         <div>
-          <label className="block text-gray-400">Pickup Date</label>
+          <label className="block text-gray-400 custom label" >Pickup Date</label>
           <input
             type="date"
             value={pickupDate}

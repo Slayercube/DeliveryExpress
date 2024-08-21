@@ -6,14 +6,16 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border: 1px solid #db2323;
+  /* border: 1px solid #db2323; */
 }
 
 .drone {
   position: relative;
   width: 500px; /* Increased size */
-  height: 350px; /* Increased size */
-  animation: fly 4s linear infinite;
+  height: 330px; /* Increased size */
+  animation: fly 3s linear infinite;
+  z-index: 1;
+
   top: -15%;
 }
 
@@ -62,15 +64,15 @@
 .billboard {
   position: absolute;
   width: 80%; /* Increased size */
-  height: 80%; /* Increased size */
+  height: 69%; /* Increased size */
   background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid #000;
-  border-radius: 5px;
-  padding: 10px;
+  border: 5px solid #000;
+  border-radius: 10px;
+  /* padding: 10px; */
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -337,7 +339,7 @@
 }
 
 .sensor-front {
-  top: 332px;
+  top: 312px;
   left: 50%;
   transform: translateX(-50%);
  width: 10px;
@@ -366,6 +368,29 @@
   bottom: -200px;
   left: 50%;
   transform: translateX(-50%);
+  transform-origin: top;
+  animation: sway 10s infinite ease-in-out;
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-50%) rotate(8deg);
+  }
+  40% {
+    transform: translateX(-50%) rotate(-8deg);
+  }
+  60% {
+    transform: translateX(-50%) rotate(6deg);
+  }
+  80% {
+    transform: translateX(-50%) rotate(-6deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
 }
 
 .link-container {

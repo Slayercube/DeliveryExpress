@@ -30,7 +30,7 @@ const Vehicles = () => {
         <video
               src={vehicleMedia[vehicle]}
               alt={vehicle}
-              style={{ width: '500px', height: '200px' }}
+              style={{ width: '100%', height: '100%' }}
               controls
               autoPlay
               loop

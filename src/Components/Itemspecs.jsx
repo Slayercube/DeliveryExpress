@@ -3,7 +3,7 @@ import { myContext } from '../Context'
 import styles from './Itemspecs.module.css'
 
 const Itemspecs = () => {
-  const { setVehicle } = useContext(myContext)
+  const { setVehicle , setShowDrone } = useContext(myContext)
   const [itemType, setItemType] = useState('')
   const [length, setLength] = useState('')
   const [width, setWidth] = useState('')
@@ -25,6 +25,7 @@ const Itemspecs = () => {
     if (!error) {
       handleSubmitClick()
       setError(null)
+      setShowDrone(true)
     }
   }
 

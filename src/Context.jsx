@@ -18,8 +18,8 @@ function ContextProvider({ children }) {
   const [deliveryDate, setDeliveryDate] = useState('');
   const [deliveryTime, setDeliveryTime] = useState('');
   const [showMap, setShowMap] = useState(false)
-  const [fadeOut, setFadeOut] = useState(false);
-  const [fadeIn, setFadeIn] = useState(false);
+  const [showDrone, setShowDrone] = useState(false)
+
 
 
 
@@ -136,7 +136,9 @@ function ContextProvider({ children }) {
         setDeliveryTime,
         showMap,
         setShowMap,
-        estimatedPrice
+        estimatedPrice,
+        showDrone,
+        setShowDrone
     };
 
     return (
