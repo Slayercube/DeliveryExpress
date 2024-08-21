@@ -3,8 +3,8 @@ import React from 'react'
 const Testimonial = () => {
   return (
     <div>
-        <section className="relative">
-      <div className="mx-auto max-w-8xl px-5 py-20 md:px-10 md:py-24">
+        <section className="relative -mt-40">
+      <div className="mx-auto max-w-7xl px-5 py-4 md:px-10 md:py-13">
         {/* Heading Text */}
         <h2 className="mx-auto mb-6 w-full max-w-3xl text-center text-3xl font-semibold md:mb-12  md:text-5xl">
           What our clients are saying

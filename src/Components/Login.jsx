@@ -22,8 +22,8 @@ export const Login = () => {
             </div>
             <div className="">
                 <div className="">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1"></input>
+                    <label for="exampleInputPassword1" className="form-label">Password</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"></input>
                 </div>
                 <br></br>
                 <button type="submit" className="btn btn-primary">Submit</button>
@@ -37,4 +37,3 @@ export const Login = () => {
     )
 }
 
-export default Login;

@@ -1,13 +1,16 @@
 
+
 import { useNavigate } from 'react-router-dom'
 import styles from './home.module.css'
 import mapImage from './map.png'
 const Hero = () => {
-   let navigate = useNavigate()
+ const navigate = useNavigate()
 
-   function handleClick() {
-     navigate('/app')
-   }
+ function handleClick() {
+  navigate('/app')
+ }
+
+ 
   
   return (
     <div>

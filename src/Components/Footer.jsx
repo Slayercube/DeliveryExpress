@@ -12,12 +12,13 @@ const Footer = () => {
             <div className="flex max-w-sm grid-cols-1 flex-col items-start justify-start gap-8 max-[991px]:[grid-area:span_1/span_4/span_1/span_4] max-[767px]:flex-col max-[767px]:[grid-area:span_1/span_2/span_1/span_2] lg:mr-10">
               <div className="flex flex-col items-start gap-6">
                 <a href="#" className="inline-block max-w-full text-white">
-                  <img
+                  {/* <img
                     src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94d6f4e6cf96_Group%2047874-3.png"
                     alt=""
                     className="inline-block max-h-10"
                     style={{ filter: 'invert(1)' }}
-                  />
+                  /> */}
+                   <strong>  Delivery express</strong>
                 </a>
                 <p className="text-gray-500">
                   Phasellus a nulla in neque lacinia posuere. Etiam auctor
