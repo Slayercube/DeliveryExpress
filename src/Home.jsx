@@ -1,4 +1,4 @@
- import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Hero from "./Components/home/Hero";
 import Logo from "./Components/home/Logo";
 import Mid from "./Components/home/Mid";
@@ -24,18 +24,22 @@ const Home = () => {
     );
 
     sectionsRef.current.forEach((section) => {
-      observer.observe(section);
+      if (section) {
+        observer.observe(section);
+      }
     });
 
     return () => {
       sectionsRef.current.forEach((section) => {
-        observer.unobserve(section);
+        if (section) {
+          observer.unobserve(section);
+        }
       });
     };
   }, []);
 
   return (
-    <div  style={{ color: 'white' }}>
+    <div style={{ color: 'white' }}>
       <div ref={(el) => (sectionsRef.current[0] = el)} className="section">
         <Hero />
       </div>
@@ -48,13 +52,12 @@ const Home = () => {
       <div ref={(el) => (sectionsRef.current[3] = el)} className="section">
         <Logo />
       </div>
-       <div ref={(el) => (sectionsRef.current[4] = el)} className="section">
+      <div ref={(el) => (sectionsRef.current[4] = el)} className="section">
         <Cards />
       </div>
       <div ref={(el) => (sectionsRef.current[5] = el)} className="section">
         <Testimonial />
       </div>
-      
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import '../app.css'
 import logo from '../Images/DELIVERY (4).png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,6 +39,8 @@ const Navbar = () => {
             <Link to="/login" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">
               <span className="text-white">Login</span>
             </Link>
+        
+
             <Link to="/signup" className="relative px-3 py-2 rounded-md text-sm font-medium primary-button glow-hover">
               <span className="text-white">Sign Up</span>
             </Link>

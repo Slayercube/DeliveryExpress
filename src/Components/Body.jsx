@@ -7,14 +7,9 @@ import { myContext } from '../Context'
 import Map from './Map'
 import styles from './Body.module.css'
 
-import Bus from './vehicles/Bus';
+import Bus from './vehicles/Bus'
 
 import Car from './vehicles/Car'
-
-
-// import TimeDate1 from './TimeDate1'
-import Vehicles from './Vehicles';
-
 
 const Body = () => {
   const {
@@ -30,7 +25,9 @@ const Body = () => {
     handleSetDeliveryocation,
     errorMessage,
     setErrorMessage,
-    showMap,setShowMap,vehicle ,showDrone,setShowDrone
+    showMap,
+    setShowMap,
+    showDrone,
   } = useContext(myContext)
 
   const [pickResults, setPickResults] = useState([])
@@ -87,7 +84,6 @@ const Body = () => {
     setIsBooked(true)
     setErrorMessage('')
   }
-  
 
   return (
     <div className="container">
@@ -195,13 +191,11 @@ const Body = () => {
 
       <div className={styles.map}>{showMap && <Map />}</div>
       <br />
-      
 
+      <dir> {showDrone && <Car />} </dir>
+      {/* <Car /> */}
 
-    <dir>   { showDrone &&  <Car /> }    </dir>
-    {/* <Car /> */}
-     {/* <TimeDate1 /> */}
-     <Bus /> 
+      <Bus />
     </div>
   )
 }
