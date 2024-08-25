@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { myContext } from '../Context'
 import styles from './Itemspecs.module.css'
+import axios from 'axios'
 
 const Itemspecs = () => {
   const { setVehicle , setShowDrone } = useContext(myContext)
@@ -10,41 +11,64 @@ const Itemspecs = () => {
   const [height, setHeight] = useState('')
   const [weight, setWeight] = useState('')
   const [error, setError] = useState(null)
+  const { user } = useContext(myContext)
 
-  const handleBookClick = () => {
+  const handleBookClick = async () => { // Make the function async
     if (!itemType) {
-      setError('Please select an item type.')
-      return
+      setError('Please select an item type.');
+      return;
     }
     if (!length || !width || !height || !weight) {
-      setError('Please fill in all dimensions and weight.')
-      return
+      setError('Please fill in all dimensions and weight.');
+      return;
     }
-    setError('')
-    console.log('Booking details:', { itemType, length, width, height, weight })
+    const itemData = {
+      itemType,
+      length,
+      width,
+      height,
+      weight,
+      userId: user.id, // Assuming user object has an id property
+    };
+    // Call the API to save the item details
+    try {
+      console.log('Sending item data to API:', itemData);
+      const response = await axios.post('http://localhost:3002/items/items', itemData); // Corrected URL
+      console.log('API response:', response.data);
+      alert('Item details saved successfully');
+    } catch (err) {
+      console.error('Error saving item details:', err.response ? err.response.data : err.message);
+      setError('Failed to save item details');
+    }
+ 
+
+    setError('');
+    console.log('Booking details:', { itemType, length, width, height, weight });
     if (!error) {
-      handleSubmitClick()
-      setError(null)
-      setShowDrone(true)
+      handleSubmitClick();
+      setError(null);
+      setShowDrone(true);
     }
-  }
-
+  };
+  
   const handleSubmitClick = () => {
-    const l = parseFloat(length)
-    const w = parseFloat(width)
-    const h = parseFloat(height)
-    const wt = parseFloat(weight)
-
+    const l = parseFloat(length);
+    const w = parseFloat(width);
+    const h = parseFloat(height);
+    const wt = parseFloat(weight);
+  
     if (l <= 1 && w <= 1 && h <= 1 && wt <= 10) {
-      setVehicle('bike')
+      setVehicle('bike');
     } else if (l <= 2 && w <= 2 && h <= 2 && wt <= 50) {
-      setVehicle('car')
+      setVehicle('car');
     } else if (l <= 3 && w <= 3 && h <= 3 && wt <= 200) {
-      setVehicle('van')
+      setVehicle('van');
     } else {
-      setVehicle('truck')
+      setVehicle('truck');
     }
-  }
+  };
+ 
+
 
   return (
     <div className="w-full max-w-md rounded-lg p-8 shadow-lg">

@@ -414,11 +414,9 @@
   border-radius: 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border: 5px solid transparent; /* Transparent border to show the background */
-  background: linear-gradient(rgb(0, 0, 0), rgb(71, 71, 71)) padding-box, 
-              linear-gradient(to right, red, green, blue, yellow, red, green, blue, yellow) border-box;
-  background-size: 200% 100%;
-  animation: lights 2s linear infinite;
+  background: linear-gradient(rgb(0, 0, 0), rgb(71, 71, 71));
   transform: translateX(-50%);
+  animation: lights 2s linear infinite, glow 1.5s ease-in-out infinite;
 }
 
 @keyframes lights {
@@ -427,5 +425,14 @@
   }
   100% {
     background-position: 100% 0%;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
   }
 }

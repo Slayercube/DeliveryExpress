@@ -21,6 +21,18 @@ function ContextProvider({ children }) {
   const [showDrone, setShowDrone] = useState(false)
 
 
+// backend
+  const [user, setUser] = useState(null);
+  const [values, setValues] = useState({
+    username: '',
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    password: ''
+  });
+
+
 
 
     //this use used for current location
@@ -100,9 +112,23 @@ function ContextProvider({ children }) {
 
     return distance * pricePerKm;
   };
+      
+  
+  const estimatedPrice = calculateEstimatedPrice(distance, vehicle);
 
 
-      const estimatedPrice = calculateEstimatedPrice(distance, vehicle);
+  //get user info so that he can stay logged in
+  const getUserInfoFromToken = async (token) => {
+    try {
+      const response = await axios.get('http://localhost:3002/users/profile', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching user info:', error);
+      return null;
+    }
+  };
    
    
    
@@ -138,7 +164,12 @@ function ContextProvider({ children }) {
         setShowMap,
         estimatedPrice,
         showDrone,
-        setShowDrone
+        setShowDrone,
+        user,
+        setUser,
+        values,
+        setValues,
+        getUserInfoFromToken
     };
 
     return (
