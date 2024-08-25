@@ -13,25 +13,23 @@ import Home from './Home.jsx'
 const Routers = () => {
   return (
     <div>
-
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        { <Route path='/contact' element={<Contact />} /> }
-        { <Route path='/login' element={<Login />} /> }
-        { <Route path='/signup' element={<Signup />} /> }
-        { <Route path='/rate' element={<Rate />} /> }
-        { <Route path='/userinfo' element={<UserInfoForm />} /> }
-        { <Route path='/payment' element={<Payment />} /> }
-        { <Route path='/foot' element={<Footer />} /> }
-        { <Route path='/app' element={<App />} /> }
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/rate' element={<Rate />} />
+        <Route path='/userinfo' element={<UserInfoForm />} />
+        <Route path='/payment' element={<Payment />} />
+        <Route path='/foot' element={<Footer />} />
+        <Route path='/app' element={<App />} />
       </Routes>
       <Footer />
-    
     </div>
-   
-    
+
+
   )
 }
 
-export default Routers
+export default Routers;

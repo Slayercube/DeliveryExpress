@@ -22,8 +22,8 @@ const Cards = () => {
                             alt="Motobike"
                             className="verhicles-card-img mb-4 inline-block h-auto w-full object-cover"
                         />
-                        <p className="font-bold card-title pb-3" id= {styles.cardtitle}  style={{color : "gold"}}>Motobike</p>
-                        <p className=" text-md text-white-900 card-text" id= {styles.cardtext}>Delivers smaller packages like Documents.</p>
+                        <p className="font-bold card-title pb-3" id={styles.cardtitle} style={{ color: "gold" }}>Motobike</p>
+                        <p className=" text-md text-white-900 card-text" id={styles.cardtext}>Delivers smaller packages like Documents.</p>
                     </div>
 
 
@@ -35,8 +35,8 @@ const Cards = () => {
                             alt="Car"
                             className=" vehicles-card-img mb-3 inline-block h-auto w-full object-cover"
                         />
-                        <p className="font-bold card-title mt-2" id= {styles.cardtitle}  style={{color : 'gold'}}  >Car</p>
-                        <p className=" mt-3 text-md text-white-950 card-text" id= {styles.cardtext}>Express delivery, receive in same day</p>
+                        <p className="font-bold card-title mt-2" id={styles.cardtitle} style={{ color: 'gold' }}  >Car</p>
+                        <p className=" mt-3 text-md text-white-950 card-text" id={styles.cardtext}>Express delivery, receive in same day</p>
                     </div>
 
 
@@ -48,8 +48,8 @@ const Cards = () => {
                             alt="Mini-Van"
                             className=" vehicles-card-img mb-5 inline-block h-auto w-full object-cover"
                         />
-                        <p className="font-bold card-title" id= {styles.cardtitle}  style={{color : 'gold'}}>Mini-Van</p>
-                        <p className="text-md text-white-950 card-text" id= {styles.cardtext}>Delivery for medium pacels and smaller relocation.</p>
+                        <p className="font-bold card-title" id={styles.cardtitle} style={{ color: 'gold' }}>Mini-Van</p>
+                        <p className="text-md text-white-950 card-text" id={styles.cardtext}>Delivery for medium pacels and smaller relocation.</p>
                     </div>
 
 
@@ -61,8 +61,8 @@ const Cards = () => {
                             alt="Truck"
                             className=" vehicles-card-img mb-5 inline-block h-auto w-full object-cover"
                         />
-                        <p className="font-bold card-title" id= {styles.cardtitle} style={{color : 'gold'}}>Truck</p>
-                        <p className="text-md text-white-950 card-text" id= {styles.cardtext}>Big relocation, Restock delivery and any other</p>
+                        <p className="font-bold card-title" id={styles.cardtitle} style={{ color: 'gold' }}>Truck</p>
+                        <p className="text-md text-white-950 card-text" id={styles.cardtext}>Big relocation, Restock delivery and any other</p>
                     </div>
                 </div>
             </div>

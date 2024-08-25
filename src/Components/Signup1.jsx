@@ -120,6 +120,40 @@ export const Signup = () => {
 							</div>
 
 
+							{/* Gender radio */}
+							<div className="flex mb-3 justify-center radio gender">
+
+								{/* male radio */}
+								<p className='border rounded text-dark bg-light me-5 px-2'>Male
+
+									<input
+										name='radio'
+										placeholder='Male'
+										type='radio'
+										className='ms-2'
+									></input>
+								</p>
+
+
+
+								{/* female radio */}
+								<p className=' border rounded text-dark bg-light ms-5 px-2'>Female
+
+									<input
+										name='radio'
+										placeholder='Female'
+										type='radio'
+										className='ms-2'
+									>
+
+									</input>
+								</p>
+
+							</div>
+
+
+
+
 							{/* inputbox3 */}
 							<div className={`relative flex flex-col mb-4 inputbox3 mb-2 ${styles.inputbox3}`}>
 								<label htmlFor="input3" className={`form-label font-bold text-dark mb-1 text-left`}></label>
