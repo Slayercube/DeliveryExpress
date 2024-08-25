@@ -4,8 +4,8 @@ import Logo from "./Components/home/Logo";
 import Mid from "./Components/home/Mid";
 import Team from "./Components/home/Team";
 import Testimonial from "./Components/home/Testimonial";
-import './app.css';
-import Cards from './Components/Cards';
+import "./App.css";
+import Cards from "./Components/Cards";
 
 const Home = () => {
   const sectionsRef = useRef([]);

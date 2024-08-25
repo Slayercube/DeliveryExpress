@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { myContext } from '../Context';
-import Dropdown from 'react-bootstrap/Dropdown';
-import SplitButton from 'react-bootstrap/SplitButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
