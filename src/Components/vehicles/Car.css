@@ -1,0 +1,431 @@
+.drone-container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* border: 1px solid #db2323; */
+}
+
+.drone {
+  position: relative;
+  width: 500px; /* Increased size */
+  height: 330px; /* Increased size */
+  animation: fly 3s linear infinite;
+  z-index: 1;
+
+  top: -15%;
+}
+
+.drone-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #333, #555);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  perspective: 1000px;
+  z-index: 1;
+
+}
+
+.drone-body::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #444, #666);
+  border-radius: 10px;
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: rotateX(10deg) rotateY(10deg);
+  
+}
+
+.drone-body-detail {
+  position: absolute;
+  width: 240px; /* Increased size */
+  height: 120px; /* Increased size */
+  background: linear-gradient(145deg, #444, #666);
+  border-radius: 15px;
+  top: 20px; /* Adjusted position */
+  left: 20px; /* Adjusted position */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+ 
+}
+
+.billboard {
+  position: absolute;
+  width: 80%; /* Increased size */
+  height: 69%; /* Increased size */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #000;
+  border-radius: 10px;
+  /* padding: 10px; */
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.billboard img {
+  max-width: 100%;
+  max-height: 80%;
+  margin-bottom: 10px;
+}
+
+.billboard a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.billboard a:hover {
+  text-decoration: underline;
+}
+
+.arm {
+  position: absolute;
+  width: 7px; /* Increased size */
+  height: 100px; /* Increased size */
+  background: linear-gradient(145deg, #2f2f2f, #303030);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(236, 17, 17, 0.2);
+  z-index: 0; /* Set lower z-index to position behind other elements */
+}
+
+.arm-top-left {
+  top: -88px; /* Adjusted position */
+  left: -28px; /* Adjusted position */
+  transform: rotate(-35deg);
+  
+}
+
+.arm-top-right {
+  top: -88px; /* Adjusted position */
+  right: -28px; /* Adjusted position */
+  transform: rotate(35deg);
+}
+
+.arm-bottom-left {
+  bottom: -96px; /* Adjusted position */
+  left: -40px; /* Adjusted position */
+  transform: rotate(35deg);
+}
+
+.arm-bottom-right {
+  bottom: -95px; /* Adjusted position */
+  right: -28px; /* Adjusted position */
+  transform: rotate(-35deg);
+}
+
+.propeller {
+  position: absolute;
+  width: 15px; /* Increased size */
+  height: 100px; /* Increased size */
+  background: linear-gradient(145deg, #555, #777);
+  border-radius: 10px;
+  animation: spin .1s linear infinite;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.propeller-top-left {
+  top: -125px; /* Adjusted position */
+  left: -60px; /* Adjusted position */
+}
+
+.propeller-top-right {
+  top: -125px; /* Adjusted position */
+  right: -60px; /* Adjusted position */
+}
+
+.propeller-bottom-left {
+  bottom: -130px; /* Adjusted position */
+  left: -70px; /* Adjusted position */
+}
+
+.propeller-bottom-right {
+  bottom: -130px; /* Adjusted position */
+  right: -55px; /* Adjusted position */
+}
+.light {
+  position: absolute;
+  width: 15px; /* Increased size */
+  height: 15px; /* Increased size */
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 10px red;
+  animation: changeColor 1s infinite alternate;
+}
+
+@keyframes changeColor {
+  0% {
+    background-color: red;
+    box-shadow: 0 0 10px red;
+  }
+  25% {
+    background-color: blue;
+    box-shadow: 0 0 10px blue;
+  }
+  50% {
+    background-color: green;
+    box-shadow: 0 0 10px green;
+  }
+  75% {
+    background-color: yellow;
+    box-shadow: 0 0 10px yellow;
+  }
+  100% {
+    background-color: purple;
+    box-shadow: 0 0 10px purple;
+  }
+}
+
+.light-top-left {
+  top: -80px; /* Adjusted position */
+  left: -60px; /* Adjusted position */
+}
+
+.light-top-right {
+  top: -80px; /* Adjusted position */
+  right: -60px; /* Adjusted position */
+}
+
+.light-bottom-left {
+  bottom: -90px; /* Adjusted position */
+  left: -70px; /* Adjusted position */
+}
+
+.light-bottom-right {
+  bottom: -86px; /* Adjusted position */
+  right: -55px; /* Adjusted position */
+}
+
+.landing-gear {
+  position: absolute;
+  width: 10px; /* Increased size */
+  height: 60px; /* Increased size */
+  background: linear-gradient(145deg, #555, #777);
+  bottom: -60px; /* Adjusted position */
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.landing-gear-left {
+  left: 40px; /* Adjusted position */
+}
+
+.landing-gear-right {
+  right: 40px; /* Adjusted position */
+}
+
+.antenna {
+  position: absolute;
+  width: 7px; /* Increased size */
+  height: 40px; /* Increased size */
+  background-color: #525252;
+  border-radius: 2px;
+}
+
+.antenna-left {
+  top: -40px; /* Adjusted position */
+  left: 30px; /* Adjusted position */
+}
+
+.antenna-right {
+  top: -40px; /* Adjusted position */
+  right: 30px; /* Adjusted position */
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.camera {
+  position: absolute;
+  width: 30px; /* Increased size */
+  height: 30px; /* Increased size */
+  background: radial-gradient(circle, #000 60%, #333 100%); /* Lens effect */
+  border-radius: 50%;
+  bottom: -2px; /* Adjusted position */
+  box-shadow: 0 0 10px rgb(255, 253, 253);
+  animation: growShadow .1s infinite alternate, rotateCamera 5s linear infinite; /* Added rotation animation */
+}
+
+@keyframes growShadow {
+  0% {
+    box-shadow: 0 0 10px rgb(255, 253, 253);
+  }
+  100% {
+    box-shadow: 0 0 30px rgb(255, 253, 253); /* Increased shadow size */
+  }
+}
+
+@keyframes rotateCamera {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.camera-light {
+  position: absolute;
+  width: 5px; /* Adjusted size */
+  height: 5px; /* Adjusted size */
+  background-color: red;
+  border-radius: 50%;
+  top: 5px; /* Adjusted position */
+  right: 5px; /* Adjusted position */
+  box-shadow: 0 0 5px red;
+  animation: blinkLight 1s infinite alternate; /* Blinking light animation */
+}
+
+@keyframes blinkLight {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+
+.sensor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(145deg, #555, #777);
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sensor-front {
+  top: 312px;
+  left: 50%;
+  transform: translateX(-50%);
+ width: 10px;
+  height: 10px; 
+  background: rgb(5, 5, 5);
+  z-index: 1000;
+}
+
+.sensor-back {
+  bottom: 3px;
+  
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  
+  
+}
+
+
+.rope {
+  position: absolute;
+  width: 5px;
+  height: 200px;
+  background: linear-gradient(135deg, #a67b5b 25%, #8b5e3c 25%, #8b5e3c 50%, #a67b5b 50%, #a67b5b 75%, #8b5e3c 75%, #8b5e3c);
+  background-size: 10px 10px;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: top;
+  animation: sway 10s infinite ease-in-out;
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-50%) rotate(8deg);
+  }
+  40% {
+    transform: translateX(-50%) rotate(-8deg);
+  }
+  60% {
+    transform: translateX(-50%) rotate(6deg);
+  }
+  80% {
+    transform: translateX(-50%) rotate(-6deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+
+.link-container {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -80px; /* Adjust to align with the bottom of the rope */
+  left: 50%;
+
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  bottom: -250px;
+  border: 5px solid; /* Add border */
+   transform: translateX(-50%);
+
+}
+.link-container {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -250px; /* Adjust to align with the bottom of the rope */
+  left: 50%;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: 5px solid transparent; /* Transparent border to show the background */
+  background: linear-gradient(rgb(0, 0, 0), rgb(71, 71, 71)) padding-box, 
+              linear-gradient(to right, red, green, blue, yellow, red, green, blue, yellow) border-box;
+  background-size: 200% 100%;
+  animation: lights 2s linear infinite;
+  transform: translateX(-50%);
+}
+
+@keyframes lights {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}

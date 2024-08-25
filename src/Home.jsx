@@ -4,7 +4,7 @@ import Logo from "./Components/home/Logo";
 import Mid from "./Components/home/Mid";
 import Team from "./Components/home/Team";
 import Testimonial from "./Components/home/Testimonial";
-import './app.css'; // Import the CSS file for animations
+import './app.css';
 import Cards from './Components/Cards';
 
 
@@ -37,7 +37,11 @@ const Home = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div style={{ color: 'white'}}>
+=======
+    <div  style={{ color: 'white' }}>
+>>>>>>> dd476b203d2aa108f8422defae0ee891350e3cdd
       <div ref={(el) => (sectionsRef.current[0] = el)} className="section">
         <Hero />
       </div>
@@ -50,11 +54,11 @@ const Home = () => {
       <div ref={(el) => (sectionsRef.current[3] = el)} className="section">
         <Logo />
       </div>
-      <div ref={(el) => (sectionsRef.current[4] = el)} className="section">
-        <Testimonial />
-      </div>
-       <div ref={(el) => (sectionsRef.current[5] = el)} className="section">
+       <div ref={(el) => (sectionsRef.current[4] = el)} className="section">
         <Cards />
+      </div>
+      <div ref={(el) => (sectionsRef.current[5] = el)} className="section">
+        <Testimonial />
       </div>
       
     </div>
