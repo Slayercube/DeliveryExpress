@@ -9,9 +9,6 @@ import Footer from './Components/Footer.jsx'
 import Home from './Home.jsx'
 import Bus from './Components/vehicles/Bus';
 import Body from './Components/Body.jsx'
-import Register from './back-end/view/auth/Register.jsx'
-import Profile from './back-end/view/auth/Profile.jsx'
-import Login from './back-end/view/auth/Login.jsx'
 
 
 
