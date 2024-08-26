@@ -13,7 +13,14 @@ const Itemspecs = () => {
   const [error, setError] = useState(null)
   const { user } = useContext(myContext)
 
-  const handleBookClick = async () => { // Make the function async
+  const handleBookClick = async () => { 
+    const userId = event.target.dataset.userId; 
+
+    if (!userId) {
+      console.error('User ID is null or undefined');
+      return;
+    }
+
     if (!itemType) {
       setError('Please select an item type.');
       return;
