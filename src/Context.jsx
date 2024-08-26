@@ -17,9 +17,6 @@ function ContextProvider({ children }) {
   const [pickupTime, setPickupTime] = useState('');
   const [deliveryDate, setDeliveryDate] = useState('');
   const [deliveryTime, setDeliveryTime] = useState('');
-  const [showMap, setShowMap] = useState(false)
-  const [showDrone, setShowDrone] = useState(false)
-
 
 
 
@@ -46,8 +43,6 @@ function ContextProvider({ children }) {
             const address = await reverseGeocode(lat, lng);
             if (address) {
               setPickAddress(address);
-              setShowMap(true)
-              
             }
           });
         } else {
@@ -66,7 +61,6 @@ function ContextProvider({ children }) {
             const address = await reverseGeocode(lat, lng);
             if (address) {
               setDeliverAddress(address);
-              setShowMap(true)
             }
           });
         } else {
@@ -75,34 +69,8 @@ function ContextProvider({ children }) {
       };
     
 
-      // this is used to calculate the estimated price
-      
-  const calculateEstimatedPrice = (distance, vehicle) => {
-    if (!distance || !vehicle) return null;
-
-    let pricePerKm;
-    switch (vehicle) {
-      case 'van':
-        pricePerKm = 2.0;
-        break;
-      case 'car':
-        pricePerKm = 1.5;
-        break;
-      case 'bike':
-        pricePerKm = 1.0;
-        break;
-      case 'truck':
-        pricePerKm = 2.5;
-        break;
-      default:
-        pricePerKm = 1.0;
-    }
-
-    return distance * pricePerKm;
-  };
 
 
-      const estimatedPrice = calculateEstimatedPrice(distance, vehicle);
    
    
    
@@ -134,11 +102,6 @@ function ContextProvider({ children }) {
         setDeliveryDate,
         deliveryTime,
         setDeliveryTime,
-        showMap,
-        setShowMap,
-        estimatedPrice,
-        showDrone,
-        setShowDrone
     };
 
     return (

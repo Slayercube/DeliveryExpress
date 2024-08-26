@@ -1,26 +1,14 @@
 
-
 import { useNavigate } from 'react-router-dom'
 import styles from './home.module.css'
 import mapImage from './map.png'
 const Hero = () => {
-<<<<<<< HEAD
   let navigate = useNavigate()
 
   function handleClick() {
     navigate('/app')
   }
 
-=======
- const navigate = useNavigate()
-
- function handleClick() {
-  navigate('/app')
- }
-
- 
-  
->>>>>>> dd476b203d2aa108f8422defae0ee891350e3cdd
   return (
     <div id={styles.headerhero}>
       <header>

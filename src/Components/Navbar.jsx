@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../app.css'
-import logo from '../Images/DELIVERY (4).png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,11 +15,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/" className="text-2xl font-bold text-white glow-hover"><img
-                  src={logo}
-                  alt="Delivery Express Logo"
-                  className="h-8 w-auto"
-                /></Link>
+              <Link to="/" className="text-2xl font-bold text-white glow-hover">Delivery Express</Link>
             </div>
             <div className="hidden md:ml-6 md:flex md:space-x-8">
               <Link to="/" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">

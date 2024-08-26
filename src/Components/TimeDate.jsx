@@ -1,64 +1,59 @@
-import { useContext } from "react";
-import { myContext } from "../Context";
-import '../app.css';
+import { useContext } from 'react';
+import { myContext } from '../Context';
 
 const TimeDate = () => {
   const {
     pickupDate, setPickupDate,
     pickupTime, setPickupTime,
     deliveryDate, setDeliveryDate,
-    deliveryTime, setDeliveryTime,
+    deliveryTime, setDeliveryTime
   } = useContext(myContext);
 
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <div style={{color : 'white'}}>
-      <div className="mb-4 flex space-x-4">
-        <div>
-          <label className="block text-gray-400 custom label" >Pickup Date</label>
-          <input
-            type="date"
-            value={pickupDate}
-            onChange={(e) => setPickupDate(e.target.value)}
-            className="p-2 border border-white rounded bg-gray-700 text-gray-200"
+    <div>
+      <div className="mb-4">
+        <label className="block text-gray-700">Pickup Date</label>
+        <input
+          type="date"
+          value={pickupDate}
+          onChange={(e) => setPickupDate(e.target.value)}
+          className="w-1/4 p-2 border border-gray-300 rounded"
             min={today}
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-gray-400">Pickup Time</label>
-          <input
-            type="time"
-            value={pickupTime}
-            onChange={(e) => setPickupTime(e.target.value)}
-            className="w-40 p-2 border border-gray-600 rounded bg-gray-700 text-gray-200"
-            required
-          />
-        </div>
+          required
+        />
       </div>
-      <div className="mb-4 flex space-x-4">
-        <div>
-          <label className="block text-gray-400">Delivery Date</label>
-          <input
-            type="date"
-            value={deliveryDate}
-            onChange={(e) => setDeliveryDate(e.target.value)}
-            className="p-2 border border-gray-600 rounded bg-gray-700 text-gray-200"
-            min={today}
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-gray-400">Delivery Time</label>
-          <input
-            type="time"
-            value={deliveryTime}
-            onChange={(e) => setDeliveryTime(e.target.value)}
-            className="w-40 p-2 border border-gray-600 rounded bg-gray-700 text-gray-200"
-            required
-          />
-        </div>
+      <div className="mb-4">
+        <label className="block text-gray-700">Pickup Time</label>
+        <input
+          type="time"
+          value={pickupTime}
+          onChange={(e) => setPickupTime(e.target.value)}
+          className="w-1/4 p-2 border border-gray-300 rounded"
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700">Delivery Date</label>
+        <input
+          type="date"
+          value={deliveryDate}
+          onChange={(e) => setDeliveryDate(e.target.value)}
+          className="w-1/4 p-2 border border-gray-300 rounded"
+          min={today}
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700">Delivery Time</label>
+        <input
+          type="time"
+          value={deliveryTime}
+          onChange={(e) => setDeliveryTime(e.target.value)}
+          className="w-1/4 p-2 border border-gray-300 rounded"
+          required
+        />
       </div>
     </div>
   );
