@@ -4,7 +4,7 @@ import Logo from "./Components/home/Logo";
 import Mid from "./Components/home/Mid";
 import Team from "./Components/home/Team";
 import Testimonial from "./Components/home/Testimonial";
-import './app.css'; // Import the CSS file for animations
+import "../src/App.css"; // Import the CSS file for animations
 import Cards from './Components/Cards';
 
 
