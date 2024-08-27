@@ -63,13 +63,14 @@ const Navbar = () => {
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0">
-              <Link to="/" className="text-white text-lg font-bold">Brand</Link>
+          
+            <div className="flex-shrink-0 flex">
+              <Link to="/" className="text-white text-lg font-bold">Delivery Express</Link>
             </div>
-            <div className="hidden sm:block sm:ml-6">
+            <div className="hidden sm:block sm:ml-6 ">
               <div className="flex space-x-4">
                 <Link to="/about" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">
-                  <span className="text-white">About</span>
+                  <span className="text-white mx-5">About</span>
                 </Link>
                 <Link to="/services" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">
                   <span className="text-white">Services</span>

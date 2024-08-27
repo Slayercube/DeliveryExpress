@@ -21,8 +21,7 @@ const Footer = () => {
                    <strong>  Delivery express</strong>
                 </a>
                 <p className="text-gray-500">
-                  Phasellus a nulla in neque lacinia posuere. Etiam auctor
-                  facilisis augue vel gravida.
+                  Just like the name, we Deliver on express, say no to standard.
                 </p>
               </div>
               <div className="mt-12 grid w-full max-w-52 grid-flow-col grid-cols-4 gap-3 mb-8 md:mb-0">
@@ -197,6 +196,10 @@ const Footer = () => {
             </a>
           </div>
         </div>
+
+        <div className="text-center text-decoration-underline text-danger"><a href="#">Back to the Top</a></div>
+
+        
         {/* Divider */}
         <div className="mb-14 mt-16 w-full border-b border-white"></div>
         <div className="flex justify-between md:flex-row flex-col gap-8 md:gap-0">

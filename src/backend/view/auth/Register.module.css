@@ -1,0 +1,224 @@
+.main_frame {
+    width: 100%;
+    max-width: 600px;
+    /* Set a maximum width for large screens */
+    margin: auto;
+    text-align: center;
+}
+
+#signup {
+    background: rgba(254, 254, 254, 0.1);
+    width: 95%;
+    /* Reduce the width for smaller screens */
+    max-width: 500px;
+    /* Set a maximum width */
+    padding: 30px 20px;
+    /* Adjust padding */
+    color: #fff;
+    border: 3px solid rgba(254, 254, 254, 0.7);
+    border-radius: 80px 80px 80px 80px;
+    /* Reduced border radius */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    background: url(https://pics.craiyon.com/2023-10-30/1f7bbe4feae4429d9aa47c57e63f001b.webp) no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    padding-bottom: 70px;
+    /* Adjust padding */
+    transition: 0.2s ease-in-out;
+    margin-top: 50px;
+}
+
+
+
+#form {
+    position: relative;
+    width: 100%;
+}
+
+
+
+.h1 {
+    font-size: 5em;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 1px 3px 13px rgb(247, 0, 255);
+
+}
+.userNameBox,
+.inputbox1,
+.inputbox2,
+.inputbox3,
+.inputbox4,
+/* .inputbox5, */
+.phoneBox {
+    position: relative;
+}
+
+.username,
+.firstname,
+.lastname,
+.email,
+.password,
+/* .input5, */
+.phone {
+    color: #000000;
+    width: 85%;
+    height: 70px;
+    outline: none;
+    font-size: 1.3em;
+    border: 3px solid rgba(254, 254, 254, 0.6);
+    border-radius: 50px;
+    background: transparent;
+    display: inline;
+    margin: 10px 0;
+    padding-right: 80px;
+    transition: 0.1s ease-in;
+}
+
+.username,
+.firstname,
+.lastname,
+.email,
+.password,
+/* .input5, */
+.phone {
+    border: 3px solid;
+    background: rgba(255, 255, 255, 0.688);
+}
+
+
+.phone[type="number"]::-webkit-outer-spin-button,
+.phone[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.username::placeholder {
+    color: #000000;
+}
+
+.firstname::placeholder {
+    color: #000000;
+}
+
+.lastname::placeholder {
+    color: #000000;
+}
+
+.email::placeholder {
+    color: #000000;
+}
+
+.password::placeholder {
+    color: #000000;
+}
+
+/* .input5::placeholder {
+    color: #000000;
+} */
+
+.phone::placeholder {
+    color: #000000;
+}
+
+
+.btn {
+    color: #ffffff;
+    font-size: 1.8em;
+    border: 3px solid rgb(135, 123, 58);
+    margin-top: 50px;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s ease-in-out;
+    width: 60%;
+    height: 2em;
+    border-radius: 30px;
+}
+
+.btn:hover {
+    color: #000000;
+    background: #7075fa;
+}
+
+
+.uil1 {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+    color: black;
+
+}
+
+.emaillogo {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+    color: black;
+
+}
+
+
+
+.phonelogo {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+    color: black;
+
+}
+
+
+
+.uil2{
+    position: absolute;
+    bottom: 50px;
+    right: 70px;
+    transform: translateY(115%);
+    font-size: 1.8em;
+    color: black;
+
+}
+
+
+
+.googlesignup:hover,
+.facebooksignup:hover {
+    color: rgb(156, 147, 147);
+}
+
+.facebooksignup,
+.googlesignup {
+    border-radius: 50px;
+    border: 2px solid white;
+    width: 85%;
+    margin: auto;
+}
+
+
+
+.login {
+    text-decoration: underline;
+    color: rgb(205, 205, 26);
+}
+
+.login:hover {
+    color: gold;
+}
+
+
+.policy {
+    color: rgb(205, 205, 26);
+}
+
+.policy:hover {
+    color: gold;
+}

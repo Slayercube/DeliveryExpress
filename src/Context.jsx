@@ -27,8 +27,8 @@ function ContextProvider({ children }) {
     username: '',
     firstname: '',
     lastname: '',
-    email: '',
     phone: '',
+    email: '',
     password: ''
   });
 
