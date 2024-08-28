@@ -371,6 +371,9 @@
   transform-origin: top;
   animation: sway 10s infinite ease-in-out;
 }
+.rope:hover {
+  animation-play-state: paused;
+}
 
 @keyframes sway {
   0% {
@@ -393,19 +396,8 @@
   }
 }
 
-.link-container {
-  position: absolute; /* Change to absolute positioning */
-  bottom: -80px; /* Adjust to align with the bottom of the rope */
-  left: 50%;
 
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  bottom: -250px;
-  border: 5px solid; /* Add border */
-   transform: translateX(-50%);
 
-}
 .link-container {
   position: absolute; /* Change to absolute positioning */
   bottom: -250px; /* Adjust to align with the bottom of the rope */

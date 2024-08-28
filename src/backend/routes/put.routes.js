@@ -1,22 +1,28 @@
-// routes.js or user.routes.js
-import express from 'express'
-import { updateUser } from '../controllers/user.controller'
-import authenticateToken from '../../backend/middleware/authenticateate
+const pool = require('../db/pool');
+const express = require('express');
+const authenticate = require('../middleware/authenticate');
 
-router.put('/update/:id', authenticateToken, updateUser)
+const router = express.Router();
 
-const updateUser = async (req, res) => {
-  const { id } = req.params
-  const { userName, email } = req.body
-  // Update user in the database
+router.put('/update/:id', authenticate, (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate(
-      id,
-      { userName, email },
-      { new: true },
-    )
-    res.json(user)
+    const { id } = req.params;
+    const { userName, firstName, lastName, email, phone } = req.body;
+
+    pool.query(
+      'UPDATE customers SET userName = ?, firstName = ?, lastName = ?, email = ?, phone = ? WHERE id = ?',
+      [userName, firstName, lastName, email, phone, id],
+      (error, results) => {
+        if (error) {
+          throw error;
+        }
+        res.status(200).send(`User modified with ID: ${id}`);
+      }
+    );
   } catch (error) {
-    res.status(500).json({ error: 'Error updating user' })
+    console.log(error);
+    res.status(500).send('Internal Server Error');
   }
-}
+});
+
+module.exports = router;

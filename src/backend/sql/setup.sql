@@ -37,3 +37,20 @@ create table product (
     updated_at timestamptz not null default now(),
    
 );
+
+CREATE TABLE Customers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+  -- Add other customer fields as necessary
+);
+
+CREATE TABLE Products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  length FLOAT NOT NULL,
+  width FLOAT NOT NULL,
+  height FLOAT NOT NULL,
+  weight FLOAT NOT NULL,
+  typeofItem VARCHAR(255) NOT NULL,
+  customerId INT,
+  FOREIGN KEY (customerId) REFERENCES Customers(id)
+);

@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const Itemspecs = () => {
   const { setVehicle , setShowDrone } = useContext(myContext)
-  const [itemType, setItemType] = useState('')
+  const [typeofItem, setTypeofItem] = useState('')
   const [length, setLength] = useState('')
   const [width, setWidth] = useState('')
   const [height, setHeight] = useState('')
@@ -14,14 +14,9 @@ const Itemspecs = () => {
   const { user } = useContext(myContext)
 
   const handleBookClick = async () => { 
-    const userId = event.target.dataset.userId; 
+ 
 
-    if (!userId) {
-      console.error('User ID is null or undefined');
-      return;
-    }
-
-    if (!itemType) {
+    if (!typeofItem) {
       setError('Please select an item type.');
       return;
     }
@@ -30,11 +25,11 @@ const Itemspecs = () => {
       return;
     }
     const itemData = {
-      itemType,
-      length,
-      width,
-      height,
-      weight,
+      typeofItem : typeofItem,
+      length : length,
+      width : width,
+      height : height,
+      weight : weight,
       userId: user.id, // Assuming user object has an id property
     };
     // Call the API to save the item details
@@ -50,7 +45,7 @@ const Itemspecs = () => {
  
 
     setError('');
-    console.log('Booking details:', { itemType, length, width, height, weight });
+    console.log('Booking details:', { typeofItem, length, width, height, weight });
     if (!error) {
       handleSubmitClick();
       setError(null);
@@ -82,8 +77,8 @@ const Itemspecs = () => {
       {error && <div className="mb-4 text-red-500">{error}</div>}
       <select
         className="mb-4 w-full rounded bg-gray-700 p-2 text-white"
-        value={itemType}
-        onChange={(e) => setItemType(e.target.value)}
+        value={typeofItem}
+        onChange={(e) => setTypeofItem(e.target.value)}
       >
         <option value="">Select item</option>
         <option value="Documents">Documents</option>

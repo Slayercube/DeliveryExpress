@@ -23,6 +23,7 @@ function ContextProvider({ children }) {
 
 // backend
   const [user, setUser] = useState(null);
+  //used in register form
   const [values, setValues] = useState({
     username: '',
     firstname: '',
@@ -31,6 +32,16 @@ function ContextProvider({ children }) {
     phone: '',
     password: ''
   });
+  //used in profile.jsx to update user info
+  const [formData, setFormData] = useState({
+    userName: '',
+    email: '',
+    firstName: '',
+    lastName: '',
+    phone: ''
+  });
+  const [isEditing, setIsEditing] = useState(false);
+
 
 
 
@@ -130,6 +141,38 @@ function ContextProvider({ children }) {
     }
   };
    
+  // used to delete customer account
+  const handleDeleteAccount = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const response = await axios.delete(`http://localhost:3002/user/delete/${user.id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      console.log('User deleted successfully:', response.data);
+    } catch (error) {
+      console.error('Error deleting account:', error);
+    }
+  };
+
+ // update customer account information
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) throw new Error('No token found');
+      
+      const response = await axios.put(`http://localhost:3002/update/update/${user.id}`, formData, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setUser(response.data);
+      setIsEditing(false);
+      console.log('User updated successfully:', response.data);
+      window.location.reload();
+    } catch (error) {
+      console.error('Error updating account:', error);
+    }
+  };
+  
    
    
    
@@ -169,7 +212,13 @@ function ContextProvider({ children }) {
         setUser,
         values,
         setValues,
-        getUserInfoFromToken
+        getUserInfoFromToken,
+        handleDeleteAccount,
+        handleSubmit,
+        formData,
+        setFormData,
+        isEditing,
+        setIsEditing
     };
 
     return (
