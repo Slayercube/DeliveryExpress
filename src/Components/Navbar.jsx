@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { myContext } from '../Context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,6 +14,7 @@ const Navbar = () => {
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+    console.log(dropdownOpen)
   };
 
   useEffect(() => {
@@ -63,23 +65,32 @@ const Navbar = () => {
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          
+
+            <div className="navbarImage me-3">
+              <Link to="/">
+              <img src='https://res.cloudinary.com/dzfrjt8bq/image/upload/v1724851783/delivery_Express_navbar_logo_black_bg_mkwdga.png'
+                alt='logo of a spped vehicle'
+                className='h-14 '/>
+              </Link>
+              
+            </div>
+
             <div className="flex-shrink-0 flex">
-              <Link to="/" className="text-white text-lg font-bold">Delivery Express</Link>
+              <Link to="/" className={`text-white header my-2 text-lg font-bold ${styles.header}`}>Delivery Express</Link>
             </div>
             <div className="hidden sm:block sm:ml-6 ">
               <div className="flex space-x-4">
-                <Link to="/about" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">
+                <Link to="/about" className="relative px-3 py-3 rounded-md text-sm font-medium glow-hover">
                   <span className="text-white mx-5">About</span>
                 </Link>
-                <Link to="/services" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">
+                <Link to="/services" className="relative px-3 py-3 rounded-md text-sm font-medium glow-hover">
                   <span className="text-white">Services</span>
                 </Link>
               </div>
             </div>
           </div>
-          <div className="hidden md:flex md:items-center md:space-x-4">
-          {isLoggedIn ? (
+          <div className=" md:flex md:items-center md:space-x-4">
+            {isLoggedIn ? (
               <div className="relative">
                 <button
                   onClick={toggleDropdown}
@@ -117,8 +128,8 @@ const Navbar = () => {
                 <Link to="/login" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">
                   <span className="text-white">Login</span>
                 </Link>
-                <Link to="/register" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">
-                  <span className="btn btn-primary text-white">Sign up</span>
+                <Link to="/register" className=" px-3 py-2 text-sm font-medium">
+                  <span className={`btn text-white rounded-5 ${styles.navSignupButton}`}>Sign up</span>
                 </Link>
               </>
             )}
