@@ -80,11 +80,11 @@ const Register = () => {
 
               {/* username */}
               <input
-              autoComplete="on"
+                autoComplete="on"
                 onChange={e => setValues({ ...values, username: e.target.value })}
                 type="text"
                 id="username"
-                className={`m-auto username block h-9 w-full rounded-md px-4 py-6 text-sm username form-control ${styles.username}`}
+                className={`m-auto username form-control block h-9 w-full rounded-md px-4 py-6 text-sm username form-control ${styles.username}`}
                 placeholder="Username"
                 required
               />
@@ -103,11 +103,11 @@ const Register = () => {
 
               {/* firstname */}
               <input
-              autoComplete="on"
+                autoComplete="on"
                 onChange={e => setValues({ ...values, firstname: e.target.value })}
                 type="text"
                 id="firstname"
-                className={`m-auto firstname block h-9 w-full rounded-md px-4 py-6 text-sm firstname form-control ${styles.firstname}`}
+                className={`m-auto firstname form-control block h-9 w-full rounded-md px-4 py-6 text-sm firstname form-control ${styles.firstname}`}
                 placeholder="First Name"
                 required
               />
@@ -127,11 +127,11 @@ const Register = () => {
 
               {/* lastname*/}
               <input
-              autoComplete="on"
+                autoComplete="on"
                 onChange={e => setValues({ ...values, lastname: e.target.value })}
                 type="text"
                 id="lastname"
-                className={`m-auto input4 block h-9 w-full rounded-md px-4 py-6 text-sm 2 form-control ${styles.lastname}`}
+                className={`m-auto input4 form-control block h-9 w-full rounded-md px-4 py-6 text-sm 2 form-control ${styles.lastname}`}
                 placeholder="Last Name"
                 required
               />
@@ -151,11 +151,11 @@ const Register = () => {
 
               {/* phone*/}
               <input
-              autoComplete="on"
+                autoComplete="on"
                 onChange={e => setValues({ ...values, phone: e.target.value })}
                 type="number"
                 id="phone"
-                className={`m-auto input4 block h-9 w-full rounded-md px-4 py-6 text-sm 2 form-control ${styles.phone}`}
+                className={`m-auto input4 form-control block h-9 w-full rounded-md px-4 py-6 text-sm 2 form-control ${styles.phone}`}
                 placeholder="Phone"
                 required
               />
@@ -175,11 +175,11 @@ const Register = () => {
 
               {/* email*/}
               <input
-              autoComplete="on"
+                autoComplete="on"
                 onChange={e => setValues({ ...values, email: e.target.value })}
                 type="email"
                 id="email"
-                className={`m-auto email block h-9 w-full rounded-md px-4 py-6 text-sm form-control ${styles.email}`}
+                className={`m-auto email form-control block h-9 w-full rounded-md px-4 py-6 text-sm form-control ${styles.email}`}
                 placeholder="Email Address"
                 required
               />
@@ -196,7 +196,7 @@ const Register = () => {
 
               {/*password */}
               <input
-              autoComplete="on"
+                autoComplete="on"
                 onChange={e => setValues({ ...values, password: e.target.value })}
                 type={passwordVisible ? "text" : "password"}  // This toggles the type between 'text' and 'password'
                 className={`m-auto password form-control block h-9 w-full rounded-md px-4 ${styles.password}`}

@@ -21,16 +21,16 @@ const Hero = () => {
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-20">
           
           {/* Title */}
-          <h1 className="mb-6 max-w-3xl text-4xl font-bold md:mb-10 md:text-6xl lg:mb-12">
-            Welcome to the Fastest Delivery Service
+          <h1 className="mb-6 mt-6  italic text-4xl font-bold md:mb-10 md:text-6xl lg:mb-12">
+            Welcome to the Fastest Delivery Service !
           </h1>
           {/* Buttons */}
           <div className="flex items-stretch">
             <a
               href="#" onClick={handleClick}
-              className="mr-6 rounded-5  bg-primary px-20 py-4 text-center font-bold text-white lg:mr-8"
+              className={`mr-6 rounded-5 px-20 italic py-4 text-center font-bold lg:mr-8 ${styles.startButton} `}
             >
-              Start
+              Click to send
             </a>
            
           </div>

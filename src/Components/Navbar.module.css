@@ -222,6 +222,24 @@ a:hovered{
     text-decoration: none;
 }
 
+
+
+.header {
+    font-size: 2em;
+    font-style: oblique;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navSignupButton {
+    background: linear-gradient(to left, black 10%, rgb(88, 88, 160));
+
+}
+
+
+.navSignupButton:hover {
+    background: linear-gradient(to right, black 10%, rgb(88, 88, 160));
+}
+
 /* ------------------------------------------------------------------------------- ANIMATIONS ---------------------------------------------------------------------------------------- */
 
 @keyframes fadeOut {
@@ -241,4 +259,3 @@ a:hovered{
       background-color: rgb(4, 180, 255);
     }
   }
-
