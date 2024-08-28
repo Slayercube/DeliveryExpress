@@ -12,6 +12,7 @@ import Body from './Components/Body.jsx'
 import Register from './backend/view/auth/Register';
 import Login from './backend/view/auth/Login';
 import Profile from './backend/view/auth/Profile';
+import About from './Components/About.jsx'
 
 
 
@@ -34,6 +35,7 @@ const Routers = () => {
         { <Route path='/body' element={<Body />} /> }
         { <Route path='/login' element={<Login />} /> }
         { <Route path='/profile' element={<Profile />} /> }
+        { <Route path='/about' element={<About />} /> }
       </Routes>
       <Footer />
 

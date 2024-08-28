@@ -20,7 +20,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: .5 }
     );
 
     sectionsRef.current.forEach((section) => {
