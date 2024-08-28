@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { myContext } from '../../../Context'
 import axios from 'axios'
+import styles from './Profile.module.css'
 
 const Profile = () => {
   const {
@@ -46,15 +47,15 @@ const Profile = () => {
   if (!user) return <div className="text-center text-white">Loading...</div>
 
   return (
-    <div className="mb-2 flex min-h-screen items-start justify-center bg-gray-900 pt-10">
-      <div className="profile-card max-w-sm transform rounded-lg bg-gray-800 p-8 shadow-lg transition duration-500 hover:scale-105 hover:shadow-2xl">
+    <div className="mb-2 flex min-h-screen items-center justify-center bg-dark-900">
+      <div className={`profileCard bg-gray-800 p-8 shadow-lg transition duration-500 hover:scale-105 ${styles.editContainer} ${styles.profileCard}`}>
         {isEditing ? (
           <form onSubmit={handleSubmit}>
-            <div className="mb-4 flex items-center">
+            <div className="mb-4  flex justify-center ms-10 items-center">
               <img
                 className="mr-4 h-16 w-16 rounded-full"
                 src="https://via.placeholder.com/150"
-                alt="Profile"
+                alt="Profile-Image"
               />
               <div>
                 <input
@@ -62,56 +63,63 @@ const Profile = () => {
                   name="userName"
                   value={formData.userName}
                   onChange={handleChange}
-                  className="rounded bg-gray-700 p-2 text-3xl font-bold text-white"
+                  className="rounded ms-2  h-10 p-2 bg-secondary text-light"
                 />
+                
+            </div>
+              </div>
+            <div className="text-lg text-gray-300">
+
+            <p className='mb-2 ms-1'>
+              <strong className={`emailEdit ${styles.emailEdit}`}>Email :</strong>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="rounded bg-gray-700 p-2 text-lg text-gray-400"
+                  className="rounded bg-secondary text-light ms-5 p-2"
                 />
-              </div>
-            </div>
-            <div className="text-lg text-gray-300">
+                </p>
+
+
               <p className="mb-2">
-                <strong>First Name:</strong>
+                <strong className={`firstNameEdit ${styles.firstNameEdit}`}>First Name :</strong>
                 <input
                   type="text"
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="rounded bg-gray-700 p-2"
+                  className="rounded bg-secondary text-light ms-2 p-2"
                 />
               </p>
               <p className="mb-2">
-                <strong>Last Name:</strong>
+                <strong className={`lastNameEdit ${styles.lastNameEdit}`}>Last Name :</strong>
                 <input
                   type="text"
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="rounded bg-gray-700 p-2"
+                  className="rounded bg-secondary text-light ms-3 p-2"
                 />
               </p>
               <p className="mb-2">
-                <strong>Phone:</strong>
+                <strong className={`phoneEdit ${styles.phoneEdit}`}>Phone :</strong>
                 <input
                   type="text"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="rounded bg-gray-700 p-2"
+                  className="rounded bg-secondary text-light ms-5 p-2"
                 />
               </p>
             </div>
-            <div className="mt-4 flex space-x-4">
-              <button type="submit" className="btn btn-success">
+            <div className="mt-4 flex justify-center space-x-4">
+              <button type="submit" className="ms-3  btn btn-success">
                 Save
               </button>
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="btn btn-danger px-3"
                 onClick={() => setIsEditing(false)}
               >
                 Cancel
@@ -120,7 +128,7 @@ const Profile = () => {
           </form>
         ) : (
           <>
-            <div className="mb-4 flex items-center">
+            <div className="mb-4 flex justify-center items-center">
               <img
                 className="mr-4 h-16 w-16 rounded-full"
                 src="https://via.placeholder.com/150"
@@ -134,17 +142,17 @@ const Profile = () => {
               </div>
             </div>
             <div className="text-lg text-gray-300">
-              <p className="mb-2">
-                <strong>First Name:</strong> {user.firstName}
+              <p className="mb-3">
+                <strong className={`FirstName pe-3 ${styles.firstName}`}>First Name :</strong> {user.firstName}
               </p>
-              <p className="mb-2">
-                <strong>Last Name:</strong> {user.lastName}
+              <p className="mb-3">
+                <strong className={`lastName pe-3 ${styles.lastName}`}>Last Name :</strong> {user.lastName}
               </p>
-              <p className="mb-2">
-                <strong>Phone:</strong> {user.phone}
+              <p className="mb-3">
+                <strong className={`phone ms-4 ps-2 pe-3 ${styles.phone}`}>Phone :</strong> {user.phone}
               </p>
             </div>
-            <div className="mt-4 flex space-x-4">
+            <div className="mt-5 flex justify-center space-x-4">
               <button className="btn btn-warning" onClick={handleUpdateClick}>
                 Edit
               </button>

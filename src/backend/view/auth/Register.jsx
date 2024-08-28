@@ -286,7 +286,7 @@ const Register = () => {
 
 
         <div className="customer mt-2">
-          <p>Already have an account? <a className={`Login ${styles.login}`} href='./Login'>Login</a></p>
+          <p>Already have an account? <a className={`Login ${styles.login}`} role='button' href='./Login'>Login</a></p>
         </div>
 
 

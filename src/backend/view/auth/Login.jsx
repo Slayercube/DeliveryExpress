@@ -216,7 +216,7 @@ const Login = () => {
                     {/* Don't have an account & Sign Up */}
                     <div className={`mt-4 createnew ${styles.createnew}`}>
                         <span>
-                            Don't have an account? <a className='ms-2' href="./Register">Sign Up</a>
+                            Don't have an account? <a className='ms-2' role='button' href="./Register">Sign Up</a>
                         </span>
                     </div>
                 </div>

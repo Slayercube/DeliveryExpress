@@ -103,6 +103,9 @@ div{
 
 }
 
+
+
+
 /* ------------------------------------------------------------------------------- LINKS ---------------------------------------------------------------------------------------- */
 
 
@@ -160,9 +163,9 @@ div{
     animation-duration: 0.5s;
 }
 
-a:hovered{
+/* a:hovered{
     
-}
+} */
 
 .hovered_link_submenu{
     width: 100%;
@@ -223,7 +226,7 @@ a:hovered{
 }
 
 
-
+/* saeeds edit starts */
 .header {
     font-size: 2em;
     font-style: oblique;
@@ -239,6 +242,29 @@ a:hovered{
 .navSignupButton:hover {
     background: linear-gradient(to right, black 10%, rgb(88, 88, 160));
 }
+
+
+.userProfileButton {
+    background: linear-gradient(to left, white 50%, rgb(88, 88, 160));
+    color: black;
+}
+
+.userProfileButton:hover {
+    background: linear-gradient(to right, white 40%, rgb(88, 88, 160));
+    color: black;
+}
+
+.logout {
+    background-color: rgb(87, 51, 51);
+}
+
+
+
+.logout:hover {
+    background-color: red;
+}
+
+/* saeed's edit ends */
 
 /* ------------------------------------------------------------------------------- ANIMATIONS ---------------------------------------------------------------------------------------- */
 

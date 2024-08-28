@@ -58,7 +58,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <button onClick={handleMenuToggle} className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <button onClick={handleMenuToggle} className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              type='button'
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle nagivation">
               <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
@@ -68,55 +74,70 @@ const Navbar = () => {
 
             <div className="navbarImage me-3">
               <Link to="/">
-              <img src='https://res.cloudinary.com/dzfrjt8bq/image/upload/v1724851783/delivery_Express_navbar_logo_black_bg_mkwdga.png'
-                alt='logo of a spped vehicle'
-                className='h-14 '/>
+                <img src='https://res.cloudinary.com/dzfrjt8bq/image/upload/v1724851783/delivery_Express_navbar_logo_black_bg_mkwdga.png'
+                  alt='logo of a spped vehicle'
+                  className='h-14 w-14' />
               </Link>
-              
+
             </div>
 
             <div className="flex-shrink-0 flex">
               <Link to="/" className={`text-white header my-2 text-lg font-bold ${styles.header}`}>Delivery Express</Link>
             </div>
-            <div className="hidden sm:block sm:ml-6 ">
-              <div className="flex space-x-4">
-                <Link to="/about" className="relative px-3 py-3 rounded-md text-sm font-medium glow-hover">
-                  <span className="text-white mx-5">About</span>
-                </Link>
-                <Link to="/services" className="relative px-3 py-3 rounded-md text-sm font-medium glow-hover">
-                  <span className="text-white">Services</span>
-                </Link>
-              </div>
+
+
+
+            <div className=''>
+              {/* about and services dropdown */}
+              <button className="hidden sm:block sm:ml-6">
+                <div className="flex space-x-4">
+                  <Link to="/about" className="relative px-3 py-3 rounded-md text-sm font-medium glow-hover">
+                    <span className="text-white mx-5">About</span>
+                  </Link>
+                  <Link to="/services" className="relative px-3 py-3 rounded-md text-sm font-medium glow-hover">
+                    <span className="text-white">Services</span>
+                  </Link>
+                </div>
+              </button>
             </div>
+
+
+
           </div>
           <div className=" md:flex md:items-center md:space-x-4">
             {isLoggedIn ? (
               <div className="relative">
+
+
+                {/* userName when logged in starts*/}
                 <button
                   onClick={toggleDropdown}
-                  className="relative px-3 py-2 rounded-md text-sm font-medium text-white bg-secondary hover:bg-secondary-dark transition duration-300 ease-in-out transform hover:scale-105 flex items-center"
+                  className={`relative px-3 py-2 rounded-5 text-sm font-medium  transition duration-300 ease-in-out transform  flex items-center ${styles.userProfileButton}`}
                 >
                   {userInfo.userName}
                   <FontAwesomeIcon icon={faChevronDown} className="ml-3" />
                 </button>
+                {/* userName when logged in ends*/}
+
+
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-20 animate-fade-in-down">
+                  <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-bottom-5 shadow-lg  z-20 animate-fade-in-down">
                     <button
                       onClick={handleProfile}
-                      className="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left"
+                      className="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full"
                     >
                       Account
                     </button>
-                    <button className="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">
+                    <button className="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full">
                       Support
                     </button>
-                    <button className="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">
+                    <button className="block  px-4 py-2 text-sm text-white hover:bg-gray-700 w-full">
                       Active Item
                     </button>
                     <div className="border-t border-gray-100"></div>
                     <button
                       onClick={handleLogout}
-                      className="block px-4 py-2 text-sm text-red-500 hover:bg-gray-700 w-full text-left"
+                      className={`block px-4 py-2 text-sm text-white rounded-bottom-5 w-full ${styles.logout}`}
                     >
                       Logout
                     </button>
@@ -125,10 +146,10 @@ const Navbar = () => {
               </div>
             ) : (
               <>
-                <Link to="/login" className="relative px-3 py-2 rounded-md text-sm font-medium glow-hover">
+                <Link to="/login" className="relative px-3 py-2 rounded-5 font-medium">
                   <span className="text-white">Login</span>
                 </Link>
-                <Link to="/register" className=" px-3 py-2 text-sm font-medium">
+                <Link to="/register" className=" px-3 py-2 font-medium">
                   <span className={`btn text-white rounded-5 ${styles.navSignupButton}`}>Sign up</span>
                 </Link>
               </>

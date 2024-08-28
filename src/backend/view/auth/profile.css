@@ -1,7 +1,0 @@
-.profile-card {
-    perspective: 1000px;
-  }
-  
-  .profile-card:hover {
-    transform: rotateY(10deg) rotateX(10deg);
-  }
