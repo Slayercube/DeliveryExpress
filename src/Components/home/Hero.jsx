@@ -19,6 +19,7 @@ const Hero = () => {
       <div className={styles.img} >
         {/* Container */}
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-20">
+          
           {/* Title */}
           <h1 className="mb-6 max-w-3xl text-4xl font-bold md:mb-10 md:text-6xl lg:mb-12">
             Welcome to the Fastest Delivery Service
@@ -27,9 +28,9 @@ const Hero = () => {
           <div className="flex items-stretch">
             <a
               href="#" onClick={handleClick}
-              className="mr-6 rounded-md bg-primary px-20 py-4 text-center font-bold text-white lg:mr-8"
+              className="mr-6 rounded-5  bg-primary px-20 py-4 text-center font-bold text-white lg:mr-8"
             >
-              CLick to Send
+              Start
             </a>
            
           </div>
@@ -55,11 +56,7 @@ const Hero = () => {
             {/* Divider */}
             <div className="my-6 w-16 border-t border-white"></div>
             <p className="text-sm text-gray-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum
-              lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+              Welcome to best Delivery Service. Was establish in 2015, founded by our Members aka the Developers, <strong style={{color: 'gold'}}>Joao, Deepak and Saeed.</strong> We offer nothing but the top quality services for Delivery of any type of packages from <b style={{color: 'purple'}}>XS to L</b> you name it. Due to your package, we organise the best and safe vehicle for transport. You might be wondering, how will we calculate the price, we got u covered!, If you click the "<strong style={{color: 'purple'}}> Start button above</strong>", it links you to a page where you can enter the weight & size of your packages and aslo set a pickup location and a destination. For <b>new customers</b>, you get <b style={{color: 'gold'}}>70% off</b> plus with a customer card.
             </p>
           </div>
           {/* Image */}

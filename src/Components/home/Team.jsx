@@ -10,7 +10,7 @@ const Team = () => {
           Our Team Members
         </h2>
         <p className="mx-auto mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">
-          Lorem ipsum dolor sit amet elit ut aliquam
+          The Founders of Delivery Express, graduated from 4Geeks Academy with some high skills.
         </p>
         {/* Content */}
         <div className="grid grid-cols-1 justify-items-center gap-5 sm:grid-cols-2 sm:justify-items-stretch md:grid-cols-3 md:gap-4 lg:gap-6">

@@ -27,18 +27,286 @@
 
 .vehicles-container {
     background-color: black;
-    background: linear-gradient(to right, rgb(69, 69, 126),beige);
 }
-.team-container {
-    background-color: rgb(50, 40, 40);
-    background-image: url("https://cdn.pixabay.com/photo/2023/11/05/09/36/ai-generated-8366613_640.jpg");
-     background-blend-mode: multiply;
-     border-radius: 20% 0 20% 0;
-}
-.team-card-img {
-    border-radius: 10% 0 10% 0;
-}
+
+/* card */
 #card{
     margin-top: -50px;
 
+}
+
+#card {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 100px;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
+
+
+
+
+img, #cardtitle, #cardtext {
+    z-index: 10;
+}
+
+
+#cardtitle {
+    text-align: center;
+}
+
+/* Motobike */
+#motobike {
+    border: 10px solid gray;
+    border-radius: 50px 0 50px 0;
+    display: grid;
+     cursor: pointer;
+     position: relative;
+}
+
+#motobike {
+    overflow: hidden;
+}
+
+#motobike::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 180%;
+    background: linear-gradient(to right, gold, blue);
+    transform: rotate(45deg);
+}
+
+#motobike:hover::before {
+    animation: animate2 2s linear infinite;
+}
+
+@keyframes animate2 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#motobike::after {
+    position: absolute;
+    content: '';
+    inset: 5px;
+    background: #000000;
+    border-radius: 50px 0 50px 0;
+}
+
+#motobike {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
+
+
+/* car */
+#car {
+    border: 10px solid gray;
+    border-radius: 50px 0 50px 0;
+    display: grid;
+     cursor: pointer;
+     position: relative;
+}
+
+
+#car {
+    overflow: hidden;
+}
+
+#car::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 180%;
+    background: linear-gradient(to right, gold, blue);
+    transform: rotate(45deg);
+}
+
+#car:hover::before {
+    animation: animate2 2s linear infinite;
+}
+
+@keyframes animate2 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#car::after {
+    position: absolute;
+    content: '';
+    inset: 5px;
+    background: #000000;
+    border-radius: 50px 0 50px 0;
+}
+
+#car {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+/* Mini-Van */
+#minivan {
+    border: 10px solid gray;
+    border-radius: 50px 0 50px 0;
+    display: grid;
+     cursor: pointer;
+     position: relative;
+}
+
+
+#minivan {
+    overflow: hidden;
+}
+
+#minivan::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 180%;
+    background: linear-gradient(to right, gold, blue);
+    transform: rotate(45deg);
+}
+
+#minivan:hover::before {
+    animation: animate2 2s linear infinite;
+}
+
+@keyframes animate2 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#minivan::after {
+    position: absolute;
+    content: '';
+    inset: 5px;
+    background: #000000;
+    border-radius: 50px 0 50px 0;
+}
+
+#minivan {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
+}
+
+
+
+
+
+
+/* Truck */
+#truck {
+    border: 10px solid gray;
+    border-radius: 50px 0 50px 0;
+    display: grid;
+     cursor: pointer;
+     position: relative;
+}
+
+
+#truck {
+    overflow: hidden;
+}
+
+#truck::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 180%;
+    background: linear-gradient(to right, gold, blue);
+    transform: rotate(45deg);
+}
+
+#truck:hover::before {
+    animation: animate2 2s linear infinite;
+}
+
+@keyframes animate2 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#truck::after {
+    position: absolute;
+    content: '';
+    inset: 5px;
+    background: #000000;
+    border-radius: 50px 0 50px 0;
+}
+
+#truck {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {
+        scale: .8; opacity: 0;
+    }
+    to {
+        scale: 1; opacity: 1;
+    }
 }

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { myContext } from "../Context";
-import '../app.css';
+import '../App.css';
 
 const TimeDate = () => {
   const {

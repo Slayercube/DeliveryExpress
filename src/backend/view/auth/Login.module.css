@@ -1,0 +1,189 @@
+
+.main_frame {
+    width: 100%;
+    max-width: 600px; /* Set a maximum width for large screens */
+    margin: auto;
+    text-align: center;
+}
+
+#login {
+    background: rgba(254, 254, 254, 0.1);
+    width: 90%; /* Reduce the width for smaller screens */
+    max-width: 500px; /* Set a maximum width */
+    padding: 30px 20px; /* Adjust padding */
+    color: #fff;
+    border: 3px solid rgba(254, 254, 254, 0.7);
+    border-radius: 80px 0 80px 0; /* Reduced border radius */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    background: url(https://thumbs.dreamstime.com/b/stars-above-snowy-autumn-mountain-ridges-21627356.jpg?w=768) no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    padding-bottom: 70px; /* Adjust padding */
+    padding: 50px 20px; /* Increase padding */
+    padding-bottom: 100px;
+    margin-top: 50px;
+}
+
+
+#form {  
+    position: relative;
+    width: 100%;
+}
+
+.h1 {
+    font-size: 5em;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 1px 3px 13px cyan;
+
+}
+
+.inputbox1,
+.inputbox2 {
+    position: relative;
+}
+
+.email,
+.password {
+    color: #fff;
+    width: 85%;
+    height: 70px;
+    outline: none;
+    font-size: 1.3em;
+    border: 3px solid rgba(254, 254, 254, 0.6);
+    border-radius: 50px;
+    background: transparent;
+    display: inline;
+    margin: 10px 0;
+    padding-right: 80px;
+    transition: 0.1s ease-in;
+}
+
+.email,
+.password {
+    border: 3px solid;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.email::placeholder {
+    color: #fff;
+}
+
+.password::placeholder {
+    color: #fff;
+}
+
+.emaillogo {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+
+}
+
+.uil2 {
+    position: absolute;
+    right: 70px;
+    transform: translateY(115%);
+    font-size: 1.8em;
+
+}
+
+.forgetpw {
+    display: flex;
+    justify-content: space-around;
+}
+
+.forgetpw label input{
+    scale: 1.2;
+    accent-color: gold;
+}
+
+.pw a{
+    color: cyan;
+    text-decoration: none;
+}
+
+.pw a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    color: #fff;
+    font-size: 1.8em;
+    border: 3px solid rgb(135, 123, 58);
+    margin-top: 50px;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s ease-in-out;
+    width: 70%;
+    height: 2em;
+    border-radius: 30px;
+}
+
+.btn:hover {
+    color: #000000;
+    background: #7075fa;
+}
+
+.OR {
+    display: flex;
+}
+
+.createnew {
+ margin-top: 20px;
+ font-size: 1.2em;   
+}
+
+.createnew a {
+    color: cyan;
+    text-decoration: none;
+}
+
+.createnew a:hover {
+    text-decoration: underline;
+}
+
+.socialicons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.facebook, .instagram, .google, .linkedin, .twitter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 1.4rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.facebook {
+    background-color: #306ed9;
+}
+
+.instagram {
+    background: linear-gradient(rgb(243,5,171), rgb(205,95,4), yellow);
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+.google {
+    background-color: #CA3224;
+}
+
+.linkedin {
+    background-color: #0E76AB;
+    border-radius: 15px;
+}
+
+.twitter {
+    background-color: #000;
+    border-radius: 15px;
+}

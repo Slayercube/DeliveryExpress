@@ -28,8 +28,8 @@ function ContextProvider({ children }) {
     username: '',
     firstname: '',
     lastname: '',
-    email: '',
     phone: '',
+    email: '',
     password: ''
   });
   //used in profile.jsx to update user info

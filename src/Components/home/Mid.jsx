@@ -37,7 +37,7 @@ const Mid = () => {
                   24/7 Support
                 </h4>
                 <p style={{ color: 'gray' }}>
-                  Lorem ipsum dolor sit amet conse adipiscing elit.
+                  You are just a Phone call & an E-mail away, 24/7 suport plus AI. 
                 </p>
               </div>
             </div>
@@ -59,7 +59,7 @@ const Mid = () => {
                   Fast Delivery
                 </h4>
                 <p style={{ color: 'gray' }}>
-                  Lorem ipsum dolor sit amet conse adipiscing elit.
+                  We're very accurate, fast delivery we surely stand by.
                 </p>
               </div>
             </div>
@@ -81,7 +81,7 @@ const Mid = () => {
                   Team Work
                 </h2>
                 <p style={{ color: 'gray' }}>
-                  Lorem ipsum dolor sit amet conse adipiscing elit.
+                  Together we're unbreakable, like strands of strings.
                 </p>
               </div>
             </div>
