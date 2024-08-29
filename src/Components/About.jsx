@@ -44,8 +44,7 @@ const About = () => {
                   First Client
                 </h6>
                 <p className="text-secondary-subtle">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                  aliquam, purus sit amet luctus.
+                  Was unique to to us, got ocourse a  golden Customer Card plus a 70% off first order.
                 </p>
               </div>
             </div>
@@ -66,8 +65,7 @@ const About = () => {
                   Hired our first Dev
                 </h6>
                 <p className="text-secondary-subtle">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                  aliquam, purus sit amet luctus.
+                  Our first was hired in October, newly graduated from havard. He was more specialised in the backend.
                 </p>
               </div>
             </div>
