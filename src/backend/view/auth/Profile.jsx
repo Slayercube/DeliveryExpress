@@ -47,11 +47,11 @@ const Profile = () => {
   if (!user) return <div className="text-center text-white">Loading...</div>
 
   return (
-    <div className="mb-2 flex min-h-screen items-center justify-center bg-dark-900">
+    <div className="mb-2 flex min-h-screen max-w-sm md:max-w-md justify-center mx-auto lg:max-w-lg items-center justify-center bg-dark-900">
       <div className={`profileCard bg-gray-800 p-8 shadow-lg transition duration-500 hover:scale-105 ${styles.editContainer} ${styles.profileCard}`}>
         {isEditing ? (
           <form onSubmit={handleSubmit}>
-            <div className="mb-4  flex justify-center ms-10 items-center">
+            <div className="mb-4  flex justify-center mx-auto ms-10 items-center">
               <img
                 className="mr-4 h-16 w-16 rounded-full"
                 src="https://via.placeholder.com/150"
@@ -63,7 +63,7 @@ const Profile = () => {
                   name="userName"
                   value={formData.userName}
                   onChange={handleChange}
-                  className="rounded ms-2  h-10 p-2 bg-secondary text-light"
+                  className="rounded ms-2  h-10 p-2 bg-light text-dark"
                 />
                 
             </div>
@@ -77,7 +77,7 @@ const Profile = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="rounded bg-secondary text-light ms-5 p-2"
+                  className="rounded bg-light text-dark ms-5 p-2"
                 />
                 </p>
 
@@ -89,7 +89,7 @@ const Profile = () => {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="rounded bg-secondary text-light ms-2 p-2"
+                  className="rounded bg-light text-dark ms-2 p-2"
                 />
               </p>
               <p className="mb-2">
@@ -99,7 +99,7 @@ const Profile = () => {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="rounded bg-secondary text-light ms-3 p-2"
+                  className="rounded bg-light text-dark ms-3 p-2"
                 />
               </p>
               <p className="mb-2">
@@ -109,7 +109,7 @@ const Profile = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="rounded bg-secondary text-light ms-5 p-2"
+                  className="rounded bg-light text-dark ms-5 p-2"
                 />
               </p>
             </div>

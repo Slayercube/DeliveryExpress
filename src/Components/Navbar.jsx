@@ -112,7 +112,7 @@ const Navbar = () => {
                 {/* userName when logged in starts*/}
                 <button
                   onClick={toggleDropdown}
-                  className={`relative px-3 py-2 rounded-5 text-sm font-medium  transition duration-300 ease-in-out transform  flex items-center ${styles.userProfileButton}`}
+                  className={`relative px-3 py-2 rounded-5 ms-2 mt-1 text-sm font-medium  transition duration-300 ease-in-out transform  flex items-center ${styles.userProfileButton}`}
                 >
                   {userInfo.userName}
                   <FontAwesomeIcon icon={faChevronDown} className="ml-3" />
