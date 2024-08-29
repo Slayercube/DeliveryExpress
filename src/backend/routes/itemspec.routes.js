@@ -1,38 +1,50 @@
-const express = require('express');
-const router = express.Router();
-const pool = require('../db/pool');
+const express = require('express')
+const router = express.Router()
+const pool = require('../db/pool')
+// const authenticate = require('../middleware/authenticate')
 
-// Route to handle item details submission
-router.post('/items', async (req, res) => {
-  const { length, width, height, weight, typeofItem, id } = req.body;
 
-  if (!length || !width || !height || !weight || !typeofItem || !id) {
-    return res.status(400).json({ error: 'All fields are required' });
-  }
+router.post('/',  async (req, res) => {
+  let {
+    toCustomer,
+    pickupLocation,
+    dropLocation,
+    itemType,
+    weight,
+    width,
+    length,
+    height,
+    vehicleType,
+    pickupTime,
+    deliveryTime,
+  } = req.body
 
-  try {
-    const connection = await pool.getConnection();
+  const formatDateTime = (time) => {
+    const date = new Date();
+    const [hours, minutes] = time.split(':');
+    date.setHours(hours);
+    date.setMinutes(minutes);
+    date.setSeconds(0);
+    return date.toISOString().slice(0, 19).replace('T', ' ');
+  };
 
-    // Check if the customer exists
-    const [customerRows] = await connection.query('SELECT * FROM customers WHERE id = ?', [id]);
-    if (customerRows.length === 0) {
-      connection.release();
-      return res.status(404).json({ error: 'Customer not found' });
-    }
+  pickupTime = formatDateTime(pickupTime);
+  deliveryTime = formatDateTime(deliveryTime);
+  
+  let query = `insert into orders (toCustomer, pickupLocation, dropLocation, itemType, weight, width, length, height, vehicleType, pickupTime, deliveryTime)
+    values ('${toCustomer}', '${pickupLocation}', '${dropLocation}', '${itemType}', '${weight}', '${width}', '${length}', '${height}', '${vehicleType}', '${pickupTime}', '${deliveryTime}') ;`
 
-    // Insert the new product
-    const [result] = await connection.query(
-      'INSERT INTO product (length, width, height, weight, typeofItem, id) VALUES (?, ?, ?, ?, ?, ?)',
-      [length, width, height, weight, typeofItem, id]
-    );
+    pool.query(query, (err, data) => {
+      if (err) {
+        res.status(500).send(err);
+        console.log(err)
+      } else {
+        res.status(200).send(data);
+        
+      }
+    });
 
-    connection.release();
+  // res.send(data)
+})
 
-    res.status(201).json({ message: 'Product details saved successfully', productId: result.insertId });
-  } catch (err) {
-    console.error('Error saving product details:', err);
-    res.status(500).json({ error: 'Failed to save product details' });
-  }
-});
-
-module.exports = router;
+module.exports = router

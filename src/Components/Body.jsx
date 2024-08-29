@@ -10,6 +10,7 @@ import styles from './Body.module.css'
 import Bus from './vehicles/Bus'
 
 import Car from './vehicles/Car'
+import InfoForm from './Infoform'
 
 const Body = () => {
   const {
@@ -28,6 +29,9 @@ const Body = () => {
     showMap,
     setShowMap,
     showDrone,
+    orderData,  
+    setOrderData,
+   
   } = useContext(myContext)
 
   const [pickResults, setPickResults] = useState([])
@@ -65,12 +69,14 @@ const Body = () => {
   const handlePickResultClick = (result) => {
     setPickAddress(result.name)
     setPickLocation(result.center)
+    setOrderData({ ...orderData, pickupLocation: result.name });
     setPickResults([])
   }
 
   const handleDeliverResultClick = (result) => {
     setDeliverAddress(result.name)
     setDeliverLocation(result.center)
+    setOrderData({ ...orderData, dropLocation: result.name });
     setDeliverResults([])
   }
 
@@ -80,13 +86,14 @@ const Body = () => {
       return
     }
     setShowItemspecs(true)
-
+    setOrderData({ ...orderData, pickupLocation: pickAddress, dropLocation: deliverAddress });
     setIsBooked(true)
     setErrorMessage('')
   }
-
+  
   return (
     <div className="container">
+    
       <div
         className={`${styles.container} ${showItemspecs ? styles.containerShifted : ''}`}
       >
@@ -97,6 +104,7 @@ const Body = () => {
           <input
             className={styles.input}
             type="text"
+            name='pickupLocation'
             placeholder="Pick-up Address"
             value={pickAddress}
             onChange={handlePickAddressChange}
@@ -140,6 +148,7 @@ const Body = () => {
           <input
             className={styles.input}
             type="text"
+            name='dropLocation'
             placeholder="Delivery Address"
             value={deliverAddress}
             onChange={handleDeliverAddressChange}
@@ -189,12 +198,14 @@ const Body = () => {
         <div className={styles.specs}> {showItemspecs && <Itemspecs />} </div>
       </div>
 
+      
+
       <div className={styles.map}>{showMap && <Map />}</div>
       <br />
 
       <dir> {showDrone && <Car />} </dir>
       {/* <Car /> */}
-
+        <InfoForm />
       <Bus />
     </div>
   )

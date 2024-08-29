@@ -46,8 +46,8 @@ const Profile = () => {
   if (!user) return <div className="text-center text-white">Loading...</div>
 
   return (
-    <div className="mb-2 flex min-h-screen items-start justify-center bg-gray-900 pt-10">
-      <div className="profile-card max-w-sm transform rounded-lg bg-gray-800 p-8 shadow-lg transition duration-500 hover:scale-105 hover:shadow-2xl">
+    <div className="mb-2 flex min-h-screen items-start justify-center bg-gray-900 pt-10 ">
+      <div className="profile-card max-w-sm transform rounded-lg bg-gray-800 p-6 shadow-lg transition duration-500 hover:scale-105 hover:shadow-2xl">
         {isEditing ? (
           <form onSubmit={handleSubmit}>
             <div className="mb-4 flex items-center">
@@ -62,7 +62,7 @@ const Profile = () => {
                   name="userName"
                   value={formData.userName}
                   onChange={handleChange}
-                  className="rounded bg-gray-700 p-2 text-3xl font-bold text-white"
+                  className="rounded bg-gray-700 p-2 text-3xl  w-64 font-bold text-white"
                 />
                 <input
                   type="email"
@@ -95,7 +95,7 @@ const Profile = () => {
                 />
               </p>
               <p className="mb-2">
-                <strong>Phone:</strong>
+                <strong>Phone Number:</strong>
                 <input
                   type="text"
                   name="phone"
