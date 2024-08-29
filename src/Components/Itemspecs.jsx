@@ -1,84 +1,91 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { myContext } from '../Context'
 import styles from './Itemspecs.module.css'
-import axios from 'axios'
 
 const Itemspecs = () => {
-  const { setVehicle , setShowDrone } = useContext(myContext)
-  const [typeofItem, setTypeofItem] = useState('')
+  const { setVehicle,
+     setShowDrone,
+      orderData,
+     setOrderData,
+     } = useContext(myContext)
+  const [itemType, setItemType] = useState('')
   const [length, setLength] = useState('')
   const [width, setWidth] = useState('')
   const [height, setHeight] = useState('')
   const [weight, setWeight] = useState('')
   const [error, setError] = useState(null)
-  const { user } = useContext(myContext)
 
-  const handleBookClick = async () => { 
- 
+  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setOrderData({ ...orderData, [name]: value });
+  };
 
-    if (!typeofItem) {
-      setError('Please select an item type.');
-      return;
+  const handleBookClick = async () => {
+    if (!orderData.itemType) {
+      setError('Please select an item type.')
+      return
     }
-    if (!length || !width || !height || !weight) {
-      setError('Please fill in all dimensions and weight.');
-      return;
+    if (!orderData.length || !orderData.width || !orderData.height || !orderData.weight) {
+      setError('Please fill in all dimensions and weight.')
+      return
     }
-    const itemData = {
-      typeofItem : typeofItem,
-      length : length,
-      width : width,
-      height : height,
-      weight : weight,
-      userId: user.id, // Assuming user object has an id property
-    };
-    // Call the API to save the item details
-    try {
-      console.log('Sending item data to API:', itemData);
-      const response = await axios.post('http://localhost:3002/items/items', itemData); // Corrected URL
-      console.log('API response:', response.data);
-      alert('Item details saved successfully');
-    } catch (err) {
-      console.error('Error saving item details:', err.response ? err.response.data : err.message);
-      setError('Failed to save item details');
-    }
- 
 
-    setError('');
-    console.log('Booking details:', { typeofItem, length, width, height, weight });
+    setError('')
+    console.log('Booking details:', { itemType, length, width, height, weight })
     if (!error) {
-      handleSubmitClick();
-      setError(null);
-      setShowDrone(true);
+      handleSubmitClick()
+      handleSubmitVehicle()
+      setError(null)
+      setShowDrone(true)
     }
-  };
-  
-  const handleSubmitClick = () => {
-    const l = parseFloat(length);
-    const w = parseFloat(width);
-    const h = parseFloat(height);
-    const wt = parseFloat(weight);
-  
-    if (l <= 1 && w <= 1 && h <= 1 && wt <= 10) {
-      setVehicle('bike');
-    } else if (l <= 2 && w <= 2 && h <= 2 && wt <= 50) {
-      setVehicle('car');
-    } else if (l <= 3 && w <= 3 && h <= 3 && wt <= 200) {
-      setVehicle('van');
-    } else {
-      setVehicle('truck');
-    }
-  };
- 
+  }
 
+  const handleSubmitClick = () => {
+    const l = parseFloat(orderData.length)
+    const w = parseFloat(orderData.width)
+    const h = parseFloat(orderData.height)
+    const wt = parseFloat(orderData.weight)
+
+    if (l <= 1 && w <= 1 && h <= 1 && wt <= 10) {
+      setVehicle('bike')
+    } else if (l <= 2 && w <= 2 && h <= 2 && wt <= 50) {
+      setVehicle('car')
+    } else if (l <= 3 && w <= 3 && h <= 3 && wt <= 200) {
+      setVehicle('van')
+    } else {
+      setVehicle('truck')
+    }
+  }
+  const handleSubmitVehicle = () => {
+    const l = parseFloat(orderData.length);
+    const w = parseFloat(orderData.width);
+    const h = parseFloat(orderData.height);
+    const wt = parseFloat(orderData.weight);
+
+    let vehicleType = 'truck';
+    if (l <= 1 && w <= 1 && h <= 1 && wt <= 10) {
+      vehicleType = 'bike';
+    } else if (l <= 2 && w <= 2 && h <= 2 && wt <= 50) {
+      vehicleType = 'car';
+    } else if (l <= 3 && w <= 3 && h <= 3 && wt <= 200) {
+      vehicleType = 'van';
+    }
+
+    setOrderData({ ...orderData, vehicleType });
+  };
 
   return (
     <div className="w-full max-w-md rounded-lg p-8 shadow-lg">
       {error && <div className="mb-4 text-red-500">{error}</div>}
+      <>
+
+     
       <select
         className="mb-4 w-full rounded bg-gray-700 p-2 text-white"
-        value={typeofItem}
-        onChange={(e) => setTypeofItem(e.target.value)}
+        name='itemType'
+        value={orderData.itemType}
+        onChange={handleInputChange} 
       >
         <option value="">Select item</option>
         <option value="Documents">Documents</option>
@@ -92,8 +99,9 @@ const Itemspecs = () => {
           <input
             className="w-full rounded bg-gray-700 p-2 text-white"
             type="number"
-            value={length}
-            onChange={(e) => setLength(e.target.value)}
+            name='length'
+            value={orderData.length}
+            onChange={handleInputChange}
           />
         </div>
         <div>
@@ -101,8 +109,9 @@ const Itemspecs = () => {
           <input
             className="w-full rounded bg-gray-700 p-2 text-white"
             type="number"
-            value={width}
-            onChange={(e) => setWidth(e.target.value)}
+            name='width'
+            value={orderData.width}
+            onChange={handleInputChange}
           />
         </div>
         <div>
@@ -110,8 +119,9 @@ const Itemspecs = () => {
           <input
             className="w-full rounded bg-gray-700 p-2 text-white"
             type="number"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
+            name='height'
+            value={orderData.height}
+            onChange={handleInputChange}
           />
         </div>
         <div>
@@ -119,8 +129,9 @@ const Itemspecs = () => {
           <input
             className="w-full rounded bg-gray-700 p-2 text-white"
             type="number"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
+            name='weight'
+            value={orderData.weight}
+            onChange={handleInputChange}
           />
         </div>
       </div>
@@ -131,6 +142,7 @@ const Itemspecs = () => {
       >
         Submit
       </button>
+      </>
     </div>
   )
 }
