@@ -3,7 +3,7 @@ import styles from './About.module.css'
 
 const About = () => {
   return (
-    <section className=''>
+    <section className={`bg-dark ${styles.aboutMomContainer}`}>
       {/* Container */}
       <div className="mx-auto mt-20 w-full max-w-7xl px-5 py-12 md:px-10 md:py-16 lg:py-20">
         {/* Component */}
@@ -23,18 +23,18 @@ const About = () => {
 
               <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black"></div>
               <div className="w-1/2 pl-5 md:pl-12">
-                <h6 className="text-md md:text-xl text-light font-semibold mb-3">
+                <h6 className="text-md md:text-xl text-warning font-semibold mb-3">
                   Started the company
                 </h6>
                 <p className="text-secondary-subtle">
-                  In August, 3 pals decided to do something with their skills, so we gave it a try, all started with a bike and now here we are.
+                  It all started with a thought, so we gave it a try, from a bike and now here we are.
                 </p>
               </div>
             </div>
             {/* Another Static Event Entry */}
             <div className="mb-20 mt-20 flex items-center w-full">
               <div className="w-1/2 text-right pr-5 md:pr-12">
-                <h5 className="text-lg md:text-2xl text-dark-subtle font-semibold">
+                <h5 className="text-lg md:text-2xl text-warning font-semibold">
                   September 2016
                 </h5>
               </div>
@@ -44,7 +44,7 @@ const About = () => {
                   First Client
                 </h6>
                 <p className="text-secondary-subtle">
-                  Was unique to to us, got ocourse a  golden Customer Card plus a 70% off first order.
+                  Was unique to to us, got ofcourse a golden Customer Card plus a 70% off first order. One time business with us 4ever business with us.
                 </p>
               </div>
             </div>
@@ -61,18 +61,18 @@ const About = () => {
               </div>
               <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-gray-300"></div>
               <div className="w-1/2 pl-5 md:pl-12">
-                <h6 className="text-md md:text-xl text-light font-semibold mb-3">
+                <h6 className="text-md md:text-xl text-warning font-semibold mb-3">
                   Hired our first Dev
                 </h6>
                 <p className="text-secondary-subtle">
-                  Our first was hired in October, newly graduated from havard. He was more specialised in the backend.
+                  Our first was hired in January, newly graduated from havard. He was more specialised in the backend. With us you have the opportunity to rise up & alot of advantages.
                 </p>
               </div>
             </div>
             {/* And another one */}
             <div className="mb-20 mt-20 flex items-center w-full">
               <div className="w-1/2 text-right pr-5 md:pr-12">
-                <h5 className="text-lg md:text-2xl text-dark-subtle font-semibold">
+                <h5 className="text-lg md:text-2xl text-warning font-semibold">
                   May 2017
                 </h5>
               </div>
@@ -82,8 +82,7 @@ const About = () => {
                   Raised $5M
                 </h6>
                 <p className="text-secondary-subtle">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                  aliquam, purus sit amet luctus.
+                  Due to dedication, decipline and hard work we raised by the end of 2018 a sum of $5M and still counting, business is flowing and lookingfor new recruits.
                 </p>
               </div>
             </div>

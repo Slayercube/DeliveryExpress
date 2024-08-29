@@ -1,3 +1,10 @@
 .AboutSelfContainer {
-    border-radius: 30px 90px;
+    border-radius: 20px 120px;
+}
+
+
+.aboutMomContainer {
+    background-color: rgb(0, 0, 0);
+    background: url(https://png.pngtree.com/thumb_back/fh260/background/20200722/pngtree-led-lighting-effect-with-abstract-background-design-image_360097.jpg);
+    background-blend-mode: multiply;
 }
