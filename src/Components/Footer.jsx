@@ -236,7 +236,7 @@ const Footer = () => {
         <div className="mb-14 mt-16 w-full border-b border-white"></div>
         <div className="flex md:flex-row items-start justify-between sm:flex-col flex-col-reverse md:items-center">
           <p className="text-sm sm:text-base">
-            © Copyright 2021. All rights reserved.
+            © Copyright 2024. All rights reserved.
           </p>
           <div className="text-center font-semibold">
             <a
