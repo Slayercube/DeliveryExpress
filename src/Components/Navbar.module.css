@@ -245,13 +245,15 @@ div{
 
 
 .userProfileButton {
-    background: linear-gradient(to left, white 50%, rgb(88, 88, 160));
-    color: black;
+    background: linear-gradient(to right, rgb(0, 0, 0) 50%, rgb(200, 200, 200));
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    
 }
 
 .userProfileButton:hover {
-    background: linear-gradient(to right, white 40%, rgb(88, 88, 160));
-    color: black;
+    background: linear-gradient(to left, rgb(0, 0, 0) 50%, rgb(175, 175, 175));
+    color: rgb(255, 255, 255);
 }
 
 .logout {
