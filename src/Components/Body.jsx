@@ -205,7 +205,7 @@ const Body = () => {
 
       <dir> {showDrone && <Car />} </dir>
       {/* <Car /> */}
-        <InfoForm />
+        {/* <InfoForm /> */}
       <Bus />
     </div>
   )
