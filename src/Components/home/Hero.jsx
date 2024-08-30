@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="flex items-stretch">
             <a
               href="#" onClick={handleClick}
-              className={`mr-6 rounded-5 px-20 italic py-4 text-center font-bold lg:mr-8 ${styles.startButton} `}
+              className={`mr-6 rounded-5 px-20 py-4 text-center font-bold lg:mr-8 ${styles.clickToSendButton} `}
             >
               Click to send
             </a>

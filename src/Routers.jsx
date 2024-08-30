@@ -14,6 +14,7 @@ import Login from './backend/view/auth/Login';
 import Profile from './backend/view/auth/Profile';
 import About from './Components/About.jsx'
 import Infoform from './Components/Infoform.jsx'
+import Services from './Components/Services.jsx'
 
 
 
@@ -38,6 +39,7 @@ const Routers = () => {
         { <Route path='/profile' element={<Profile />} /> }
         { <Route path='/about' element={<About />} /> }
         { <Route path='/info' element={<Infoform />} /> }
+        { <Route path='/services' element={<Services />} /> }
       </Routes>
       <Footer />
 

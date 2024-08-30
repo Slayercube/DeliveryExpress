@@ -26,17 +26,17 @@
 
 
 /* saeed edit start*/
-.startButton {
+.clickToSendButton {
   background: linear-gradient(to left, black 10%, rgb(88, 88, 160));
   margin-top: 90px;
   margin-bottom:55px;
   color: white(0, 0, 0);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
   font-size: x-large;
   
 }
 
-.startButton:hover {
+.clickToSendButton:hover {
   background: linear-gradient(to right, black 10%, rgb(88, 88, 160));
 }
 /* saeed edit end */

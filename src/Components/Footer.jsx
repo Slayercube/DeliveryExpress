@@ -162,7 +162,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-start font-semibold">
             <div className="mb-4">
-              <p className="font-bold uppercase" style={{color : 'white'}}>Comapny</p>
+              <p className="font-bold uppercase" style={{color : 'white'}}>Company</p>
             </div>
             <a
               href="#"
