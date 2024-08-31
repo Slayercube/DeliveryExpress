@@ -17,6 +17,7 @@
   position: relative;
   animation: move-truck 5s linear infinite;
   perspective: 1000px; /* Added perspective */
+  right: 60px;
 }
 
 .truck-cab {
@@ -28,7 +29,7 @@
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: rotateY(-10deg); /* Added 3D rotation */
-  left: 15px;
+  left: 25px;
 }
 
 
