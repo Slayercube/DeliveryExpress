@@ -507,12 +507,13 @@
 }
 
 .left-pipe {
-  left: 360px; 
+  left: -120px; 
+  bottom: -50px;
 }
 
 .right-pipe {
-  left: 780px; /* Adjust the position as needed */
-  position: absolute;
+  left: 280px; /* Adjust the position as needed */
+  bottom: -50px; /* Adjust the position as needed */
 }
 .pipe::before {
   content: '';
@@ -541,12 +542,12 @@
   }
     .billboard1 {
     position: absolute;
-    top: -300px; /* Position it above the truck */
-    left: 60%;
+    top: -400px; /* Position it above the truck */
+    left: 85px;
     transform: translateX(-50%) perspective(1000px) rotateX(10deg); /* Add perspective and slight rotation */
     width: 580px; /* Make the width responsive */
     max-width: 630px; /* Maximum width of the billboard */
-    height: 360px; /* Height of the billboard */
+    height: 380px; /* Height of the billboard */
     background: linear-gradient(135deg, #1e1e1e, #3a3a3a); /* Gradient background */
     border: 2px solid #333;
     border-radius: 15px; /* Rounded corners */
@@ -565,7 +566,7 @@
     background-image: url('path/to/texture.jpg'); /* Add a texture image */
     background-size: cover; /* Cover the entire billboard */
     background-blend-mode: multiply; /* Blend the texture with the gradient */
-    animation: glow 4s infinite alternate; /* Add glowing animation */
+    animation: glow 5s infinite alternate; /* Add glowing animation */
 
   }
   
@@ -576,8 +577,9 @@
     text-overflow: ellipsis; /* Add ellipsis for overflowing text */
     white-space: wrap; /* Prevent text from wrapping */
     width: 100%;
-    color: #cbc9c3; /* Change text color for better contrast */
+    color: #ffffff; /* Change text color for better contrast */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for depth */
+    
   }
   
   @media (max-width: 768px) {
@@ -590,4 +592,54 @@
     .billboard1 {
       font-size: 12px; /* Adjust font size for even smaller screens */
     }
+  }
+  .box {
+    position: absolute;
+  }
+  .crack, .crack1 {
+    position: absolute;
+   
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    width: 2px; 
+    height: 100%; 
+    background: inherit;
+    z-index: 2;
+    pointer-events: none; /* Allow clicks to pass through */
+    clip-path: polygon(
+      10% 0%, 12% 10%, 8% 20%, 15% 30%, 10% 40%, 20% 50%, 15% 60%, 25% 70%, 20% 80%, 30% 90%, 25% 100%,
+      40% 100%, 35% 90%, 45% 80%, 40% 70%, 50% 60%, 45% 50%, 55% 40%, 50% 30%, 60% 20%, 55% 10%, 65% 0%
+    );
+    border-right: 3px solid rgba(255, 255, 255, 0.8); /* More noticeable border */
+    animation: crack-glow 1s infinite, crack-blink .1s infinite; /* Added animation */
+    text-align: center;
+  }
+  
+  /* Glowing animation for cracks */
+  @keyframes crack-glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255); /* Enhanced white glow */
+    }
+    10%, 30%, 50%, 70%, 90% {
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.6); /* Enhanced white glow */
+    }
+    20%, 40%, 60%, 80% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.4); /* Enhanced white glow */
+    }
+  }
+  @keyframes crack-blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .crack{
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+  }
+  .crack1{
+    top: 50%; /* Center vertically */
+    left: 80%; /* Center horizontally */
   }
