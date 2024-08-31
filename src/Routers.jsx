@@ -14,6 +14,8 @@ import Login from './backend/view/auth/Login';
 import Profile from './backend/view/auth/Profile';
 import About from './Components/About.jsx'
 import Infoform from './Components/Infoform.jsx'
+import Checkout from './Components/Checkout.jsx'
+import Orders from './Components/Orders.jsx'
 
 
 
@@ -38,6 +40,8 @@ const Routers = () => {
         { <Route path='/profile' element={<Profile />} /> }
         { <Route path='/about' element={<About />} /> }
         { <Route path='/info' element={<Infoform />} /> }
+        { <Route path='/checkout' element={<Checkout />} /> }
+        { <Route path='/orders' element={<Orders />} /> }
       </Routes>
       <Footer />
 

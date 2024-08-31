@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const myContext = React.createContext()
@@ -55,6 +55,7 @@ function ContextProvider({ children }) {
     vehicleType: '',
     pickupTime: '',
     deliveryTime: '',
+    price:'',
   })
   
 
@@ -141,6 +142,14 @@ function ContextProvider({ children }) {
   }
 
   const estimatedPrice = calculateEstimatedPrice(distance, vehicle)
+
+  useEffect(() => {
+    setOrderData((prevOrderData) => ({
+      ...prevOrderData,
+      price: estimatedPrice,
+    }));
+  }, [estimatedPrice]);
+ 
 
 
 

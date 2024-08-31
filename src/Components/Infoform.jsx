@@ -1,29 +1,32 @@
 import React, { useContext } from 'react'
 import { myContext } from '../Context'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const InfoForm = () => {
-  const { orderData ,user } = useContext(myContext)
+  const { orderData, user } = useContext(myContext)
+  const navigate = useNavigate()
   const handleSubmitOrder = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       const dataToSend = {
         ...orderData,
-        toCustomer: user.id, 
-      };
-      await axios.post('http://localhost:3002/items', dataToSend);
+        toCustomer: user.id,
+      }
+      await axios.post('http://localhost:3002/items', dataToSend)
       // alert('Item data submitted successfully!');
+      navigate('/checkout', { state: { orderData: dataToSend } });
     } catch (error) {
-      console.error('Error submitting item data:', error);
+      console.error('Error submitting item data:', error)
       // alert('Failed to submit item data.');
     }
-  };
-  if (!user || !user.id) {
-    console.error('User ID is missing');
-    return;
   }
+  if (!user || !user.id) {
+    console.error('User ID is missing')
+    return
+  }
+  const price = orderData.price ? orderData.price.toFixed(2) : '0.00';
 
-  
   return (
     <div>
       <h2>Order Information</h2>
@@ -37,7 +40,13 @@ const InfoForm = () => {
       <p>Vehicle Type: {orderData.vehicleType}</p>
       <p>Pickup Time: {orderData.pickupDateTime}</p>
       <p>Delivery Time: {orderData.deliveryDateTime}</p>
-      <button className="btn btn-danger" onClick={handleSubmitOrder}>payment</button>
+      <div>
+        ${price}
+        <button className="btn btn-danger" onClick={handleSubmitOrder}>
+          {' '}
+          Checkout
+        </button>
+      </div>
     </div>
   )
 }

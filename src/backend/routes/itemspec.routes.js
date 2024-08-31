@@ -17,6 +17,7 @@ router.post('/',  async (req, res) => {
     vehicleType,
     pickupTime,
     deliveryTime,
+    price
   } = req.body
 
   const formatDateTime = (time) => {
@@ -31,8 +32,8 @@ router.post('/',  async (req, res) => {
   pickupTime = formatDateTime(pickupTime);
   deliveryTime = formatDateTime(deliveryTime);
   
-  let query = `insert into orders (toCustomer, pickupLocation, dropLocation, itemType, weight, width, length, height, vehicleType, pickupTime, deliveryTime)
-    values ('${toCustomer}', '${pickupLocation}', '${dropLocation}', '${itemType}', '${weight}', '${width}', '${length}', '${height}', '${vehicleType}', '${pickupTime}', '${deliveryTime}') ;`
+  let query = `insert into orders (toCustomer, pickupLocation, dropLocation, itemType, weight, width, length, height, vehicleType, pickupTime, deliveryTime,price)
+    values ('${toCustomer}', '${pickupLocation}', '${dropLocation}', '${itemType}', '${weight}', '${width}', '${length}', '${height}', '${vehicleType}', '${pickupTime}', '${deliveryTime}', '${price}' ) ;`
 
     pool.query(query, (err, data) => {
       if (err) {
