@@ -294,7 +294,7 @@ const Register = () => {
         {/* Terms of Use */}
         <p className="text-light text-sm max-w-80 mx-auto mt-6">
           By proceeding, you agree to Delivery Express
-          <a href="#" className={` font-bold underline ml-1 ${styles.policy}`}>
+          <a href="./termsOfServices" className={` font-bold underline ml-1 ${styles.policy}`}>
             Terms of Use & Privacy Policy.
           </a>
         </p>

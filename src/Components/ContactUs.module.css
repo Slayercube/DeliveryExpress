@@ -1,0 +1,22 @@
+.main1 {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRitsc5qzrah9F2PS6If--_h3LaFVL1bDDcjvcgqkE7HpZVqf-ad18bNHaXywXd8aQYr7k&usqp=CAU);
+    background-blend-mode: multiply;
+    background-color: rgb(93, 93, 93);
+    border-radius: 50px;
+}
+
+
+.policy2 {
+    color: rgb(205, 205, 26);
+}
+
+.policy2:hover {
+    color: gold;
+}
+
+h2 {
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+}
+

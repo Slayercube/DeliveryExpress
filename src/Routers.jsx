@@ -15,6 +15,8 @@ import Profile from './backend/view/auth/Profile';
 import About from './Components/About.jsx'
 import Infoform from './Components/Infoform.jsx'
 import Services from './Components/Services.jsx'
+import TermsOfServices from './Components/TermsOfServices.jsx'
+import ContactUs from './Components/ContactUs.jsx'
 
 
 
@@ -40,6 +42,8 @@ const Routers = () => {
         { <Route path='/about' element={<About />} /> }
         { <Route path='/info' element={<Infoform />} /> }
         { <Route path='/services' element={<Services />} /> }
+        { <Route path='/termsOfServices' element={<TermsOfServices />} /> }
+        { <Route path='/contactUs' element={<ContactUs />} /> }
       </Routes>
       <Footer />
 

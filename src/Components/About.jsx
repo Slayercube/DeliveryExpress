@@ -3,7 +3,7 @@ import styles from './About.module.css'
 
 const About = () => {
   return (
-    <section className={`bg-dark ${styles.aboutMomContainer}`}>
+    <section className={`bg-secondary ${styles.aboutMomContainer}`}>
       {/* Container */}
       <div className="mx-auto mt-20 w-full max-w-7xl px-5 py-12 md:px-10 md:py-16 lg:py-20">
         {/* Component */}

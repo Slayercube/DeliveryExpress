@@ -75,7 +75,7 @@ const Navbar = () => {
             <div className="navbarImage me-3">
               <Link to="/">
                 <img src='https://res.cloudinary.com/dzfrjt8bq/image/upload/v1724851783/delivery_Express_navbar_logo_black_bg_mkwdga.png'
-                  alt='logo of a spped vehicle'
+                  alt='logo of a speed vehicle'
                   className='h-14 w-14' />
               </Link>
 
@@ -100,8 +100,8 @@ const Navbar = () => {
                   <Link to="/services" className="relative  py-3 rounded-md text-sm font-medium glow-hover">
                     <span className="text-white">Services</span>
                   </Link>
-                  <Link to="/services" className="relative  py-3 rounded-md text-sm font-medium glow-hover">
-                    <span className="text-white">Contact</span>
+                  <Link to="/contactUs" className="relative py-3 rounded-md text-sm font-medium glow-hover">
+                    <span className="text-white">Contact Us</span>
                   </Link>
                 </div>
               </button>
