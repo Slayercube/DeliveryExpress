@@ -9,4 +9,8 @@ open the second terminal don't close the first terminal.  it's for frontend. the
 - npm install
 - npm start
 
+# stripe
+open the third terminal
+- cd\backend\server
+- run inside the terminal ===> node server.js
 - !!!!have fun
