@@ -18,6 +18,7 @@ function ContextProvider({ children }) {
   const [deliveryTime, setDeliveryTime] = useState('')
   const [showMap, setShowMap] = useState(false)
   const [showDrone, setShowDrone] = useState(false)
+  const [dpmCheckerLink, setDpmCheckerLink] = useState("");
 
 
   // backend
@@ -313,6 +314,8 @@ function ContextProvider({ children }) {
     // handleDeliveryTimeChange,
     // pickupDateTime,
     // deliveryDateTime,
+    dpmCheckerLink,
+    setDpmCheckerLink,
 
 
   }
