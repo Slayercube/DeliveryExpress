@@ -6,21 +6,8 @@ import TimeDate from './../TimeDate'
 import { myContext } from '../../Context'
 
 const Car = () => {
-  const { vehicle, estimatedPrice, errorMessage,setErrorMessage, orderData , setOrderData ,showInfoForm, setShowInfoForm } = useContext(myContext)
-  
+  const { vehicle, estimatedPrice, errorMessage,setErrorMessage, orderData ,} = useContext(myContext)
 
-  const handleConfirmClick = () => {
-    // Validate the data before proceeding
-    if (!orderData.pickAddress || !orderData.deliverAddress || !orderData.itemType || !orderData.length || !orderData.width || !orderData.height || !orderData.weight || !orderData.vehicleType || !orderData.pickupDate || !orderData.pickupTime || !orderData.deliveryDate || !orderData.deliveryTime) {
-      setErrorMessage('Please fill all the fields.');
-      return;
-    }
-    // Proceed with the order confirmation logic
-    // For example, you can send the data to the backend or update the state to show the InfoForm component
-    setErrorMessage('');
-    // Show InfoForm component with the order data
-    setShowInfoForm(true);
-  };
 
 
   return (
@@ -67,9 +54,9 @@ const Car = () => {
                     <div style={{ color: 'red' }}>{errorMessage}</div>
                   )}
                   <div className='container d-flex'>
-                  <button className="btn btn-primary" onClick={handleConfirmClick}>Confirm</button>
+                  {/* <button className="btn btn-primary" onClick={handleConfirmClick}>Confirm</button> */}
                   
-                  {estimatedPrice !== null && <div className='m-2' style={{color : 'white'}}> ${estimatedPrice.toFixed(2)}</div>}
+                  {orderData.estimatedPrice !== null && <div className='m-2' style={{color : 'white'}}>Estimated price : ${estimatedPrice.toFixed(2)}</div>}
                   </div>
                   
                 </>

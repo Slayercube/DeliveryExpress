@@ -3,21 +3,26 @@ const cors = require('cors')
 require('dotenv').config()
 const pool = require('./db/pool')
 
+
 const app = express()
 app.use(express.json())
 app.use(cors())
+
+app.post
 
 // Import routes
 const users = require('./routes/users.routes')
 const deleteRoutes = require('./routes/delete.routes')
 const updateRoutes = require('./routes/put.routes')
 const items = require('./routes/itemspec.routes')
+const stripeRoutes = require('./server/stripe.routes')
 
 // Use routes
 app.use('/user', deleteRoutes)
 app.use('/users', users)
 app.use('/items', items)
 app.use('/update', updateRoutes)
+app.use('/stripe', stripeRoutes)
 
 // Check database connection
 ;(async () => {

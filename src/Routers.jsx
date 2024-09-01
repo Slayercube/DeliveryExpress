@@ -14,9 +14,14 @@ import Login from './backend/view/auth/Login';
 import Profile from './backend/view/auth/Profile';
 import About from './Components/About.jsx'
 import Infoform from './Components/Infoform.jsx'
+<<<<<<< HEAD
 import Services from './Components/Services.jsx'
 import TermsOfServices from './Components/TermsOfServices.jsx'
 import ContactUs from './Components/ContactUs.jsx'
+=======
+import Checkout from './Components/Checkout.jsx'
+import Orders from './Components/Orders.jsx'
+>>>>>>> 77700572c4c18d17ee4db692b76a05abd5dd788a
 
 
 
@@ -41,9 +46,14 @@ const Routers = () => {
         { <Route path='/profile' element={<Profile />} /> }
         { <Route path='/about' element={<About />} /> }
         { <Route path='/info' element={<Infoform />} /> }
+<<<<<<< HEAD
         { <Route path='/services' element={<Services />} /> }
         { <Route path='/termsOfServices' element={<TermsOfServices />} /> }
         { <Route path='/contactUs' element={<ContactUs />} /> }
+=======
+        { <Route path='/checkout' element={<Checkout />} /> }
+        { <Route path='/orders' element={<Orders />} /> }
+>>>>>>> 77700572c4c18d17ee4db692b76a05abd5dd788a
       </Routes>
       <Footer />
 

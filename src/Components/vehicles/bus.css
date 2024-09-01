@@ -2,8 +2,9 @@
 .truck-container {
   position: relative;
   width: 100%;
-  height: 400px; /* Adjust height as needed */
+  height: 570px; /* Adjust height as needed */
   overflow: hidden;
+  z-index: 1;
 }
 
 
@@ -16,6 +17,7 @@
   position: relative;
   animation: move-truck 5s linear infinite;
   perspective: 1000px; /* Added perspective */
+  right: 60px;
 }
 
 .truck-cab {
@@ -27,21 +29,9 @@
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: rotateY(-10deg); /* Added 3D rotation */
+  left: 25px;
 }
 
-.truck-bed {
-  width: 300px;
-  height: 150px;
-  background: linear-gradient(to bottom right, #A9A9A9, #808080);
-  border: 2px solid #000;
-  border-radius: 10px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: rotateY(-10deg); /* Added 3D rotation */
-}
 
 .window {
   width: 45px;
@@ -74,25 +64,6 @@
   border-radius: 10px;
 }
 
-.wheel {
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle, #696969, #333);
-  border-radius: 50%;
-  position: absolute;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: rotate-wheel 1s linear infinite;
-}
-
-.front-wheel {
-  bottom: -30px;
-  left: 75px;
-}
-
-.back-wheel {
-  bottom: -30px;
-  left: 375px;
-}
 
 .headlight {
   width: 20px;
@@ -174,6 +145,17 @@
   right: 10px;
   border-radius: 5px;
 }
+.exhaust-pipe1 {
+  width: 5px;
+  height: 50px;
+  background: #414141;
+  position: absolute;
+  bottom: -59px;
+  right: 606px;
+  border-radius: 5px;
+  z-index: 0;
+}
+
 
 .roof-rack {
   width: 140px;
@@ -207,15 +189,6 @@
 .tread:nth-child(7) { transform: rotate(270deg) translateX(20px); }
 .tread:nth-child(8) { transform: rotate(315deg) translateX(20px); }
 
-.front-wheel {
-  bottom: -95px;
-  left: -410px;
-}
-
-.back-wheel {
-  bottom: -95px;
-  left: -220px;
-}
 
 @keyframes rotate-wheel {
   0% {
@@ -226,18 +199,6 @@
   }
 }
 
-.wheel {
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle, #333 20%, #696969 80%);
-  border-radius: 50%;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: rotate-wheel 1s linear infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .hubcap {
   width: 30px;
@@ -269,7 +230,7 @@
 
 .backlight {
   width: 10px;
-  height: 35px;
+  height: 30px;
   background: red;
   position: absolute;
   bottom: 10px;
@@ -279,12 +240,16 @@
 }
 
 .backlight.left {
-  left: 290px;
+  left: 0px;
+  z-index: 1; /* Ensure the left light is on top */
+  top: 1px;
 }
 
 .backlight.right {
   right: 0px;
   box-shadow: 10px 0 30px 10px rgba(255, 0, 0, 1); /* More intense glow to the right */
+  z-index: 1; /* Ensure the right light is below the left light */
+  top: 1px;
 }
 
 @keyframes glow-dip {
@@ -331,7 +296,7 @@
   top: -20px; /* Adjust as needed */
   right: 10px; /* Adjust as needed */
   width: 10px;
-  height: 30px;
+  height: 50px;
   background-color: #555;
   border-radius: 5px;
 }
@@ -394,3 +359,288 @@
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0d6efd, 0 0 40px #0d6efd, 0 0 50px #0d6efd, 0 0 60px #0d6efd, 0 0 70px #0d6efd;
   }
 }
+
+
+.wheel {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #333 20%, #696969 80%);
+  border-radius: 100%;
+  position:absolute;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: rotate-wheel 1s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front-wheel {
+  bottom: -70px; 
+  left: -120px; 
+  
+}
+
+.back-wheel {
+  bottom: -60px;
+  left: 55%;
+}
+.back-wheel1 {
+  bottom: -60px;
+  left: 65%;
+}
+.back-wheel2 {
+  bottom: -60px;
+  left: 75%;
+}
+
+
+.billboard1 {
+  position: absolute;
+  top: -100px; /* Position it above the truck */
+  left: 60%;
+  transform: translateX(-50%);
+  width: 60%; /* Width of the billboard */
+  height: 20%; /* Height of the billboard */
+  background: #fff;
+  border: 2px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #151515;
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.billboard1-text {
+  text-align: center;
+  padding: 10px; /* Add padding if needed */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.truck-bed {
+  width: 600px;
+  height: 30px;
+  background: linear-gradient(to bottom right, #A9A9A9, #808080);
+  border: 2px solid #000;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: rotateY(-10deg); /* Added 3D rotation */
+  top: 50px;
+  background-image: linear-gradient(45deg, #d3d3d3 25%, transparent 25%, transparent 75%, #d3d3d3 75%, #d3d3d3), 
+                    linear-gradient(45deg, #d3d3d3 25%, transparent 25%, transparent 75%, #d3d3d3 75%, #d3d3d3);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.truck-bed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.truck-bed::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+  border-radius: 10px;
+  pointer-events: none;
+}
+.truck-bed .side-panel {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 20px;
+  background: #808080;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 0
+}
+
+.truck-bed .side-panel.left {
+  left: 0;
+  transform: rotateY(10deg);
+}
+
+.truck-bed .side-panel.right {
+  right: 0;
+  transform: rotateY(-10deg);
+}
+
+.truck-bed .floor {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: #696969;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.pipe {
+  width: 5px;
+  height:100px;
+  background: linear-gradient(180deg, #fefdfd, #585757);
+  position: absolute;
+  bottom: 7; /* Position it at the bottom of the parent container */
+  left: 10%; /* Adjust the position as needed */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #333;
+  z-index: -1;
+}
+
+.left-pipe {
+  left: -120px; 
+  bottom: -50px;
+}
+
+.right-pipe {
+  left: 280px; /* Adjust the position as needed */
+  bottom: -50px; /* Adjust the position as needed */
+}
+.pipe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80%;
+  height: 10px;
+  background: #58a3e5;
+  border-radius: 5px 5px 0 0;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pipe::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 80%;
+  height: 10px;
+  background: #58a3e5;
+  border-radius: 0 0 5px 5px;
+  transform: translateX(-50%);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  }
+    .billboard1 {
+    position: absolute;
+    top: -400px; /* Position it above the truck */
+    left: 85px;
+    transform: translateX(-50%) perspective(1000px) rotateX(10deg); /* Add perspective and slight rotation */
+    width: 580px; /* Make the width responsive */
+    max-width: 630px; /* Maximum width of the billboard */
+    height: 380px; /* Height of the billboard */
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a); /* Gradient background */
+    border: 2px solid #333;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), /* Larger shadow for depth */
+                inset 0 4px 8px rgba(255, 255, 255, 0.1), /* Inner shadow for 3D effect */
+                0 0 20px rgba(0, 0, 0, 0.5); /* Outer glow for realism */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffffff;
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    padding: 20px; /* Add padding */
+    background-image: url('path/to/texture.jpg'); /* Add a texture image */
+    background-size: cover; /* Cover the entire billboard */
+    background-blend-mode: multiply; /* Blend the texture with the gradient */
+    animation: glow 5s infinite alternate; /* Add glowing animation */
+
+  }
+  
+  .billboard1-text {
+    text-align: left;
+    padding: 20px; /* Add padding if needed */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    white-space: wrap; /* Prevent text from wrapping */
+    width: 100%;
+    color: #ffffff; /* Change text color for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for depth */
+    
+  }
+  
+  @media (max-width: 768px) {
+    .billboard1 {
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .billboard1 {
+      font-size: 12px; /* Adjust font size for even smaller screens */
+    }
+  }
+  .box {
+    position: absolute;
+  }
+  .crack, .crack1 {
+    position: absolute;
+   
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    width: 2px; 
+    height: 100%; 
+    background: inherit;
+    z-index: 2;
+    pointer-events: none; /* Allow clicks to pass through */
+    clip-path: polygon(
+      10% 0%, 12% 10%, 8% 20%, 15% 30%, 10% 40%, 20% 50%, 15% 60%, 25% 70%, 20% 80%, 30% 90%, 25% 100%,
+      40% 100%, 35% 90%, 45% 80%, 40% 70%, 50% 60%, 45% 50%, 55% 40%, 50% 30%, 60% 20%, 55% 10%, 65% 0%
+    );
+    border-right: 3px solid rgba(255, 255, 255, 0.8); /* More noticeable border */
+    animation: crack-glow 1s infinite, crack-blink .1s infinite; /* Added animation */
+    text-align: center;
+  }
+  
+  /* Glowing animation for cracks */
+  @keyframes crack-glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255); /* Enhanced white glow */
+    }
+    10%, 30%, 50%, 70%, 90% {
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.6); /* Enhanced white glow */
+    }
+    20%, 40%, 60%, 80% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.4); /* Enhanced white glow */
+    }
+  }
+  @keyframes crack-blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .crack{
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+  }
+  .crack1{
+    top: 50%; /* Center vertically */
+    left: 80%; /* Center horizontally */
+  }

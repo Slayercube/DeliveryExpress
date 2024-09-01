@@ -1,10 +1,11 @@
+import InfoForm from '../Infoform'
 import './bus.css'
 import Road from './Road'
 
 const Bus = () => {
   return (
     <div className="truck-container">
-      <div className="truck translate-y-[160px]">
+      <div className="truck translate-y-[330px]">
         <div className="truck-cab">
           <div className="window"></div>
           <div className="headlight"></div>
@@ -28,56 +29,73 @@ const Bus = () => {
             <div className="smoke"></div>
             <div className="smoke"></div>
           </div>
-
         </div>
         <div className="truck-bed">
-          <div className="board">
-          <div className='board-text'>
-         Thanks for using our services!!
-          <p>see you soon !! 😎</p> 
-          </div>
-          
-          
-           </div>
           <div className="exhaust-pipe"></div>
+          <div className="exhaust-pipe1"></div>
           <div className="backlight left"></div>
           <div className="backlight right"></div>
-        </div>
-        <div className="wheel front-wheel">
-          <div className="hubcap">
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
+          <div className="side-panel left"></div>
+          <div className="side-panel right"></div>
+          <div className="wheel front-wheel">
+            <div className="hubcap">
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+            </div>
           </div>
-        </div>
-        <div className="wheel back-wheel">
-          <div className="hubcap">
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
+          <div className="wheel back-wheel">
+            <div className="hubcap">
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+            </div>
           </div>
+          <div className="wheel back-wheel1">
+            <div className="hubcap">
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+            </div>
+          </div>{' '}
+          <div className="wheel back-wheel2">
+            <div className="hubcap">
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+              <div className="tread"></div>
+            </div>
+          </div>{' '}
         </div>
-        <div className="wheel back-wheel">
-          <div className="hubcap">
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
-            <div className="tread"></div>
+        <div className="box">
+          <div className="billboard1">
+            <div className="billboard1-text">
+              <InfoForm />
+            </div>
+            <div className='crack'></div>
+            <div className='crack1'></div>
           </div>
+          <div className="pipe left-pipe"></div>
+          <div className="pipe right-pipe"></div>
         </div>
       </div>
 

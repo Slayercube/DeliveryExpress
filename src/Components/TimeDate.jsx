@@ -4,10 +4,10 @@ import '../App.css';
 
 const TimeDate = () => {
   const {
-    pickupDate, setPickupDate,
-    pickupTime, setPickupTime,
-    deliveryDate, setDeliveryDate,
-    deliveryTime, setDeliveryTime,
+    // pickupDate, setPickupDate,
+    // pickupTime, setPickupTime,
+    // deliveryDate, setDeliveryDate,
+    // deliveryTime, setDeliveryTime,
     orderData , setOrderData
   } = useContext(myContext);
 
