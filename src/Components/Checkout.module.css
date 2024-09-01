@@ -1,0 +1,37 @@
+.pickup {
+    font-size: large;
+    color: gold;
+}
+
+.delivery2 {
+    color: gold;
+}
+
+.twoForOne {
+display: flex;
+justify-content: end;
+/* justify-content: space-evenly; */
+}
+
+.total {
+    margin-top: 5px;
+}
+
+
+.button {
+   margin-left: 5%;
+}
+
+.payment1 {
+    background: url(https://previews.123rf.com/images/fastfun23/fastfun231702/fastfun23170200320/71750885-black-snake-skin-pattern-texture-background.jpg);
+    background-blend-mode: multiply;
+    background-color: rgb(20, 57, 63);
+    border-radius: 50px;
+}
+
+.dollarSign {
+    color: gold;
+}
+
+
+/* https://png.pngtree.com/background/20230618/original/pngtree-sleek-and-stylish-3d-render-of-metallic-black-texture-picture-image_3754831.jpg */

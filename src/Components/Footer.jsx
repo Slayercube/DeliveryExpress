@@ -18,7 +18,7 @@ const Footer = () => {
                     <img src='https://res.cloudinary.com/dzfrjt8bq/image/upload/v1724851783/delivery_Express_navbar_logo_black_bg_mkwdga.png'
                       alt='logo of a speed vehicle'
                       className='me-4  h-14 w-14' />
-                    <span className={`deliveryExpress ${styles.deliveryExpress}`}>Express</span>
+                    <span className={`deliveryExpress ${styles.deliveryExpress}`}><a href='./'>Express</a></span>
                   </div>
 
                 </a>

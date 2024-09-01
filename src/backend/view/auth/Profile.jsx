@@ -47,11 +47,11 @@ const Profile = () => {
   if (!user) return <div className="text-center text-white">Loading...</div>
 
   return (
-    <div className="mb-2 flex min-h-screen  max-w-sm md:max-w-md  mx-auto lg:max-w-lg items-center justify-center bg-dark-900">
+    <div className="mb-2 flex min-h-screen  max-w-sm md:max-w-md  mx-auto lg:max-w-lg items-center justify-center">
       <div className={`profileCard bg-gray-800 p-8 shadow-lg transition duration-500 hover:scale-105 ${styles.editContainer} ${styles.profileCard}`}>
         {isEditing ? (
           <form onSubmit={handleSubmit}>
-            <div className="mb-4  flex justify-center mx-auto ms-10  items-center">
+            <div className="mb-4 flex justify-center mx-auto ms-10  items-center">
               <img
                 className="mr-4 h-16 w-16 rounded-full"
                 src="https://via.placeholder.com/150"
