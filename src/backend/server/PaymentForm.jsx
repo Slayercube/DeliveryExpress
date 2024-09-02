@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement } from '@stripe/react-stripe-js';
 import { myContext } from '../../Context.jsx';
-import './PaymentForm.css'; 
+import './PaymentForm.css';
+import styles from './PaymentForm.module.css'
+
 
 const PaymentForm = () => {
   const stripe = useStripe();
@@ -70,73 +72,84 @@ const PaymentForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="payment-form">
-      <h2>Complete Your Payment</h2>
+    <form onSubmit={handleSubmit} className={`p-6 payment-form ${styles.payment2}`}>
+      <h2 className='mb-5'>Complete Your Payment</h2>
       <div className="payment-methods">
         <button
           type="button"
           onClick={() => setPaymentMethod('card')}
-          className={`payment-method ${paymentMethod === 'card' ? 'selected' : ''}`}
+          className={`payment-method rounded-5 ${paymentMethod === 'card' ? 'selected' : ''}`}
         >
-          Credit/Debit Card
+          <i className={`fa-regular fa-credit-card ${styles.cCard}`}></i>
         </button>
+        
+
         <button
           type="button"
           onClick={() => setPaymentMethod('google_pay')}
-          className={`payment-method ${paymentMethod === 'google_pay' ? 'selected' : ''}`}
+          className={`payment-method rounded-5 ${paymentMethod === 'google_pay' ? 'selected' : ''}`}
         >
-          Google Pay
+          <i className={`fa-brands fa-google-pay ${styles.gPay}`}></i>
         </button>
+
+
         <button
           type="button"
           onClick={() => setPaymentMethod('apple_pay')}
-          className={`payment-method ${paymentMethod === 'apple_pay' ? 'selected' : ''}`}
+          className={`payment-method rounded-5 ${paymentMethod === 'apple_pay' ? 'selected' : ''}`}
         >
-          Apple Pay
+          <i className={`fa-brands fa-apple-pay ${styles.applePay}`}></i>
         </button>
       </div>
-      <div className="form-group">
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+
+      <div className=' p-3'>
+        <div className={`ms-5 flex justify-center form-group ${styles.name}`}>
+          <label htmlFor="name" className='ms-3 text-warning font-bold'>Name:</label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className='ms-3 py-1 rounded-5 text-dark ps-3'
+          />
+        </div>
+        <div className={`ms-5 flex justify-center form-group ${styles.email}`}>
+          <label htmlFor="email" className='ms-3 text-warning font-bold'>Email:</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className='ms-3 py-1 rounded-5 text-dark ps-3'
+          />
+        </div>
       </div>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </div>
+
       {paymentMethod === 'card' && (
         <>
           <div className="form-group">
-            <label htmlFor="card-number">Card Number</label>
-            <CardNumberElement id="card-number" className="card-element" />
+            <label htmlFor="card-number" className='ms-1 text-warning font-bold'>Card Number</label>
+            <i className={`fa-regular ms-3 fa-credit-card`}></i>
+            <CardNumberElement id="card-number"className="text-dark rounded-5 bg-light card-element" />
           </div>
           <div className="form-group-inline">
             <div className="form-group">
-              <label htmlFor="card-expiry">Expiry Date</label>
-              <CardExpiryElement id="card-expiry" className="card-element" />
+              <label htmlFor="card-expiry" className='ms-1 text-warning font-bold'>Expiry Date</label>
+              <CardExpiryElement id="card-expiry" className="text-dark bg-light rounded-5 card-element" />
             </div>
             <div className="form-group">
-              <label htmlFor="card-cvc">CVC</label>
-              <CardCvcElement id="card-cvc" className="card-element" />
+              <label htmlFor="card-cvc" className='ms-1 text-warning font-bold'>CVC</label>
+              <CardCvcElement id="card-cvc" className="tetx-dark bg-light rounded-5 card-element" />
             </div>
           </div>
         </>
       )}
       {error && <div className="message-error">{error}</div>}
       {success && <div className="message-success">Payment successful!</div>}
-      <button type="submit" disabled={!stripe || !elements || success} className="submit-button">
-        Pay ${orderData.price}
+      <button type="submit" disabled={!stripe || !elements || success} className={` rounded-5 font-bold submit-button ${styles.pay}`}>
+        Pay <span className='ms-1 text-warning'>$</span>{orderData.price}
       </button>
     </form>
   );

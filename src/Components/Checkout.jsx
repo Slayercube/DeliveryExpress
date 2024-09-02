@@ -84,35 +84,35 @@ const Checkout = () => {
 
       <hr className='mx-20' />
 
-      <p className=" text-gray-300"><strong className='me-5 '>Item Type:</strong> {orderData.itemType}</p>
+      <p className=" text-gray-300"><strong className={`me-5 ${styles.item}`}>Item Type:</strong> {orderData.itemType}</p>
 
       <hr className='mx-20' />
 
-      <p className="text-gray-300"><strong className=' me-20'>Length:</strong> {orderData.length}</p>
+      <p className="text-gray-300"><strong className={`me-20 ${styles.length}`}>Length:</strong> {orderData.length}</p>
 
       <hr className='mx-20' />
 
-      <p className="text-gray-300"><strong className=' me-20'>Width:</strong> {orderData.width}</p>
+      <p className="text-gray-300"><strong className={`me-20 ${styles.width}`}>Width:</strong> {orderData.width}</p>
 
       <hr className='mx-20' />
 
-      <p className="text-gray-300"><strong className=' me-20'>Height:</strong> {orderData.height}</p>
+      <p className="text-gray-300"><strong className={`me-20 ${styles.height}`}>Height:</strong> {orderData.height}</p>
 
       <hr className='mx-20' />
 
-      <p className="text-gray-300"><strong className=' me-20'>Weight:</strong> {orderData.weight}</p>
+      <p className="text-gray-300"><strong className={`me-20 ${styles.weight}`}>Weight:</strong> {orderData.weight}</p>
 
       <hr className='mx-20' />
 
-      <p className="text-gray-300"><strong className=' me-10'>Vehicle Type:</strong> {orderData.vehicleType}</p>
+      <p className="text-gray-300"><strong className={`me-7 ${styles.vehicleType}`}>Vehicle Type:</strong> {orderData.vehicleType}</p>
 
       <hr className='mx-20' />
 
-      <p className="text-gray-300"><strong className=' me-10'>Pickup Time:</strong> {orderData.pickupDateTime}</p>
+      <p className="text-gray-300"><strong className={`me-7 ${styles.pickUpTime}`}>Pickup Time:</strong> {orderData.pickupDateTime}</p>
 
       <hr className='mx-20' />
 
-      <p className="text-gray-300"><strong className=' me-7'>Delivery Time:</strong> {orderData.deliveryDateTime}</p>
+      <p className="text-gray-300"><strong className={`me-7 ${styles.deliveryTime}`}>Delivery Time:</strong> {orderData.deliveryDateTime}</p>
 
       <hr className='mx-20' />
 

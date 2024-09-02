@@ -1,16 +1,23 @@
-.pickup {
+.pickup,
+.delivery2,
+.item,
+.length,
+.width,
+.height,
+.weight,
+.vehicleType,
+.pickUpTime,
+.deliveryTime {
     font-size: large;
-    color: gold;
+    color: rgb(210, 187, 58);
 }
 
-.delivery2 {
-    color: gold;
-}
+
 
 .twoForOne {
-display: flex;
-justify-content: end;
-/* justify-content: space-evenly; */
+    display: flex;
+    justify-content: end;
+    /* justify-content: space-evenly; */
 }
 
 .total {
@@ -19,7 +26,7 @@ justify-content: end;
 
 
 .button {
-   margin-left: 5%;
+    margin-left: 5%;
 }
 
 .payment1 {

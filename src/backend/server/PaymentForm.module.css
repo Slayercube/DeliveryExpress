@@ -74,3 +74,48 @@
   text-align: center;
   color: green;
 }
+
+
+
+/* saeed's css starts */
+
+.payment2 {
+  padding: 50px;
+  margin-top: 5%;
+  margin-bottom: 15%;
+  border-radius: 0 50px;
+  background: url(https://png.pngtree.com/background/20230618/original/pngtree-sleek-and-stylish-3d-render-of-metallic-black-texture-picture-image_3754831.jpg);
+  background-blend-mode: multiply;
+  background-color: rgb(122, 115, 115);
+  border-top: 5px solid rgb(147, 139, 28);
+  border-bottom: 5px solid rgb(147, 139, 28);
+}
+
+
+.pay {
+  background-color: rgb(22, 89, 190);
+  color: black;
+}
+
+.pay:hover {
+  background-color: rgb(34, 84, 159);
+}
+
+.gPay,
+.applePay {
+  font-size: 2.5rem;
+}
+
+.cCard {
+  font-size: x-large;
+}
+
+.name,
+.email {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* saeed's css ends */
