@@ -14,3 +14,4 @@ open the third terminal
 - cd\backend\server
 - run inside the terminal ===> node server.js
 - !!!!have fun
+- you can try fake cards for payment from this link --> https://docs.stripe.com/testing?testing-method=card-numbers#cards
