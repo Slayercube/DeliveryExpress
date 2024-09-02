@@ -19,10 +19,15 @@ import TermsOfServices from './Components/TermsOfServices.jsx'
 import Infoform from './Components/Infoform.jsx'
 import Checkout from './Components/Checkout.jsx'
 import Orders from './Components/Orders.jsx'
+import PaymentForm from './backend/server/PaymentForm.jsx'
+
+
+
 
 
 
 const Routers = () => {
+
   return (
     <>
 
@@ -48,6 +53,11 @@ const Routers = () => {
         { <Route path='/services' element={<Services />} /> }
         { <Route path='/contactUs' element={<ContactUs />} /> }
         { <Route path='/termsOfServices' element={<TermsOfServices />} /> }
+        <Route path="/payment-form" element={<PaymentForm />} />
+        
+       
+        
+    
       </Routes>
       <Footer />
 
