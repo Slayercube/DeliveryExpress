@@ -102,27 +102,29 @@ const PaymentForm = () => {
         </button>
       </div>
 
-      <div className=' p-3'>
-        <div className={`ms-5 flex justify-center form-group ${styles.name}`}>
-          <label htmlFor="name" className='ms-3 text-warning font-bold'>Name:</label>
+      <div className='borde px-1 p-3'>
+        <div className={`form-group ${styles.name}`}>
+          <label htmlFor="name" className='ms-1 text-warning font-bold'>Name: <i className="fa-solid ms-3 text-light fa-user"></i></label>
           <input
+          placeholder='Name'
             id="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className='ms-3 py-1 rounded-5 text-dark ps-3'
+            className='py-1 rounded-5 text-dark ps-3'
+            
           />
         </div>
-        <div className={`ms-5 flex justify-center form-group ${styles.email}`}>
-          <label htmlFor="email" className='ms-3 text-warning font-bold'>Email:</label>
+        <div className={`form-group ${styles.email}`}>
+          <label htmlFor="email" className='ms-1 text-warning font-bold'>Email: <i className="fa-solid ms-3 text-light fa-envelope"></i></label>
           <input
             id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className='ms-3 py-1 rounded-5 text-dark ps-3'
+            className='py-1 rounded-5 text-dark ps-2 '
           />
         </div>
       </div>
@@ -148,8 +150,8 @@ const PaymentForm = () => {
       )}
       {error && <div className="message-error">{error}</div>}
       {success && <div className="message-success">Payment successful!</div>}
-      <button type="submit" disabled={!stripe || !elements || success} className={` rounded-5 font-bold submit-button ${styles.pay}`}>
-        Pay <span className='ms-1 text-warning'>$</span>{orderData.price}
+      <button type="submit" disabled={!stripe || !elements || success} className={` rounded-5 font-bold submit-button text-light ${styles.pay}`}>
+        Pay <span className='ms-1 text-warning'>$ </span>{orderData.price}
       </button>
     </form>
   );
