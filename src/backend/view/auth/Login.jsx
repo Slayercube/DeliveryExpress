@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { myContext } from '../../../Context';
+import { AuthContext, myContext } from '../../../Context';
 import styles from './Login.module.css';
 // import { Tilt } from 'react-tilt';
 
 const Login = () => {
+    const { handleLogin } = useContext(AuthContext);
+   
 
     const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -20,6 +22,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+       await handleLogin(values.email, values.password);
 
         try {
             const res = await axios.post('http://localhost:3002/users/login', values);
@@ -80,6 +83,7 @@ const Login = () => {
                         required
                         id="email"
                         aria-describedby="emailHelp"
+                        
                     />
                     <i className={`ms- fa-solid fa-envelope ${styles.emaillogo}`}></i>
                 </div>
@@ -100,6 +104,7 @@ const Login = () => {
                         placeholder="Password"
                         required
                         id="password"
+                        
                     />
 
 

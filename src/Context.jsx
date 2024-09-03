@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
 
 const myContext = React.createContext()
 
@@ -19,6 +21,7 @@ function ContextProvider({ children }) {
   const [showMap, setShowMap] = useState(false)
   const [showDrone, setShowDrone] = useState(false)
   const [dpmCheckerLink, setDpmCheckerLink] = useState("");
+  
 
 
   // backend
@@ -316,6 +319,7 @@ function ContextProvider({ children }) {
     // deliveryDateTime,
     dpmCheckerLink,
     setDpmCheckerLink,
+   
 
 
   }
@@ -326,5 +330,79 @@ function ContextProvider({ children }) {
 
 }
 
+const AuthContext = createContext();
 
-export { myContext, ContextProvider }
+ const AuthProvider = ({ children }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+ const navigate = useNavigate();
+
+
+  
+ useEffect(() => {
+  const checkAuthStatus = async () => {
+    const token = localStorage.getItem('authToken');
+    console.log('Token from localStorage:', token); // Debugging statement
+    if (token) {
+      try {
+        // Replace with your backend API endpoint
+        const response = await axios.get('/auth/verify', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        console.log('Response from /verify:', response); // Debugging statement
+        if (response.status === 200) {
+          setIsLoggedIn(true);
+          console.log('User is logged in'); // Debugging statement
+        } else {
+          setIsLoggedIn(false);
+          console.log('User is not logged in'); // Debugging statement
+        }
+      } catch (error) {
+        console.error('Token verification failed:', error);
+        setIsLoggedIn(false);
+      }
+    } else {
+      setIsLoggedIn(false);
+      console.log('No token found'); // Debugging statement
+    }
+  };
+
+  checkAuthStatus();
+}, []);
+
+  const handleLogin = async (email,username, password) => {
+    try {
+      const response = await axios.post('/auth/login', { email, password });
+      if (response.status === 200) {
+        localStorage.setItem('authToken', response.data.token);
+        console.log('Token set in localStorage:', response.data.token); // Debugging statement
+        setIsLoggedIn(true);
+        navigate('/'); // Navigate to the app page after successful login
+      } else {
+        console.error('Login failed with status:', response.status);
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
+  };
+
+  const handleCLickPage = () => {
+    if (isLoggedIn) {
+      navigate('/app');
+    } else {
+      navigate('/login');
+    }
+  }
+
+  return (
+    <AuthContext.Provider value={{ isLoggedIn ,handleCLickPage , handleLogin }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+
+
+
+export { myContext, ContextProvider , AuthContext, AuthProvider}  

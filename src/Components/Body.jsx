@@ -37,6 +37,7 @@ const Body = () => {
   const [pickResults, setPickResults] = useState([])
   const [deliverResults, setDeliverResults] = useState([])
   const [showItemspecs, setShowItemspecs] = useState(false)
+  const [ showBus, setShowBus] = useState(false)
 
   const pickGeocoderRef = useRef(null)
   const deliverGeocoderRef = useRef(null)
@@ -89,6 +90,7 @@ const Body = () => {
     setOrderData({ ...orderData, pickupLocation: pickAddress, dropLocation: deliverAddress });
     setIsBooked(true)
     setErrorMessage('')
+    setShowBus(true)
   }
   
   return (
@@ -203,10 +205,10 @@ const Body = () => {
       <div className={styles.map}>{showMap && <Map />}</div>
       <br />
 
-      <dir> {showDrone && <Car />} </dir>
-      {/* <Car /> */}
-        {/* <InfoForm /> */}
-      <Bus />
+      <div> {showDrone && <Car />} </div>
+      {/* <Bus /> */}
+      <div> {showBus && <Bus /> }</div>
+
     </div>
   )
 }

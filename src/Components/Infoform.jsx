@@ -40,10 +40,9 @@ const InfoForm = () => {
       <p>Vehicle Type: {orderData.vehicleType}</p>
       <p>Pickup Time: {orderData.pickupDateTime}</p>
       <p>Delivery Time: {orderData.deliveryDateTime}</p>
-      <div>
-        ${price}
+      <div className="flex justify-end items-center space-x-4">
+        <span className="text-lg font-semibold">${price}</span>
         <button className="btn btn-danger" onClick={handleSubmitOrder}>
-          {' '}
           Checkout
         </button>
       </div>

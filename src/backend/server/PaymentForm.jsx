@@ -68,6 +68,7 @@ const PaymentForm = () => {
       }
     }
   };
+  const Price = orderData.price ? orderData.price.toFixed(2) : '';
 
   return (
     <form onSubmit={handleSubmit} className="payment-form">
@@ -136,7 +137,7 @@ const PaymentForm = () => {
       {error && <div className="message-error">{error}</div>}
       {success && <div className="message-success">Payment successful!</div>}
       <button type="submit" disabled={!stripe || !elements || success} className="submit-button">
-        Pay ${orderData.price}
+        Pay ${Price}
       </button>
     </form>
   );
