@@ -3,13 +3,17 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './home.module.css'
 import mapImage from './map.png'
+import { useContext } from 'react'
+import { AuthContext } from '../../Context'
 const Hero = () => {
  const navigate = useNavigate()
 
- function handleClick() {
-  navigate('/app')
- }
+ const {  handleCLickPage } = useContext(AuthContext);
 
+ function handleClick() {
+     navigate('/app'); 
+  
+ }
  
   
   return (

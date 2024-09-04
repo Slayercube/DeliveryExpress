@@ -19,20 +19,46 @@ const generateToken = (user) => {
 router.post('/register', async (req, res) => {
   try {
     const { username, email, password, firstname, lastname, phone } = req.body
-    const hashedPassword = await bcrypt.hash(password, 10)
-    const query =
-      'INSERT INTO customers (username, email, password, firstname, lastname, phone) VALUES (?, ?, ?, ?, ?, ?)'
-    pool.query(
-      query,
-      [username, email, hashedPassword, firstname, lastname, phone],
-      (err, result) => {
+
+    // Check if username already exists
+    const usernameQuery = 'SELECT * FROM customers WHERE userName = ?'
+    pool.query(usernameQuery, [username], async (err, result) => {
+      if (err) {
+        console.error('Error checking username:', err)
+        return res.status(500).send('Error checking username')
+      }
+      if (result.length > 0) {
+        return res.status(409).json({ message: 'Username already exists' })
+      }
+
+      // Check if email already exists
+      const emailQuery = 'SELECT * FROM customers WHERE email = ?'
+      pool.query(emailQuery, [email], async (err, result) => {
         if (err) {
-          console.error('Error inserting data:', err)
-          return res.status(500).send('Error inserting data')
+          console.error('Error checking email:', err)
+          return res.status(500).send('Error checking email')
         }
-        res.status(201).send('User created')
-      },
-    )
+        if (result.length > 0) {
+          return res.status(409).json({ message: 'Email already exists' })
+        }
+
+        // If username and email do not exist, proceed with registration
+        const hashedPassword = await bcrypt.hash(password, 10)
+        const insertQuery =
+          'INSERT INTO customers (username, email, password, firstname, lastname, phone) VALUES (?, ?, ?, ?, ?, ?)'
+        pool.query(
+          insertQuery,
+          [username, email, hashedPassword, firstname, lastname, phone],
+          (err) => {
+            if (err) {
+              console.error('Error inserting data:', err)
+              return res.status(500).send('Error inserting data')
+            }
+            res.status(201).send('User created')
+          },
+        )
+      })
+    })
   } catch (error) {
     console.error('Error during registration:', error)
     res.status(500).send('Internal server error')

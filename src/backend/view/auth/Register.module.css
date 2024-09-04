@@ -222,5 +222,14 @@
 .policy:hover {
     color: gold;
 }
-
+.error {
+    color: red;
+    font-size: 1em;
+    font-weight: 800;
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 1px 3px 13px rgb(247, 0, 255);
+    
+   
+}
 

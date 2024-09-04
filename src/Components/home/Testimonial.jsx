@@ -4,7 +4,7 @@ import styles from './home.module.css'
 const Testimonial = () => {
   return (
     <div>
-      <section className="relative">
+      <section className="relative -mt-40">
         <div className="mx-auto max-w-8xl px-5 py-20 md:px-10 md:py-24" id={styles.headertestimonial}>
           {/* Heading Text */}
           <h2 className="mx-auto mb-6 w-full max-w-3xl text-center text-3xl font-semibold md:mb-12  md:text-5xl">

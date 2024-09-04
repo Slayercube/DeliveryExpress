@@ -70,6 +70,7 @@ const PaymentForm = () => {
       }
     }
   };
+  const Price = orderData.price ? orderData.price.toFixed(2) : '';
 
   return (
     <form onSubmit={handleSubmit} className={`p-6 payment-form ${styles.payment2}`}>
