@@ -8,7 +8,7 @@
   padding: 50px;
   margin-top: 5%;
   margin-bottom:20%;
-  border-radius: 0 50px;
+  border-radius: 0 30px;
   background: url(https://png.pngtree.com/background/20230618/original/pngtree-sleek-and-stylish-3d-render-of-metallic-black-texture-picture-image_3754831.jpg);
   background-blend-mode: multiply;
   background-color: rgb(122, 115, 115);
@@ -41,6 +41,54 @@
   flex-direction: column;
   width: 100%;
 }
+
+
+/* Media Query for mobile screens */
+@media screen and (max-width: 768px) {
+  .payment2 {
+    padding: 20px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border-radius: 0 15px;
+  }
+
+  .payment-methods {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .payment-method {
+    flex: 1 1 30%;
+    margin: 5px;
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-group-inline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group-inline .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+}
+
 
 
 

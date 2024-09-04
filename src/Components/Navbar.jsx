@@ -134,6 +134,7 @@ const Navbar = () => {
                     >
                       Account
                     </button>
+                    
                     <button className="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full">
                       Support
                     </button>

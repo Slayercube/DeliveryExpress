@@ -24,7 +24,7 @@ const ContactUs = () => {
 
       <section>
         <h3 className='mt-5 mb-2 text-warning font-bold mb-3'>Marketing</h3>
-        <p>Would you like to promote our <strong className='font-bold italic text-danger'>firm</strong>? Feel free to contact us in matters related to promos, media, social media, etc.</p>
+        <p>Would you like to promote our <strong className='font-bold italic text-danger'>firm</strong> ? Feel free to contact us in matters related to promos, media, social media, etc.</p>
         <p typeof='email' className='mt-3'><span className='text-success font-bold'>E-Mail address</span>: <span className='text-decoration-underline'>marketing@ExpressDelivery.com</span></p>
       </section>
 

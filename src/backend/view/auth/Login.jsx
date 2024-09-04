@@ -127,9 +127,9 @@ const Login = () => {
 
 
                         {/* Forget Password */}
-                        <div className={`pw ${styles.pw}`}>
+                        {/* <div className={`pw ${styles.pw}`}>
                             <a href="#">Forget password?</a>
-                        </div>
+                        </div> */}
                     </div>
                     <br />
 
@@ -164,53 +164,53 @@ const Login = () => {
 
 
                         {/* facebook */}
-                        <div className={`social-icon facebook ${styles.facebook}`}>
+                        {/* <div className={`social-icon facebook ${styles.facebook}`}>
                             <span className="#">
                                 <a href="https://facebook.com">
                                     <i className="fa-brands fa-facebook"></i>
                                 </a>
                             </span>
-                        </div>
+                        </div> */}
 
 
                         {/* instagram */}
-                        <div className={`social-icon instagram ${styles.instagram}`}>
+                        {/* <div className={`social-icon instagram ${styles.instagram}`}>
                             <span className="#">
                                 <a href='https://instagram.com'>
                                     <i className="fa-brands fa-instagram"></i>
                                 </a>
                             </span>
-                        </div>
+                        </div> */}
 
 
                         {/* google */}
-                        <div className={`social-icon google ${styles.google}`}>
+                        {/* <div className={`social-icon google ${styles.google}`}>
                             <span className="#">
                                 <a href='https://google.com'>
                                     <i className="fa-brands fa-google"></i>
                                 </a>
                             </span>
-                        </div>
+                        </div> */}
 
 
                         {/* linkedin */}
-                        <div className={`social-icon linkedin ${styles.linkedin}`}>
+                        {/* <div className={`social-icon linkedin ${styles.linkedin}`}>
                             <span className="#">
                                 <a href='https://linkedin.com'>
                                     <i className="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </span>
-                        </div>
+                        </div> */}
 
 
                         {/* twitter */}
-                        <div className={`social-icon twitter ${styles.twitter}`}>
+                        {/* <div className={`social-icon twitter ${styles.twitter}`}>
                             <span className="#">
                                 <a href='https://twitter.com'>
                                     <i className="fa-brands fa-x-twitter"></i>
                                 </a>
                             </span>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Don't have an account & Sign Up */}

@@ -263,23 +263,23 @@ const Register = () => {
 
 
           {/* google signup button*/}
-          <button className={`relative mb-4 flex font-bold text-center w-full cursor-pointer items-center  px-6 py-3 ${styles.googlesignup}`}>
+          {/* <button className={`relative mb-4 flex font-bold text-center w-full cursor-pointer items-center  px-6 py-3 ${styles.googlesignup}`}>
 
             <i className="fa-brands fa-google-plus-g text-danger"></i>
             <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1" className=" mx-auto pl-5 lg:pl-0">
               <span>Sign up with Google</span>
             </a>
-          </button>
+          </button> */}
 
 
 
           {/* facebook signup button */}
-          <button className={`relative flex font-bold text-center w-full cursor-pointer items-center  px-6 py-3 ${styles.facebooksignup}`}>
+          {/* <button className={`relative flex font-bold text-center w-full cursor-pointer items-center  px-6 py-3 ${styles.facebooksignup}`}>
             <i className="fa-brands fa-facebook text-primary"></i>
             <a href="https://facebook.com" className="mx-auto pl-5">
               <span>Sign up with Facebook</span>
             </a>
-          </button>
+          </button> */}
 
 
         </div>
@@ -292,7 +292,7 @@ const Register = () => {
 
 
         {/* Terms of Use */}
-        <p className="text-light text-sm max-w-80 mx-auto mt-6">
+        <p className="text-light text-sm max-w-80 mx-auto mt-2">
           By proceeding, you agree to Delivery Express
           <a href="./termsOfServices" className={` font-bold underline ml-1 ${styles.policy}`}>
             Terms of Use & Privacy Policy.
