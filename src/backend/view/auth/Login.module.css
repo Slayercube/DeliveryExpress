@@ -187,3 +187,9 @@
     background-color: #000;
     border-radius: 15px;
 }
+.error {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 10px;
+
+}
