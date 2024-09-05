@@ -67,7 +67,7 @@ const Login = () => {
             autoComplete="on"
             onChange={(e) => setValues({ ...values, email: e.target.value })}
             type="text"
-            className={`email form-control ${styles.email}`}
+            className={`email form-control rounded-5 ${styles.email}`}
             placeholder="Email Address"
             required
             id="email"
@@ -84,7 +84,7 @@ const Login = () => {
             autoComplete="on"
             onChange={(e) => setValues({ ...values, password: e.target.value })}
             type={passwordVisible ? 'text' : 'password'}
-            className={`password form-control ${styles.password}`}
+            className={`password form-control rounded-5 ${styles.password}`}
             placeholder="Password"
             required
             id="password"
@@ -110,9 +110,7 @@ const Login = () => {
             </label>
 
             {/* Forget Password */}
-            <div className={`pw ${styles.pw}`}>
-              <a href="#">Forget password?</a>
-            </div>
+          
           </div>
           {error && <div className={styles.error}>{error}</div>}
           <br />
@@ -140,62 +138,101 @@ const Login = () => {
             />
           </span>
           {/* Social Media Signup Buttons*/}
-          <div className={`social-icons mt-3 ${styles.socialicons}`}>
-            {/* facebook */}
-            <div className={`social-icon facebook ${styles.facebook}`}>
-              <span className="#">
-                <a href="https://facebook.com">
-                  <i className="fa-brands fa-facebook"></i>
-                </a>
-              </span>
-            </div>
+          
 
             {/* instagram */}
-            <div className={`social-icon instagram ${styles.instagram}`}>
-              <span className="#">
-                <a href="https://instagram.com">
-                  <i className="fa-brands fa-instagram"></i>
-                </a>
-              </span>
-            </div>
+            
 
             {/* google */}
-            <div className={`social-icon google ${styles.google}`}>
-              <span className="#">
-                <a href="https://google.com">
-                  <i className="fa-brands fa-google"></i>
-                </a>
-              </span>
-            </div>
+            
 
             {/* linkedin */}
-            <div className={`social-icon linkedin ${styles.linkedin}`}>
-              <span className="#">
-                <a href="https://linkedin.com">
-                  <i className="fa-brands fa-linkedin-in"></i>
-                </a>
-              </span>
-            </div>
+            
 
-            {/* twitter */}
-            <div className={`social-icon twitter ${styles.twitter}`}>
-              <span className="#">
-                <a href="https://twitter.com">
-                  <i className="fa-brands fa-x-twitter"></i>
-                </a>
-              </span>
-            </div>
-          </div>
-          {/* Don't have an account & Sign Up */}
-          <div className={`createnew mt-4 ${styles.createnew}`}>
-            <span>
-              Don't have an account?{' '}
-              <a className="ms-2" role="button" href="./Register">
-                Sign Up
-              </a>
-            </span>
-          </div>
-        </div>
+                   
+
+
+                    {/* Remember Me Checkbox */}
+                   
+
+
+                        {/* Forget Password */}
+                        {/* <div className={`pw ${styles.pw}`}>
+                            <a href="#">Forget password?</a>
+                        </div> */}
+                    
+                  
+
+
+                    {/* Login Button */}
+                    
+
+
+                    {/* lines & OR */}
+                    
+
+                    {/* Social Media Signup Buttons*/}
+                   
+
+
+                        {/* facebook */}
+                        {/* <div className={`social-icon facebook ${styles.facebook}`}>
+                            <span className="#">
+                                <a href="https://facebook.com">
+                                    <i className="fa-brands fa-facebook"></i>
+                                </a>
+                            </span>
+                        </div> */}
+
+
+                        {/* instagram */}
+                        {/* <div className={`social-icon instagram ${styles.instagram}`}>
+                            <span className="#">
+                                <a href='https://instagram.com'>
+                                    <i className="fa-brands fa-instagram"></i>
+                                </a>
+                            </span>
+                        </div> */}
+
+
+                        {/* google */}
+                        {/* <div className={`social-icon google ${styles.google}`}>
+                            <span className="#">
+                                <a href='https://google.com'>
+                                    <i className="fa-brands fa-google"></i>
+                                </a>
+                            </span>
+                        </div> */}
+
+
+                        {/* linkedin */}
+                        {/* <div className={`social-icon linkedin ${styles.linkedin}`}>
+                            <span className="#">
+                                <a href='https://linkedin.com'>
+                                    <i className="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </span>
+                        </div> */}
+
+
+                        {/* twitter */}
+                        {/* <div className={`social-icon twitter ${styles.twitter}`}>
+                            <span className="#">
+                                <a href='https://twitter.com'>
+                                    <i className="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </span>
+                        </div> */}
+                    
+
+                    {/* Don't have an account & Sign Up */}
+                    <div className={`mt-4 createnew ${styles.createnew}`}>
+                        <span>
+                            Don't have an account? <a className='ms-2' role='button' href="./Register">Sign Up</a>
+                        </span>
+                    </div>
+                </div>
+        
       </form>
     </div>
     // </Tilt>

@@ -90,7 +90,7 @@ const Register = () => {
                 }
                 type="text"
                 id="username"
-                className={`username form-control username form-control m-auto block h-9 w-full rounded-md px-4 py-6 text-sm ${styles.username}`}
+                className={`username form-control username  m-auto block h-9 w-full rounded-5 bg-light  px-4 py-6 text-sm ${styles.username}`}
                 placeholder="Username"
                 required
               />
@@ -115,7 +115,7 @@ const Register = () => {
                 }
                 type="text"
                 id="firstname"
-                className={`firstname form-control firstname form-control m-auto block h-9 w-full rounded-md px-4 py-6 text-sm ${styles.firstname}`}
+                className={`firstname form-control firstname m-auto block h-9 w-full rounded-5 bg-light  px-4 py-6 text-sm ${styles.firstname}`}
                 placeholder="First Name"
                 required
               />
@@ -140,7 +140,7 @@ const Register = () => {
                 }
                 type="text"
                 id="lastname"
-                className={`input4 form-control 2 form-control m-auto block h-9 w-full rounded-md px-4 py-6 text-sm ${styles.lastname}`}
+                className={`input4 form-control  m-auto block h-9 w-full rounded-5 bg-light  px-4 py-6 text-sm ${styles.lastname}`}
                 placeholder="Last Name"
                 required
               />
@@ -165,7 +165,7 @@ const Register = () => {
                 }
                 type="number"
                 id="phone"
-                className={`input4 form-control 2 form-control m-auto block h-9 w-full rounded-md px-4 py-6 text-sm ${styles.phone}`}
+                className={`input4 form-control  m-auto block h-9 w-full rounded-5 bg-light  px-4 py-6 text-sm ${styles.phone}`}
                 placeholder="Phone"
                 required
               />
@@ -190,7 +190,7 @@ const Register = () => {
                 }
                 type="email"
                 id="email"
-                className={`email form-control form-control m-auto block h-9 w-full rounded-md px-4 py-6 text-sm ${styles.email}`}
+                className={`email form-control m-auto block h-9 w-full rounded-5 bg-light px-4 py-6 text-sm ${styles.email}`}
                 placeholder="Email Address"
                 required
               />
@@ -216,7 +216,7 @@ const Register = () => {
                   setValues({ ...values, password: e.target.value })
                 }
                 type={passwordVisible ? 'text' : 'password'} // This toggles the type between 'text' and 'password'
-                className={`password form-control m-auto block h-9 w-full rounded-md px-4 ${styles.password}`}
+                className={`password form-control m-auto block h-9 w-full rounded-5 bg-light px-4 ${styles.password}`}
                 placeholder="Password "
                 required
                 id="password"
@@ -239,16 +239,16 @@ const Register = () => {
 
             {/* Checkbox */}
             <label className="mb-6 flex items-center justify-center">
-              <input
+              {/* <input
                 type="checkbox"
                 name="checkbox"
                 className="float-left mr-1"
-              />
+              /> */}
 
               {/* i agree */}
-              <span className="text-light inline-block cursor-pointer text-sm">
+              {/* <span className="text-light inline-block cursor-pointer text-sm">
                 I agree to receive market updates from Delivery Express
-              </span>
+              </span> */}
             </label>
 
             {error && <div className={styles.error}>!!{error}</div>}
@@ -269,9 +269,8 @@ const Register = () => {
           </div>
 
           {/* google signup button*/}
-          <button
-            className={`relative mb-4 flex w-full cursor-pointer items-center px-6 py-3 text-center font-bold ${styles.googlesignup}`}
-          >
+          {/* <button className={`relative mb-4 flex font-bold text-center w-full cursor-pointer items-center  px-6 py-3 ${styles.googlesignup}`}>
+
             <i className="fa-brands fa-google-plus-g text-danger"></i>
             <a
               href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1"
@@ -279,17 +278,17 @@ const Register = () => {
             >
               <span>Sign up with Google</span>
             </a>
-          </button>
+          </button> */}
 
           {/* facebook signup button */}
-          <button
-            className={`relative flex w-full cursor-pointer items-center px-6 py-3 text-center font-bold ${styles.facebooksignup}`}
-          >
+          {/* <button className={`relative flex font-bold text-center w-full cursor-pointer items-center  px-6 py-3 ${styles.facebooksignup}`}>
             <i className="fa-brands fa-facebook text-primary"></i>
             <a href="https://facebook.com" className="mx-auto pl-5">
               <span>Sign up with Facebook</span>
             </a>
-          </button>
+          </button> */}
+
+
         </div>
 
         <div className="customer mt-2">
@@ -302,7 +301,7 @@ const Register = () => {
         </div>
 
         {/* Terms of Use */}
-        <p className="text-light mx-auto mt-6 max-w-80 text-sm">
+        <p className="text-light text-sm max-w-80 mx-auto mt-2">
           By proceeding, you agree to Delivery Express
           <a
             href="./termsOfServices"
