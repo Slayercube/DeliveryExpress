@@ -58,6 +58,7 @@
     margin: 10px 0;
     padding-right: 80px;
     transition: 0.1s ease-in;
+    border-radius: 40px;
 }
 
 .email,
