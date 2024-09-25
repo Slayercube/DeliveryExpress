@@ -11,7 +11,7 @@ open the second terminal don't close the first terminal.  it's for frontend. the
 
 # stripe
 open the third terminal
-- cd\backend\server
+- cd src\backend\server
 - run inside the terminal ===> node server.js
 - !!!!have fun
 - you can try fake cards for payment from this link --> https://docs.stripe.com/testing?testing-method=card-numbers#cards
