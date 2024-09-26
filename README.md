@@ -1,3 +1,7 @@
+https://github.com/user-attachments/assets/31144157-c67d-42fe-856a-1e6f942b2240
+
+
+
 # frontend
 - npm install
 - npm run dev
